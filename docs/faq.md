@@ -1,3 +1,7 @@
+- max has a console window where benny writes status and error messages. if it's not visible at startup you can make it appear by pressing ctrl-shift-m when the benny launcher window is selected.
+
+- on OSX it'll pop up loads of quarantine popups. say yes to each and every one. 
+
 - To set a particular song file as your default startup file, save it as 'autoload.json' in the templates folder in the benny folder
 
 
