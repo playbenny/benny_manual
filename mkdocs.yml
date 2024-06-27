@@ -6,7 +6,7 @@ theme:
     scheme: slate
     primary: black
     accent: amber
-  logo: benny_logo_800.png
+  logo: assets/benny_logo_400T.png
   features: 
     - navigation.footer
 repo: https://github.com/jamesholdenmusic/benny    
