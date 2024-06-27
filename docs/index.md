@@ -1,6 +1,10 @@
 # Welcome to Benny
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+benny is a modular software playground for making live music
+
+it seamlessly integrates hardware and software, midi and audio, lets you connect anything to anything and extends into polyphony elegantly
+
+benny is an extendible and hackable place to host your own max/msp patches
 
 ## Commands
 
