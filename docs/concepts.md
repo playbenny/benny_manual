@@ -1,5 +1,3 @@
-## concepts
-
 - the cubes in benny are called **blocks**. they all make or process sound or musical data. the first page you land on is the blocks page. hit enter, double click or start typing to find blocks to add.
 - the sidebar is where you can see more detailed audio scopes / midi visualisers, parameters, settings and states of a whatever you have selected.
 - **connections** in benny can go from anything to anything. an audio output can be connected to an audio input, or to a parameter value, or to the midi note input of a synth. every wire has gain and mute controls and wires that translate from one kind of value to another let you choose how that happens

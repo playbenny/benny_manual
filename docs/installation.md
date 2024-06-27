@@ -1,6 +1,3 @@
-
-##installation
-
 - download the latest benny (https://github.com/jamesholdenmusic/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
 - install max (http://www.cycling74.com) but no need to buy it, just ignore all those messages, don't start the free trial, don't subscribe, nothing. you'll be able to use all the features of benny. BUT if you decide you want to learn to build your own blocks you'll need to buy max.
