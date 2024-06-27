@@ -14,7 +14,7 @@ extra:
   generator: false
 repo: https://github.com/jamesholdenmusic/benny    
 nav:
-  - Home: index.md
+  - #: index.md
   - Installation: installation.md
   - Playing live sets with benny: live_sets.md
   - Developing blocks: developing.md
