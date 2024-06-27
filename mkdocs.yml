@@ -1,0 +1,7 @@
+site_name: My Docs
+site_url: https://www.playbenny.com/
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Article: article.md
