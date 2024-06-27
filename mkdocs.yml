@@ -5,7 +5,7 @@ theme:
   palette:
     primary: black
     accent: amber
-  logo: benny_logo_1.png
+  logo: benny_logo_800.png
   features: 
     - navigation.footer
 repo: https://github.com/jamesholdenmusic/benny    
