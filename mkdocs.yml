@@ -1,7 +1,14 @@
-site_name: My Docs
+site_name: benny
 site_url: https://www.playbenny.com/
 theme:
   name: material
+  palette:
+    primary: black
+    accent: amber
+  logo: benny_logo_1.png
+  features: 
+    - navigation.footer
+repo: https://github.com/jamesholdenmusic/benny    
 nav:
   - Home: index.md
   - Article: article.md

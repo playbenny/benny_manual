@@ -6,6 +6,9 @@ it seamlessly integrates hardware and software, midi and audio, lets you connect
 
 benny is an extendible and hackable place to host your own max/msp patches
 
+* [installation]
+* [keyboard_shortcuts] keyboard shortcuts
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
