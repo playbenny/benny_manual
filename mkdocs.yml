@@ -9,7 +9,12 @@ theme:
   logo: assets/benny_logo_400T.png
   features: 
     - navigation.footer
+    - header.autohide
+extra:
+  generator: false
 repo: https://github.com/jamesholdenmusic/benny    
 nav:
   - Home: index.md
-  - Article: article.md
+  - Installation: installation.md
+  - Playing live sets with benny: live_sets.md
+  - Developing blocks: developing.md
