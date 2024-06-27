@@ -3,6 +3,7 @@ site_url: https://www.playbenny.com/
 theme:
   name: material
   palette:
+    scheme: slate
     primary: black
     accent: amber
   logo: benny_logo_800.png
