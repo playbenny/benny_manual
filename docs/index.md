@@ -1,3 +1,14 @@
+---
+hide:
+ - navigation
+ - toc
+---
+<style>
+  .md-typeset h1,
+  .md-content__button {
+    display: none;
+  }
+</style>
 ![benny logo](assets/benny_logo_400T.png)
 
 benny is a modular software playground for making live music
