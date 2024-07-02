@@ -17,6 +17,12 @@ repo: https://github.com/jamesholdenmusic/benny
 nav:
   - Home: index.md
   - Concepts: concepts.md
+  - Blocks : blocks.md
+    - The sidebar : sidebar.md
+    - Connections : connections.md
+  - States : states.md
+  - Waves : waves.md
+  - Panels : panels.md
   - Installation: installation.md
   - Playing live sets with benny: live_sets.md
   - Developing blocks: developing.md
