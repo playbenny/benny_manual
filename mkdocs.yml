@@ -18,8 +18,8 @@ nav:
   - Home: index.md
   - Concepts: concepts.md
   - Blocks : blocks.md
-    - The sidebar : sidebar.md
-    - Connections : connections.md
+  - Sidebar : sidebar.md
+  - Connections : connections.md
   - States : states.md
   - Waves : waves.md
   - Panels : panels.md
