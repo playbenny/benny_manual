@@ -20,7 +20,7 @@ You can click the controller icon at the top of the sidebar to toggle automap lo
 
 #### connections
 
-If automap mode is off or nothing is selected the controller is in basic mode. You can connect from the controller's outputs to any block just like any other connection in benny. If the controller has per-knob leds they'll light to indicate active connections.
+If automap mode is off or nothing is selected the controller is in basic mode. You can connect from the controller's outputs to any block just like any other connection in benny. If the controller has per-knob leds they'll light to indicate active connections. On the new connection sidebar view you can move a control on your controller to select it in the list.
 
 ### core.input.control.basic
 
