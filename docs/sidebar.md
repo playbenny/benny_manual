@@ -74,11 +74,11 @@ You can introduce per-voice static errors, a gradual (per-voice) drift of parame
 
 ## States
 
-This section of the sidebar lets you store the current parameter values to a 'state'. States that have something in (either for this block or for others in the song) are highlighted with a border. Alt-click lets you remove this block from a state.
+This section of the sidebar lets you store the current parameter values to a [State](states.md). States that have something in (either for this block or for others in the song) are highlighted with a border. Alt-click lets you remove this block from a state.
 
 ## Connections
 
-Here you can see a list of all the connections to and from this block. You can edit them here or click them to bring up the detailed connection edit view.
+Here you can see a list of all the connections to and from this block. You can edit them here or click them to bring up the [detailed connection edit view](connections.md).
 
 ## Help
 

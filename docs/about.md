@@ -31,6 +31,6 @@ You are very welcome to contribute to benny according to your means and abilitie
 benny relies on several other people's work.
 
 - [cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
-- [chris airwindows](https://www.airwindows.com) who's open source code is both an excellent learning resource but also used widely in various benny blocks.
+- [chris airwindows](https://www.airwindows.com) whose open source code is both an excellent learning resource but also used widely in various benny blocks.
 - [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals
-- [ernest meyer](https://www.yofiel.com) who's advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system.
+- [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system.
