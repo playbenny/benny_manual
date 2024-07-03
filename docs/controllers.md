@@ -42,4 +42,12 @@ TODO: picture of sidebar graphics for this
 
 You can also connect from the core.input.keyboard block to any other block's midi input like any other midi connection.
 
-The block also has outputs for modulation, pitchbend (+,-, both) and sustain. If you have a keyboard like the CME XKEY range that outputs continuous polyphonic pressure messages in the form of more note-ons then the pressure output here outputs them. There is a time quantiser for these pressure messages that is synced to the global clock.
+The block also has outputs for modulation, pitchbend (+, -, both) and sustain. If you have a keyboard like the CME XKEY range that outputs continuous polyphonic pressure messages in the form of more note-ons then the pressure output here outputs them. There is a time quantiser for these pressure messages that is synced to the global clock.
+
+## Substitution
+
+In the hardware editor for each controller you define you can also select fallback substitutes. These also have to be fully defined in the hardware editor too. 
+
+For example in my profile I have entries for LPD-8 and LPD-8 MK II. Each is defined as a possible substitute for the other, so in old songs that expect the LPD-8 (which broke) benny finds the MK II attached and uses that instead (and even though they're configured to use different CCs benny abstracts that fact out of your way).
+
+If, for example on tour, a piece of equipment fails, as long as you can find a vaguely similar replacement you can define that in the hardware editor, set it as the substitute for the failed item, and just load all your songs without having to think about it again.
