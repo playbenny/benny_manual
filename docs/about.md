@@ -23,3 +23,12 @@ You are very welcome to contribute to benny according to your means and abilitie
     - [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ)
     - if you're unwaged or otherwise economically disadvantaged please do not donate
     - otherwise, donations will increase the amount of time I can spend on benny, and may be partly used to pay other people to implement things that are beyond my abilities. 
+
+## Acknowledgements
+
+benny relies on several other people's work.
+
+- [cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
+- [chris airwindows](https://www.airwindows.com) who's open source code is both an excellent learning resource but also used widely in various benny blocks.
+- [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals
+- [ernest meyer](https://www.yofiel.com) who's advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system.
