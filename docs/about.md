@@ -1,6 +1,8 @@
 [I](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. This makes it a different kind of thing to commercial software. I'm sharing benny because I think others may enjoy it and because I hope others may be able to make contributions that make it even better.
 
-Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same [license](https://github.com/jamesholdenmusic/benny?tab=License-1-ov-file) terms as benny. If your job is something a reasonable person might think is detrimental to humanity (eg military, law enforcement, resource extraction, etc) then you should check the [license](https://github.com/jamesholdenmusic/benny?tab=License-1-ov-file) doesn't prohibit you using it.
+Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny. 
+
+If your job is something a reasonable person might think is detrimental to humanity (eg military, law enforcement, resource extraction, etc) then you should check that the [license](https://github.com/jamesholdenmusic/benny?tab=License-1-ov-file) doesn't prohibit you using it.
 
 You are very welcome to contribute to benny according to your means and abilities.
 
