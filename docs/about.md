@@ -2,8 +2,6 @@
 
 Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny. 
 
-If your job is something a reasonable person might think is detrimental to humanity (eg military, law enforcement, resource extraction, etc) then you should check that the [license](https://github.com/jamesholdenmusic/benny?tab=License-1-ov-file) doesn't prohibit you using it.
-
 You are very welcome to contribute to benny according to your means and abilities.
 
 ### report bugs
