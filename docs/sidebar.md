@@ -10,9 +10,17 @@ Audio blocks have a scope for each output. The scrollwheel (or dragging up and d
 
 ### parameters
 
-This section shows the parameters for the block. Drag or use your scroll wheel to adjust these. Shift for fine adjust, Alt+shift for extra fine. Alt-click returns a value to its default (or if you loaded the songfile from disk, to the value it was in the last save).
+This section shows the parameters for the block. Drag or use your scroll wheel to adjust these. 
 
-If a block has multiple voices then while you hold ctrl and mouse over a slider it'll highlight it and let you adjust that one individually. Ctrl+Alt lets you tilt all the values of the individual voices around the one you're hovering over.
+**Shift** for fine adjust
+
+**Alt+shift** for extra fine. 
+
+**Alt-click** returns a value to its default (or if you loaded the songfile from disk, to the value it was in the last save).
+
+If a block has multiple voices then while you hold **ctrl and mouse over** a slider it'll highlight it and let you adjust that one individually. 
+
+**Ctrl+Alt** lets you tilt all the values of the individual voices around the one you're hovering over.
 
 ### mini-ui
 
@@ -21,8 +29,11 @@ Here's an example of a block with a mini-ui showing what it's doing. Some of the
 ### block settings
 
 Reload - does a full hard reload of the block's code.
+
 Swap - lets you swap a block out for a different one.
+
 Copy paste del do what you'd expect.
+
 Open patch - opens the max patcher for the first voice of the block.
 
 #### polyphonic note allocation modes
@@ -30,13 +41,19 @@ Open patch - opens the max patcher for the first voice of the block.
 Here you set the number of voices and select the mode for picking what voice a new note goes to. There are separate mode settings for how it allocates a note to a currently inactive voice and for when the new note has to steal a currently active voice.
 
 **Blind cycle** - each note that comes in is allocated to the next voice in turn, without concern for whether that voice is playing or whether the same note is already playing on another voice.
+
 **Blind random** - likewise but the next voice is picked at random
+
 **Cycle free** - the next free voice is picked, working round in order.
+
 **Cycle random** - a voice is picked at random from the currently unused ones.
+
 **Notememory** - it keeps track of which voice last played a particular note and returns to that one. This is how (for example) the prophet 600 allocated midi to voices.
 
 There are two other controls:
+
 **Stack** - plays mutliples of notes, or adds suboctave notes.
+
 **latching** - only implemented on a few blocks so far, this gives the option for parameters to update only one note on and/or note off events (as opposed to continuously, as is the default)
 
 #### panel assign
