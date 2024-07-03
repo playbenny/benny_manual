@@ -14,7 +14,7 @@ There are scopes for both input and output of the connection (where possible)
 
 Some connections are simple - eg a midi out to a midi in, or a single audio out to a single audio in. Some require some degree of conversion.
 
-All connections get a gain/scale control, the ability to flip (invert) their values and a mute button. You can mute a connection by ctrl-click on the wire.
+All connections get a gain/scale control, the ability to flip (invert) their values and a mute button. You can mute a connection by ctrl-click on the wire. You can adjust a connection's level by ctrl-scroll over the wire.
 
 Where relevant, connections have offset controls (eg to transpose a midi stream, or add to its velocity).
 
