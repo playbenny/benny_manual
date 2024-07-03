@@ -50,7 +50,9 @@ Here you set the number of voices and select the mode for picking what voice a n
 
 **Notememory** - it keeps track of which voice last played a particular note and returns to that one. This is how (for example) the prophet 600 allocated midi to voices.
 
-There are two other controls:
+There are three other controls:
+
+**Return stolen** - if a held note is stopped due to the voice being stolen by a new one and that new note ends, this enables the held note restarting.
 
 **Stack** - plays mutliples of notes, or adds suboctave notes.
 
