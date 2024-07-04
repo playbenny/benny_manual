@@ -10,6 +10,12 @@ Here you can select source voice(s), output, destination voice(s) and input. Hit
 
 There are scopes for both input and output of the connection (where possible)
 
+Wire colours reflect the type of output/input they come from.
+- white : not assigned yet
+- green : values/parameters
+- yellow : midi/notes
+- orange : audio 
+
 ## Conversion
 
 Some connections are simple - eg a midi out to a midi in, or a single audio out to a single audio in. Some require some degree of conversion.
