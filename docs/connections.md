@@ -11,10 +11,14 @@ Here you can select source voice(s), output, destination voice(s) and input. Hit
 There are scopes for both input and output of the connection (where possible)
 
 Wire colours reflect the type of output/input they come from.
-- white : not assigned yet
-- green : values/parameters
-- yellow : midi/notes
-- orange : audio 
+
+- <span style="color:white">white</span> : not assigned yet
+
+- <span style="color:green">green</span> : values/parameters
+
+- <span style="color:yellow">yellow</span> : midi/notes
+
+- <span style="color:orange">orange</span> : audio 
 
 ## Conversion
 
