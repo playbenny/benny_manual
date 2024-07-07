@@ -32,3 +32,4 @@ benny relies on several other people's work.
 - [chris airwindows](https://www.airwindows.com) whose open source code is both an excellent learning resource but also used widely in various benny blocks.
 - [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals
 - [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system.
+- [oskari tamellin](http://jeskola.net/buzz/) jeskola buzz (as well as being the software that I got my start in music on) was a big inspiration for benny's design.

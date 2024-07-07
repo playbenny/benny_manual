@@ -1,8 +1,10 @@
-## arming
+## Arming
 
 To arm a block or blocks for recording, select them (shift+click does multiselect) and press **ctrl-R**.
 
 At the moment (due to a technical limitation I haven't had time to build a workaround for) **hardware blocks cannot be directly recorded**. Instead you can connect a dummy block (eg a vca?) after the hardware one and record that.
+
+![record buttons](assets/screenshots/recording.png)
 
 The 'choose record folder' button will appear in the top bar. Click it and pick a folder, if you haven't already.
 
