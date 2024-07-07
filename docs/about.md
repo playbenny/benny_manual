@@ -1,4 +1,4 @@
-[I](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. It's not commercial software. I've been using benny for my live sets since early 2023.
+[I](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. It's not commercial software. It's not finished, it may never be, but I've been using benny for my live sets since early 2023.
 
 Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny. 
 
@@ -21,8 +21,7 @@ You are very welcome to contribute to benny according to your means and abilitie
 - this documentation is a [separate github repository](https://github.com/jamesholdenmusic/BennyDocs). if you hit a problem or question that isn't answered here please do add the solution when you find it to the docs, in a logical place.
 ### Donate
 - [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ)
-- if you're unwaged or otherwise economically disadvantaged please do not donate
-- otherwise, donations will increase the amount of time I can spend on benny, and may be partly used to pay other people to implement things that are beyond my abilities. 
+- if you're unwaged or otherwise economically disadvantaged please do not donate!
 
 ## Acknowledgements
 
@@ -31,5 +30,5 @@ benny relies on several other people's work.
 - [cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
 - [chris airwindows](https://www.airwindows.com) whose open source code is both an excellent learning resource but also used widely in various benny blocks.
 - [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals
-- [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system.
+- [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
 - [oskari tamellin](http://jeskola.net/buzz/) jeskola buzz (as well as being the software that I got my start in music on) was a big inspiration for benny's design.

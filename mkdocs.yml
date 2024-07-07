@@ -19,7 +19,7 @@ repo: https://github.com/jamesholdenmusic/benny
 nav:
   - Home: index.md
   - About: about.md
-  - Feature overview:
+  - Overview:
     - Blocks : blocks.md
     - Sidebar : sidebar.md
     - Connections : connections.md

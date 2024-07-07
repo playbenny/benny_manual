@@ -1,6 +1,8 @@
 - [download the latest benny](https://github.com/jamesholdenmusic/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
-- install [max](http://www.cycling74.com) but no need to buy it, just ignore all those messages, don't start the free trial, don't subscribe, nothing. you'll be able to use all the features of benny. BUT if you decide you want to learn to build your own blocks you'll need to buy max.
+- install [max](http://www.cycling74.com) but no need to buy it to use all the features of benny, just ignore all those messages, don't start the free trial, don't subscribe, nothing. BUT if you decide you want to learn to build your own blocks you'll need to buy max.
+
+- **Important** the latest version of max, 8.6.3, has a bug that stops benny working at all. please stick to max 8.6.2 until they fix this. [download link](https://cycling74.com/downloads/older)
 
 - a few blocks require airwindows console 7 vsts. they're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.
 
