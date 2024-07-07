@@ -8,7 +8,7 @@ Controllers - that is midi devices with knobs, sliders or other ways of generati
 
 There can only be one of these core.input.control.auto blocks present at a time. The controller linked to this block can be used for automap and normal connections. 
 
-#### automap
+#### Automap
 
 If automap mode is enabled for the block then when something is selected the controller will map to it. Controllers (eg midi fighter twister) with encoders and RGB leds and value feedback are ideal for this. With a suitable controller the colours and on/off status of knobs match the onscreen ui layout. If nothing is selected then the controller takes on the colours set in the block's parameters and acts in basic mode (see next section).
 
@@ -18,7 +18,7 @@ In automap mode if the selected block has more parameters than can be mapped the
 
 You can click the controller icon at the top of the sidebar to toggle automap lock for the controller and it'll stay mapped even if you select something else (or nothing).
 
-#### connections
+#### Connections
 
 If automap mode is off or nothing is selected the controller is in basic mode. You can connect from the controller's outputs to any block just like any other connection in benny. If the controller has per-knob leds they'll light to indicate active connections. On the new connection sidebar view you can move a control on your controller to select it in the list.
 
@@ -32,13 +32,13 @@ Keyboards or grid devices or drum pads or the QWERTY keyboard or any other devic
 
 QWERTY input needs to be enabled in the block parameters AND capslock needs to be on. The bottom octave starts at C = Z, the top octaves start at C = Q, , and L are up and down octave controls.
 
-#### automap
+#### Automap
 
 If the core.input.keyboard block's 'automap' parameter is set to ON then when you select a block or voice that has a midi input the keyboard will map to it automatically. If the block has multiple inputs they'll be listed as buttons so you can choose. If you click the keyboard graphic it toggles *automap lock* and the keyboard will remain mapped even when you select something (or nothing) else.
 
 TODO: picture of sidebar graphics for this
 
-#### connections
+#### Connections
 
 You can also connect from the core.input.keyboard block to any other block's midi input like any other midi connection.
 
