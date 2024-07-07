@@ -8,7 +8,7 @@ hide:
     display: none;
   }
 </style>
-![benny logo](assets/benny_logo_400T.png)
+![benny logo](assets/benny_logo_400T.png){align=left}
 
 benny is a modular software playground for making live music
 

@@ -11,6 +11,8 @@ theme:
   features: 
     - navigation.footer
     - header.autohide
+  markdown_extensions:
+    - attr_list
 extra:
   generator: false
 repo: https://github.com/jamesholdenmusic/benny    
