@@ -8,11 +8,11 @@ Press enter, double click the background or just start typing the name of what y
 
 ### audio
 
-[picture of an audio block](/assets/screenshots/block_audio_1.gif)
+[picture of an audio block](assets/screenshots/block_audio_1.gif)
 
 Here's an audio block. This one's an oscillator. Audio blocks have 2 audio inputs, 2 audio outputs, and as many midi inputs and outputs as they want. This block has one voice, represented by the single cuboid section to the right, which has the two meters showing the voice's outputs.
 
-[picture of a vst block](/assets/screenshots/block_vst_1.png)
+[picture of a vst block](assets/screenshots/block_vst_1.png)
 
 This block, holding a vst plugin, has it's 1 voice split into 2 thinner slices to show you it's a stereo-in stereo-out voice.
 
@@ -22,7 +22,7 @@ In benny audio meters (both on blocks and elsewhere) always show the minimum and
 
 ### midi
 
-[picture of the core.input.keyboard block](/assets/screenshots/block_keyboard.png)
+[picture of the core.input.keyboard block](assets/screenshots/block_keyboard.png)
 
 This block has no audio processing, it's a midi block representing both the keyboard I have connected and the QWERTY keys (if I enable that).
 
