@@ -19,15 +19,16 @@ repo: https://github.com/jamesholdenmusic/benny
 nav:
   - Home: index.md
   - About: about.md
-  - Blocks : blocks.md
-  - Sidebar : sidebar.md
-  - Connections : connections.md
-  - States : states.md
-  - Waves : waves.md
-  - Panels : panels.md
+  - Feature overview:
+    - Blocks : blocks.md
+    - Sidebar : sidebar.md
+    - Connections : connections.md
+    - States : states.md
+    - Waves : waves.md
+    - Panels : panels.md
+    - Midi Control: controllers.md
+    - Recording: recording.md
   - Installation: installation.md
-  - Midi Control: controllers.md
-  - Recording: recording.md
   - Playing live sets with benny: live_sets.md
   - Keyboard shortcuts: keyboard_shortcuts.md
   - Developing blocks: developing.md
