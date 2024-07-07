@@ -9,9 +9,9 @@ theme:
   logo: assets/benny_logo_400T.png
   favicon: assets/favicon-32x32.png
   features: 
-  - navigation.footer
-  - header.autohide
-  markdown_extensions:
+    - navigation.footer
+    - header.autohide
+markdown_extensions:
   - attr_list
 extra:
   generator: false
