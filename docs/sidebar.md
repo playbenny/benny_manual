@@ -12,7 +12,13 @@ If a block has multiple voices there'll a be a section like this where you can c
 
 ## Scopes
 
+![audio scope](assets/screenshots/sidebar_scope_audio.png)
+
 Audio blocks have a scope for each output. The scrollwheel (or dragging up and down) lets you zoom these scopes. Red shows values that go outside the normal ranges (though there is no clipping on connections between blocks)
+
+![midi scope](assets/screenshots/sidebar_scope_midi.png)
+
+Midi scopes show the notes currently playing.
 
 ## Parameters
 
