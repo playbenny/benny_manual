@@ -1,14 +1,20 @@
 The sidebar shows the details of whatever you're looking at.
 
-# blocks
+# Blocks
 
-With a single block selected the sidebar shows you all it's settings. Click the section headers to move through them. If a block has multiple voices there'll a be a section like this where you can choose to select and adjust either the whole block or an individual voice.
+![picture of the sidebar with one block selected](assets/screenshots/sidebar_block.png)
 
-## scopes
+With a single block selected the sidebar shows you all it's settings. Click the section headers to move through them. 
+
+![picture of the sidebar voice selection section](assets/screenshots/sidebar_voice_selection.png)
+
+If a block has multiple voices there'll a be a section like this where you can choose to select and adjust either the whole block or an individual voice.
+
+## Scopes
 
 Audio blocks have a scope for each output. The scrollwheel (or dragging up and down) lets you zoom these scopes. Red shows values that go outside the normal ranges (though there is no clipping on connections between blocks)
 
-## parameters
+## Parameters
 
 This section shows the parameters for the block. Drag or use your scroll wheel to adjust these. 
 
@@ -22,11 +28,15 @@ If a block has multiple voices then while you hold **ctrl and mouse over** a sli
 
 **Ctrl+Alt** lets you tilt all the values of the individual voices around the one you're hovering over.
 
-## mini-ui
+## Mini-ui
+
+![example mini-ui view in the sidebar](assets/screenshots/sidebar_miniui.png)
 
 Here's an example of a block with a mini-ui showing what it's doing. Some of these allow mouse interaction. Often they'll have an 'edit' button beneath that brings up a full-featured version of the editor on the rest of the screen.
 
-## block settings
+## Block settings
+
+![settings section of the sidebar](assets/screenshots/sidebar_settings.png)
 
 Reload - does a full hard reload of the block's code.
 
@@ -36,7 +46,7 @@ Copy paste del do what you'd expect.
 
 Open patch - opens the max patcher for the first voice of the block.
 
-### polyphonic note allocation modes
+### Polyphonic note allocation modes
 
 Here you set the number of voices and select the mode for picking what voice a new note goes to. There are separate mode settings for how it allocates a note to a currently inactive voice and for when the new note has to steal a currently active voice.
 
@@ -56,9 +66,9 @@ There are three other controls:
 
 **Stack** - plays mutliples of notes, or adds suboctave notes.
 
-**latching** - only implemented on a few blocks so far, this gives the option for parameters to update only one note on and/or note off events (as opposed to continuously, as is the default)
+**Latching** - only implemented on a few blocks so far, this gives the option for parameters to update only one note on and/or note off events (as opposed to continuously, as is the default)
 
-### panel assign
+### Panel assign
 
 Press the panel assign button to put the sidebar into a mode where you can select parameters to be shown on the [panels](panels.md) page.
 
@@ -74,9 +84,17 @@ You can introduce per-voice static errors, a gradual (per-voice) drift of parame
 
 ## States
 
-This section of the sidebar lets you store the current parameter values to a [State](states.md). States that have something in (either for this block or for others in the song) are highlighted with a border. Alt-click lets you remove this block from a state.
+![unfolded states view](assets/screenshots/sidebar_states_edit.png)
+
+When you open this section of the sidebar it lets you store the current parameter values to a [State](states.md). States that have something in (either for this block or for others in the song) are highlighted with a border. Alt-click lets you remove this block from a state.
+
+When this section is not open for editting it just shows buttons that let you fire the states **for this block only**:
+
+![folded states section](assets/screenshots/sidebar_states_folded.png)
 
 ## Connections
+
+![sidebar block connections list](assets/screenshots/sidebar_block_connections.png)
 
 Here you can see a list of all the connections to and from this block. You can edit them here or click them to bring up the [detailed connection edit view](connections.md).
 
