@@ -36,7 +36,7 @@ QWERTY input needs to be enabled in the block parameters AND capslock needs to b
 
 If the core.input.keyboard block's 'automap' parameter is set to ON then when you select a block or voice that has a midi input the keyboard will map to it automatically. If the block has multiple inputs they'll be listed as buttons so you can choose. If you click the keyboard graphic it toggles *automap lock* and the keyboard will remain mapped even when you select something (or nothing) else.
 
-TODO: picture of sidebar graphics for this
+![keyboard automap section](assets/screenshots/block_keyboard.png)
 
 #### Connections
 
