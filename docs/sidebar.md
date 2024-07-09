@@ -64,7 +64,7 @@ Here you set the number of voices and select the mode for picking what voice a n
 
 **Cycle random** - a voice is picked at random from the currently unused ones.
 
-**Notememory** - it keeps track of which voice last played a particular note and returns to that one. This is how (for example) the prophet 600 allocated midi to voices.
+**Notememory** - it keeps track of which voice last played a particular note and returns to that one. This is how (for example) the prophet 600 allocated notes to voices.
 
 In the two 'blind' modes successive triggers of the same note (without a noteoff inbetween) get new voices. In the other modes they're allocated to the same voice. For keyboards that send poly pressure messages as just more noteon velocities the non-blind modes work well.
 
@@ -88,7 +88,7 @@ As well as interesting chaotic autovariation and fun parameter-smoothing/oversho
 
 ### Parameter errors
 
-You can introduce per-voice static errors, a gradual (per-voice) drift of parameters, and there's also a 'panel lockup' feature which simulates something my prophet-600 does where randomly, for a few moments, a parameter will stop updating for just one voice.
+You can introduce per-voice static errors, a gradual (per-voice) drift of parameters, and there's also a 'panel lockup' feature which simulates something my slightly broken prophet-600 does where randomly, for a few moments, a parameter will stop updating for just one voice.
 
 ## States
 
