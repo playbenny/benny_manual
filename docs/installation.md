@@ -34,7 +34,14 @@ presets for controller setup are in the to-do list.
 
 ## VST configuration
 
-to use a **vst plugin** in benny you need to set it up in the vst manager. pick a plugin from the list the scanner finds (on windows if it doesn't find your vsts, put them in C:\Program Files\VSTPlugins), then pick the parameters you want to see in benny, and the order they should appear - at the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
+to use a **vst plugin** in benny you need to set it up in the vst manager. first run the vst plugin scanner and wait until the progress bar has finished.
+
+benny comes with a library of config files for vst plugins we've encountered already. when you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
+
+if your plugin is not automatically added to benny you can set it up in the vst manager. you need to tell it which parameters you want to see, and what order they should appear in. at the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
+
+if you've done a good, complete, generic and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the discussions pages and we'll add it to the library.
+
 
 ## Preferences
 
