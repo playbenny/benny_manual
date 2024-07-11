@@ -4,6 +4,8 @@ Benny is free to download and use. It is also open source and you're free to use
 
 You are very welcome to contribute to benny according to your means and abilities.
 
+## Contributing
+
 ### Report bugs
 - create a new bug report [here](https://github.com/jamesholdenmusic/benny/issues)
 - a good bug report contains a clear description of the problem and steps or attached files to reliably reproduce it
