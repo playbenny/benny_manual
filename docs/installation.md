@@ -52,9 +52,9 @@ Currently benny is tested against:
 
 - 2023 mid-range (i7/intel Xe) framework laptop
 
-- desktop pc with integrated graphics (AMD 4700G) 
+- 2019 pc with integrated graphics (AMD 4700G) 
 
-- high end desktop 7950X3D with a 3050 GPU. 
+- 2024 high end (7950X3D) with a 3050 GPU. 
 
 The aim is for it to be useable on any current mid-range (integrated graphics only) laptop.
 
