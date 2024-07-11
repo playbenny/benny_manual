@@ -1,8 +1,6 @@
 [I](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. It's not commercial software. It's not finished, it may never be, but I've been using benny for my live sets since early 2023.
 
-Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny. 
-
-You are very welcome to contribute to benny according to your means and abilities.
+Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny.
 
 ## Contributing
 
@@ -32,6 +30,7 @@ benny relies on several other people's work.
 - [cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
 - [chris airwindows](https://www.airwindows.com) whose open source code is both an excellent learning resource but also used in various benny blocks.
 - [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals.
-- [surreal machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks
+- [surreal machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
 - [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
-- [oskari tamellin](http://jeskola.net/buzz/) jeskola buzz (as well as being the software that I got my start in music on) was a big inspiration for benny's design.
+- [michael terren](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) for the linked essay and others.
+- [oskari tamellin](http://jeskola.net/buzz/) whose jeskola buzz (as well as being the software that I got my start in music on) is a big inspiration for benny's design.
