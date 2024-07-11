@@ -12,8 +12,16 @@ theme:
     - navigation.footer
     - header.autohide
     - navigation.expand
+    - content.code.copy
 markdown_extensions:
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 extra:
   generator: false
 repo: https://github.com/jamesholdenmusic/benny    
