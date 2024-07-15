@@ -53,6 +53,8 @@ the default numbers of note and audio voice slots can be changed this way, but b
 
 Benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
 
+The audio side of benny takes full advantage of multi core CPUs (afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't)
+
 Currently benny is tested against:
 
 - M1 macbook air

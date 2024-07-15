@@ -29,6 +29,7 @@ nav:
   - Home: index.md
   - About: about.md
   - Overview:
+    - Launcher : launcher.md
     - Blocks : blocks.md
     - Sidebar : sidebar.md
     - Connections : connections.md
