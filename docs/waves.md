@@ -1,7 +1,6 @@
 benny keeps all the waves you use in a centralised repository that all blocks share access to. In the waves page you can load in waves and tag them with timing information.
 
-*This page of benny is one of the less finished areas. The UI is a bit awkward still and many planned features are not yet implemented.
-*
+*This page of benny is one of the less finished areas. The UI is a bit awkward still and many planned features are not yet implemented.*
 
 ![waves page picture](assets/screenshots/waves_page_1.png)
 
@@ -13,7 +12,7 @@ You can use the scroll wheel to zoom on the wave.
 
 ## Slices
 
-*In the future benny will support automatic marker placement and flexible grids.*
+*In the future benny will support automatic marker placement and flexible grids with attached metadata.*
 
 At the moment you can only put a fixed grid of slices on your waves. This is essential for blocks like wave.scan and voice.multisample which use the slices. 
 
