@@ -4,6 +4,8 @@ Benny is free to download and use. It is also open source and you're free to use
 
 ## Contributing
 
+### Donate
+- if you use benny and you can afford to donate, the tipjar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ)
 ### Report bugs
 - create a new bug report [here](https://github.com/jamesholdenmusic/benny/issues)
 - a good bug report contains a clear description of the problem and steps or attached files to reliably reproduce it
@@ -19,9 +21,6 @@ Benny is free to download and use. It is also open source and you're free to use
 - create a new branch, commit your block files to it, submit a pull request
 ### Help with documentation
 - this documentation is a [separate github repository](https://github.com/jamesholdenmusic/BennyDocs). if you hit a problem or question that isn't answered here please do add the solution when you find it to the docs, in a logical place.
-### Donate
-- [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ)
-- if you're unwaged or otherwise economically disadvantaged please do not donate!
 
 ## Acknowledgements
 
@@ -32,5 +31,5 @@ benny relies on several other people's work.
 - [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals.
 - [surreal machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
 - [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
-- [michael terren](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) for the linked essay and others.
+- michael terren as I found [this](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) essay and others inspirational.
 - [oskari tamellin](http://jeskola.net/buzz/) whose jeskola buzz (as well as being the software that I got my start in music on) is a big inspiration for benny's design.
