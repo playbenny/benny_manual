@@ -17,3 +17,9 @@ This is the max/msp console window. benny prints information about what's going 
 If the console isn't visible when you start benny, select the benny launcher and press ctrl-shift-M to bring it up.
 
 Additionally the 'project' window sometimes (randomly) opens. You can just close this.
+
+## The benny window
+
+When you press start the main benny window opens. F11 makes it fullscreen.
+
+![benny main window](assets/screenshots/main_window.png)
