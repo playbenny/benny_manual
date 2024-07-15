@@ -26,7 +26,7 @@ extra:
   generator: false
 repo: https://github.com/jamesholdenmusic/benny    
 nav:
-  - About: about.md
+  - About: index.md
   - Overview:
     - Launcher : launcher.md
     - Blocks : blocks.md
