@@ -2,7 +2,7 @@ The panels page of benny is a place to build a set of controls and visualisation
 
 ![panels page](assets/screenshots/panels_view.png)
 
-Every block can have a panel. The panel can show whichever of the block's parameters you choose. (Look for 'panel assign' in the **block settings** section of the [sidebar](sidebar))
+Every block can have a panel. The panel can show whichever of the block's parameters you choose. (Look for 'panel assign' in the **block settings** section of the [sidebar](sidebar.md))
 
 Panels also show the states stored for a block.
 
