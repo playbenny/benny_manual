@@ -82,9 +82,14 @@ Press the panel assign button to put the sidebar into a mode where you can selec
 
 ### Flock
 
+![flock visualisation](assets/screenshots/flock_crop_1.gif)![flock visualisation](assets/screenshots/flock_crop_2.gif)
+
+
 Benny lets you attach up to 3 parameters to the position of imaginary creatures in a flocking simulation. Once you've assigned parameters to axes using the flock assign button you can adjust the properties of the simulation. As well as weight, tension of the spring connecting the creature to the parameter value and friction, there are parameters governing the creatures' attraction or repulsion from one another, random movement, and desire to align their motion with the others.
 
 As well as interesting chaotic autovariation and fun parameter-smoothing/overshoot this feature can be useful for making voices try not to occupy exactly the same parameter space as each other.
+
+Ctrl+click on the blocks button in the top bar brings up a visualisation of all flocked blocks, if there are any.
 
 ### Parameter errors
 
