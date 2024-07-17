@@ -58,7 +58,7 @@ All the visual/ui preferences - colour palette, wire curve detail and various be
 
 ## Recommended computer specs
 
-Benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
+benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
 
 The audio side of benny takes full advantage of multi core CPUs *(afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't).*
 
@@ -74,7 +74,7 @@ We've tested benny on the systems below, and hope it will be useable on any curr
 
 ### Resource usage sidebar
 
-Benny shows a CPU meter to the left of the play button. You can press **F12** to show the resource usage sidebar, which shows CPU usage history (yellow, lower better) and framerate history (white dots, higher better).
+benny shows a CPU meter to the left of the play button. You can press **F12** to show the resource usage sidebar, which shows CPU usage history (yellow, lower better) and framerate history (white dots, higher better).
 
 ### Settings that affect GPU usage:
 

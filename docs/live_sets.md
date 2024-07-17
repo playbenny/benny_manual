@@ -1,10 +1,10 @@
-Benny was designed not just for making individual songs, but for playing live sets.
+benny was designed not just for making individual songs, but for playing live sets.
 
-Unlike other live music software Benny doesn't load all the parts of all the songs at once. I felt that in order to play a song properly it would help both the performer and computer not to be burdened by the knowledge of the other songs.
+Unlike other live music software benny doesn't load all the parts of all the songs at once. I felt that in order to play a song properly it would help both the performer and computer not to be burdened by the knowledge of the other songs.
 
-Benny treats the songs folder you've selected as your live set. When it starts it preloads all the songfiles, then looks to see if it can preload any samples too. When you load a new song to the next it recycles as many blocks as it can, so load times are as quick as possible. 
+benny treats the songs folder you've selected as your live set. When it starts it preloads all the songfiles, then looks to see if it can preload any samples too. When you load a new song to the next it recycles as many blocks as it can, so load times are as quick as possible. 
 
-So if you want to play one song then the next (like a band) then Benny loads songs faster than people can possibly stop clapping.
+So if you want to play one song then the next (like a band) then benny loads songs faster than people can possibly stop clapping.
 
 If you want to segue between songs there are a few approaches:
 

@@ -20,7 +20,7 @@ This is a VST plugin block, which has it's 1 voice split into 2 thinner slices t
 
 ![picture of a hardware block]()
 
-This is a hardware block. Hardware blocks have meters for both benny's output to them and the signals they send back. Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all audio outputs to hardware.
+This is a hardware block. Hardware blocks have meters for both benny's output to them and the signals they send back. benny automatically applies a very transparent aliasing-suppressing softclip and dither to all audio outputs to hardware.
 
 #### Audio meters
 

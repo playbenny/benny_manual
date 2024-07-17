@@ -1,4 +1,4 @@
-Benny is designed to make midi control as fluid as possible. It also attempts to make life easy if you need to change the controllers you use but still play your old songfiles.
+benny is designed to make midi control as fluid as possible. It also attempts to make life easy if you need to change the controllers you use but still play your old songfiles.
 
 ## Controllers
 
