@@ -16,21 +16,23 @@ Once you save a songfile the initial state of all blocks is stored to the **init
 
 If you ctrl-click one of the global state buttons (bottom left of the benny window) you can edit the state name.
 
+![global state buttons](assets/screenshots/global_states.png)
+
 ## Recalling states
 
-For a single block you can recall a state by clicking the coloured square in the (unexpanded) states section of the sidebar.
+![sidebar states](assets/screenshots/sidebar_states_folded.png)
+
+You can recall a state for a single block by clicking the coloured square in the (unexpanded) states section of the sidebar.
 
 The panels page also shows (by default, can be disabled in userconfig) a button for every stored state on the panel of the relevant block.
 
-![global state buttons](assets/screenshots/global_states.png)
-
 To recall a given state for ALL blocks use the global state buttons that are at the bottom left corner of the benny window.
 
-Alt+click on the init state button also reloads all blocks' 'data' - everything that isn't a parameter that a block stores, eg patterns in sequencers, etc.
+The global states init button returns all blocks to the parameter values stored in the songfile. Alt+click on this button also reloads all blocks' 'data' - everything that isn't a parameter that a block stores, for example patterns in sequencers.
 
 ## State crossfading
 
-You can smoothly and gradually transition into a state.
+You can crossfade from current parameter values to the ones stored in a state to make a smooth transition.
 
 ![state xfade](assets/screenshots/state_fade.png)
 
