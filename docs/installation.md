@@ -100,5 +100,5 @@ The aim is for it to be useable on any current mid-range (integrated graphics on
 
 - the benny window that comes up when I press start is grey
 
-    open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore.
+    open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (this issue only happens if you've had this max installation on your pc for a long while)
 
