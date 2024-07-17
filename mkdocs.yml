@@ -27,6 +27,7 @@ extra:
 repo_url: https://github.com/jamesholdenmusic/benny    
 nav:
   - About: index.md
+  - Installation: installation.md
   - Overview:
     - Launcher : launcher.md
     - Blocks : blocks.md
@@ -37,7 +38,6 @@ nav:
     - Panels : panels.md
     - Midi Control: controllers.md
     - Recording: recording.md
-  - Installation: installation.md
   - Playing live sets with benny: live_sets.md
   - Keyboard shortcuts: keyboard_shortcuts.md
   - Developing blocks: developing.md
