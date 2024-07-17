@@ -4,7 +4,7 @@ The sidebar shows the details of whatever you're looking at.
 
 ![picture of the sidebar with one block selected](assets/screenshots/sidebar_block.png)
 
-With a single block selected the sidebar shows you all it's settings. Click the section headers to move through them. 
+With a single block selected the sidebar shows you all of its settings. Click the section headers to move through them.
 
 ![picture of the sidebar voice selection section](assets/screenshots/sidebar_voice_selection.png)
 
@@ -14,7 +14,7 @@ If a block has multiple voices there'll a be a section like this where you can c
 
 ![audio scope](assets/screenshots/sidebar_scope_audio.png)
 
-Audio blocks have a scope for each output. The scrollwheel (or dragging up and down) lets you zoom these scopes. Red shows values that go outside the normal ranges (though there is no clipping on connections between blocks)
+Audio blocks have a scope for each output. The scrollwheel (or dragging up and down) lets you zoom these scopes. Red shows values that go outside the normal ranges (though there is no clipping on connections between blocks).
 
 ![midi scope](assets/screenshots/sidebar_scope_midi.png)
 
@@ -22,17 +22,21 @@ Midi scopes show the notes currently playing.
 
 ## Parameters
 
-This section shows the parameters for the block. Drag or use your scroll wheel to adjust these. 
+![sidebar parameters](assets/screenshots/sidebar_parameters.png)
 
-**Shift** for fine adjust
+This section shows the parameters for the block. Drag or use your scroll wheel to adjust parameters. 
+
+**Shift** for fine adjust.
 
 **Alt+shift** for extra fine. 
 
 **Alt-click** returns a value to its default (or if you loaded the songfile from disk, to the value it was in the last save).
 
-If a block has multiple voices then while you hold **ctrl and mouse over** a slider it'll highlight it and let you adjust that one individually. 
+On sliders, the darker bar represents the set value of the voice's parameter, the brighter line that usually sits at the end of that bar represents the current actual value. If a parameter is modulated you see the line moving but not the bar.
 
-**Ctrl+Alt** lets you tilt all the values of the individual voices around the one you're hovering over.
+If a block has multiple voices then while you hold **ctrl and mouse over** a slider it will highlight it and let you adjust that one individually. 
+
+**Ctrl+Alt** lets you tilt all the values of the individual voices around the one you are hovering over.
 
 ## Mini-ui
 
