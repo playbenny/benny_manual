@@ -2,9 +2,9 @@
 
 - Install [Max](http://www.cycling74.com). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
-- A few blocks require Airwindows console 7 vsts. They're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. 
+- A few blocks require Airwindows console 7 VSTs. They're included in the download, look in the VST dependencies subfolder and install the ones you need for your system. 
 
-    *Windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
+    *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
 
 - Open 'benny.maxproj'. The [benny launcher](launcher.md) window will appear.
 
@@ -37,11 +37,11 @@ There are example files included that might help - so far i've made configs for:
 
 ## VST configuration
 
-To use a **vst plugin** in benny you need to set it up in the vst manager. First run the vst plugin scanner and wait until the progress bar has finished.
+To use a **VST plugin** in benny you need to set it up in the VST manager. First run the VST plugin scanner and wait until the progress bar has finished.
 
-benny comes with a library of config files for vst plugins we've encountered already. When you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
+benny comes with a library of config files for VST plugins we've encountered already. When you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
 
-If your plugin is not automatically added to benny you can set it up in the vst manager. You need to tell it which parameters you want to see, and what order they should appear in. At the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
+If your plugin is not automatically added to benny you can set it up in the VST manager. You need to tell it which parameters you want to see, and what order they should appear in. At the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
 
 If you've done a good, complete, generic and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the discussions pages and we'll add it to the library.
 

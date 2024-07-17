@@ -28,7 +28,7 @@ benny relies on several other people's work.
 
 - [Cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
 - [Chris Airwindows](https://www.airwindows.com) whose open source code is an excellent learning resource and also used in various benny blocks.
-- [Isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals.
+- [Isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows VSTs into native max externals.
 - [Surreal Machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
 - [Ernest Meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
 - [Luke Abbott](https://en.wikipedia.org/wiki/Luke_Abbott) for extensive input and testing.

@@ -16,7 +16,7 @@ Here's an audio block. This one's an oscillator. Audio blocks have 2 audio input
 
 ![picture of a vst block](assets/screenshots/block_vst_1.png)
 
-This block, holding a vst plugin, has it's 1 voice split into 2 thinner slices to show you it's a stereo-in stereo-out voice.
+This block, holding a VST plugin, has it's 1 voice split into 2 thinner slices to show you it's a stereo-in stereo-out voice.
 
 #### Audio meters
 

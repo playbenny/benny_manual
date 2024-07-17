@@ -4,7 +4,7 @@ When you first open benny a couple of windows should appear:
 
 ![benny launcher window](assets/screenshots/launcher_window.png)
 
-The dropdown let you pick the hardware setup you're using, and the start button starts benny. The buttons access audio/vst/hardware setup pages. If you scroll down there are some features for people developing their own blocks or improving benny.
+The dropdown let you pick the hardware setup you're using, and the start button starts benny. The buttons access audio/VST/hardware setup pages. If you scroll down there are some features for people developing their own blocks or improving benny.
 
 You can drag and drop song .json files onto the benny logo to open them directly.
 
