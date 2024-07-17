@@ -1,27 +1,3 @@
-<style>
-  .md-typeset h1,
-  .md-content__button {
-    display: none;
-  }
-</style>
-![benny logo](assets/benny_logo_400T.png){ align = left }
-
-benny is a modular software playground for making live music.
-
-it seamlessly integrates hardware and software, midi and audio, lets you connect anything to anything and extends flexibly into polyphony.
-
-benny is a good place to host your own max/msp patches, but you don't need to know max to get started.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Hs_4T_gjoWw?si=Yg87wI-I_sjNP9u-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## About
-
-I [(James)](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. I've been using benny for my live sets since early 2023, but it is an ongoing work in progress.
-
-*I wanted a minimal, low distraction interface that's easy to glance at (eg while performing) which tries to avoid imposing any hierarchical decisions on the user (eg it has no global timeline, no pre-defined mixer structure, etc).*
-
-Benny is free to download and use. It is open source and you are free to use [the code provided](https://github.com/playbenny/benny/) in other projects, as long as those projects also come with the same [license](https://github.com/playbenny/benny?tab=License-1-ov-file) terms.
-
 ## Contributing
 
 ### Donate
