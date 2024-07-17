@@ -20,7 +20,9 @@ I [(James)](https://www.jamesholden.org/) made benny because it didn't exist and
 
 *I wanted a low distraction interface that is easy to glance at (while performing) and tries to avoid imposing any hierarchical decisions on the user (no global timeline, no pre-defined mixer structure etc).*
 
-Benny is free to download and use. It is open source and you are free to use [the code provided](https://github.com/playbenny/benny/) in other projects, as long as those projects also come with the same [license](https://github.com/playbenny/benny?tab=License-1-ov-file) terms. If you want to get involved there are lots of ways users of all levels can [contribute](contributing.md). And if you find benny useful and you can afford it, the tip jar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
+Benny is free to download and use. It is open source and you are free to use [the code provided](https://github.com/playbenny/benny/) in other projects, as long as those projects also come with the same [license](https://github.com/playbenny/benny?tab=License-1-ov-file) terms. 
+
+If you want to get involved there are lots of ways users of all levels can [contribute](contributing.md). And if you find benny useful and you can afford it, the tip jar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
 
 ## Acknowledgements
 
