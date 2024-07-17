@@ -40,7 +40,7 @@ Benny is free to download and use. It is open source and you are free to use [th
 - It's very easy to make blocks. If you make something good and want it to be part of the public repository you are welcome to submit it. You can name your blocks with your own prefix if you want and that prefix will be given its own section of the blocks menu.
 - Create a new branch, commit your block files to it, submit a pull request.
 ### Contribute VST plugin setup files
-- benny has a library of config files so it can work out the box with those VST plugins. If you make a config file for a VST plugin that wasn't included, submit it via the forum or pull request. 
+- benny comes with a library of VST plugin config files so it can work out the box with those ones. If you make a config file for a VST plugin that wasn't included, please submit it to the library via the [forum](https://github.com/jamesholdenmusic/benny/discussions) or pull request. 
 ### Help with this manual
 - This manual is a [separate github repository](https://github.com/jamesholdenmusic/BennyDocs). If you hit a problem or question that isn't answered here please do add your solution to the appropriate section of the manual.
 
