@@ -75,7 +75,7 @@ We've tested benny on a variety of systems; the aim is for it to be useable on a
 
     (the numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it's idle to speed up loading. Defaults are 16 / 8)
 
-- You can also, either by pressing **F10** to toggle, or setting this key to set it as the default, make it only show wires to/from the current block.
+- You can also make it only show wires to/from the current block, either by pressing **F10** to toggle, or setting this key to set it as the default:
 
     ```json
     "WIRES_SHOW_ALL" : 1,
