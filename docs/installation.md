@@ -2,9 +2,9 @@
 
 - install [max](http://www.cycling74.com). you don't need to buy max in order to use benny, but if you want to build your own blocks you'll need to. please do not bother cycling74 support with problems with benny.
 
-- a few blocks require airwindows console 7 vsts. they're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.
+- a few blocks require airwindows console 7 vsts. they're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. 
 
-- open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore.
+    *windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
 
 - open 'benny.maxproj'. the benny launcher window will appear.
 
@@ -95,3 +95,10 @@ The aim is for it to be useable on any current mid-range (integrated graphics on
     ```json
     "UPSAMPLING" : 0,
     ```
+
+## Troubleshooting
+
+- the benny window that comes up when I press start is grey
+
+    open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore.
+
