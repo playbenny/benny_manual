@@ -25,7 +25,7 @@ Benny is free to download and use. It is open source and you are free to use [th
 ## Contributing
 
 ### Donate
-- If you find benny useful and you can afford to donate, the tip jar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
+- If you find benny useful and you can afford it, the tip jar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
 ### Report bugs
 - Create a new bug report [here](https://github.com/playbenny/benny/issues).
 - A good bug report contains a clear description of the problem and steps or attached files to reliably reproduce it.
