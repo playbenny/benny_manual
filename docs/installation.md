@@ -17,11 +17,11 @@ To set benny up for seamless integration with your midi controllers, modular syn
 
 ## Hardware configuration
 
-To use your **hardware** fluidly within benny you need to build a configuration file. In it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. 
+To use your **hardware** fluidly within benny you need to build a configuration file. It will tell benny about each piece of hardware that is connected to your computer, and they will appear as blocks. 
 
-Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all hardware outputs.
+If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. 
 
-In my usage I have a configuration file for each iteration of my live touring setup and a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
+*In my usage I have a configuration file for each iteration of my live touring setup, a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.*
 
 The hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
 
@@ -33,7 +33,7 @@ There are example files included that might help - so far i've made configs for:
 
 - Akai lpd8 mk2 (not recommended, incomplete midi implementation)
 
-*Presets for controller setup are in the to-do list.*
+*A library of presets for controller setup are in the to-do list.*
 
 ## VST configuration
 

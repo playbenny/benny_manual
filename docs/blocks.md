@@ -18,6 +18,10 @@ Here's an audio block. This one's an oscillator. Audio blocks have 2 audio input
 
 This block, holding a VST plugin, has it's 1 voice split into 2 thinner slices to show you it's a stereo-in stereo-out voice.
 
+![picture of a hardware block]()
+
+This is a hardware block. Hardware blocks have meters on the block for both benny's output to them and the signal they send back. Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all audio outputs to hardware.
+
 #### Audio meters
 
 In benny audio meters (both on blocks and elsewhere) always show the minimum and maximum values that happened during the last frame of video. This is so that you can meaningfully observe signal levels and dynamics and/or cv values.
