@@ -46,10 +46,10 @@ Benny is free to download and use. It is open source and you are free to use [th
 
 benny relies on several other people's work.
 
-- [cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
-- [chris airwindows](https://www.airwindows.com) whose open source code is an excellent learning resource and also used in various benny blocks.
-- [isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals.
-- [surreal machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
-- [ernest meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
-- michael terren as I found [this](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) essay and others inspirational.
-- [oskari tamellin](http://jeskola.net/buzz/) whose jeskola buzz (as well as being the software that I got my start in music on) is a big inspiration for benny's design.
+- [Cycling74](https://www.cycling74.com) who build max/msp and generously let it run as a free runtime environment.
+- [Chris Airwindows](https://www.airwindows.com) whose open source code is an excellent learning resource and also used in various benny blocks.
+- [Isabelgk](https://github.com/isabelgk/airfx) for porting the airwindows vsts into native max externals.
+- [Surreal Machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
+- [Ernest Meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
+- Michael Terren as I found [this](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) essay and others inspirational.
+- [Oskari Tamellin](http://jeskola.net/) who wrote [Jeskola Buzz](http://jeskola.net/buzz/), the first music software I ever used and a huge inspiration for benny's design.
