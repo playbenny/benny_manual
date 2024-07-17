@@ -30,13 +30,15 @@ In benny audio meters (both on blocks and elsewhere) always show the minimum and
 
 ![picture of the core.input.keyboard block](assets/screenshots/block_keyboard.png)
 
-This block has no audio processing, it's a midi block representing both the keyboard I have connected and the QWERTY keys (if I enable that).
+This block has no audio processing; it is a midi block representing both the keyboard I have connected and the QWERTY keys (when enabled).
 
 #### Midi meters
 
-On midi blocks the meter is a rectangle stretched between the lowest note, the highest note (on the x axis) and the lowest and highest velocities on the y-axis.
+On midi blocks the meter is a cuboid stretched between the lowest note, the highest note (on the x axis) and the lowest and highest velocities (on the y-axis). The number of currently held notes is indicated by the z-axis/height of the cuboid.
 
-Some midi blocks output 1-dimensional values, the meter for these is just a single bar per voice.
+![block with 1d outs](assets/screenshots/midi_block_1d_outs.png)
+
+Some midi blocks output 1-dimensional values, and the meter for these is just a single bar per voice.
 
 ## Polyphony
 
