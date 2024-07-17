@@ -39,40 +39,34 @@ There are example files included that might help - so far i've made configs for:
 
 To use a **VST plugin** in benny you need to set it up in the VST manager. First run the VST plugin scanner and wait until the progress bar has finished.
 
-benny comes with a library of config files for VST plugins we've encountered already. When you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
+benny comes with a library of config files for VST plugins that we have already encountered. When you run the scan these will be set up automatically, but you are free to make your own edits.
 
 If your plugin is not automatically added to benny you can set it up in the VST manager. You need to tell it which parameters you want to see, and what order they should appear in. At the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
 
-If you've done a good, complete, generic and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the discussions pages and we'll add it to the library.
+If you've done a complete and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the [discussions](https://github.com/playbenny/benny/discussions) pages and we'll add it to the library.
 
 
 ## Preferences
 
-All the **visual/ui preferences** - colour palette, wire curve detail, various other behaviours with self explanatory names, are in config.json. If you want to change a setting copy the relevant entry you want to change the value of over to userconfig.json and change it there, as config.json will be overwritten with defaults next time you update benny but userconfig will not.
+All the **visual/ui preferences** - colour palette, wire curve detail and various behaviours with self explanatory names, are in config.json. If you want to change a setting:
 
-The default numbers of note and audio voice slots can be changed this way, but baseline cpu usage of the system's matrix mixer grows fast with audio voice count.
+- copy the whole line for that setting and paste it into userconfig.json
+
+- anything in userconfig.json overrides the default value in config.json. it is created in the root of the benny folder after you first run benny.
+
+- config.json will be overwritten with defaults next time you update benny but userconfig will not.
 
 ## Recommended computer specs
 
 Benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
 
-The audio side of benny takes full advantage of multi core CPUs (afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't)
+The audio side of benny takes full advantage of multi core CPUs *(afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't).*
 
-Currently benny is tested against:
-
-- M1 macbook air
-
-- 2023 mid-range (i7/intel Xe) framework laptop
-
-- 2019 pc with integrated graphics (AMD 4700G) 
-
-- 2024 high end (7950X3D) with a 3050 GPU. 
-
-The aim is for it to be useable on any current mid-range (integrated graphics only) laptop.
+We've tested benny on a variety of systems; the aim is for it to be useable on any current mid range (integrated graphics only) laptop.
 
 ### Settings that affect GPU usage:
 
-- Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. Add the following keys to **userconfig.json** (which will be created in the root of the benny folder after you first run benny):
+- Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. Add the following keys to **userconfig.json**:
 
     ```json
     "MAX_BEZIER_SEGMENTS" : 4,
@@ -82,6 +76,10 @@ The aim is for it to be useable on any current mid-range (integrated graphics on
     (the numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it's idle to speed up loading. Defaults are 16 / 8)
 
 - You can also, either by pressing **F10** to toggle, or setting this key to set it as the default, make it only show wires to/from the current block.
+
+    ```json
+    "WIRES_SHOW_ALL" : 1,
+    ```
 
 ### Settings that affect CPU usage:
 
