@@ -1,6 +1,6 @@
-- [Download the latest benny](https://github.com/jamesholdenmusic/benny/archive/refs/heads/main.zip) and extract the whole folder. 
+- [Download the latest benny](https://github.com/playbenny/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
-- Install [Max](http://www.cycling74.com). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/jamesholdenmusic/benny/discussions) for that.)
+- Install [Max](http://www.cycling74.com). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
 - A few blocks require Airwindows console 7 vsts. They're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. 
 
@@ -17,7 +17,11 @@ To set benny up for seamless integration with your midi controllers, modular syn
 
 ## Hardware configuration
 
-To use your **hardware** fluidly within benny you need to build a configuration file. In it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. In my usage I have a configuration file for each iteration of my live touring setup and a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
+To use your **hardware** fluidly within benny you need to build a configuration file. In it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. 
+
+Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all hardware outputs.
+
+In my usage I have a configuration file for each iteration of my live touring setup and a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
 
 The hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
 
