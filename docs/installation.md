@@ -101,7 +101,7 @@ We've tested benny on a variety of systems; the aim is for it to be useable on a
 
 ## Installation Troubleshooting FAQ
 
-- The benny window that comes up when I press start is grey
+- *The benny window that comes up when I press start is grey*
 
     Open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (This issue only happens if you've had this max installation on your pc for a long while)
 
