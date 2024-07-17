@@ -16,7 +16,7 @@ benny is a good place to host your own max/msp patches, but you don't have to kn
 
 ## About
 
-I [(James)](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. I've been using benny for my live sets since early 2023, but it's an ongoing work in progress.
+I [(James)](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. I've been using benny for my live sets since early 2023, but it is an ongoing work in progress.
 
 *I wanted a minimal, low distraction interface that's easy to glance at (eg while performing) which tries to avoid imposing any hierarchical decisions on the user (eg it has no global timeline, no pre-defined mixer structure, etc).*
 
@@ -25,22 +25,22 @@ Benny is free to download and use. It is open source and you are free to use [th
 ## Contributing
 
 ### Donate
-- if you use benny and you can afford to donate, the tipjar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ)
+- if you find benny useful and you can afford to donate, the tipjar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
 ### Report bugs
-- create a new bug report [here](https://github.com/jamesholdenmusic/benny/issues)
-- a good bug report contains a clear description of the problem and steps or attached files to reliably reproduce it
+- create a new bug report [here](https://github.com/jamesholdenmusic/benny/issues).
+- a good bug report contains a clear description of the problem and steps or attached files to reliably reproduce it.
 - in many cases, benny prints useful information to the max console. this may not be visible on your computer, but should come up if you press ctrl-shift-m while on the benny launcher window.
-- if you're not sure, start by opening a [discussion](https://github.com/jamesholdenmusic/benny/discussions) instead
+- if you're not sure, start by opening a [discussion](https://github.com/jamesholdenmusic/benny/discussions) instead.
 ### Fix bugs
-- create a new branch of the repository
-- fix the bug in your branch
-- submit a pull request to have your fix merged back into the main repo
-- any questions or doubts, start a [discussion](https://github.com/jamesholdenmusic/benny/discussions)
+- create a new branch of the repository.
+- fix the bug in your branch.
+- submit a pull request to have your fix merged back into the main repository.
+- any questions or doubts, start a [discussion](https://github.com/jamesholdenmusic/benny/discussions).
 ### Contribute blocks
-- it's very easy to make blocks. if you make something good and want it to be part of the public repo you're welcome. you can name your blocks with your own prefix if you want and that prefix will be given its own section of the blocks menu.
-- create a new branch, commit your block files to it, submit a pull request
-### Help with documentation
-- this documentation is a [separate github repository](https://github.com/jamesholdenmusic/BennyDocs). if you hit a problem or question that isn't answered here please do add the solution when you find it to the docs, in a logical place.
+- it's very easy to make blocks. if you make something good and want it to be part of the public repository you are welcome to submit it. you can name your blocks with your own prefix if you want and that prefix will be given its own section of the blocks menu.
+- create a new branch, commit your block files to it, submit a pull request.
+### Help with this manual
+- this manual is a [separate github repository](https://github.com/jamesholdenmusic/BennyDocs). if you hit a problem or question that isn't answered here please do add your solution to the appropriate section of the manual.
 
 ## Acknowledgements
 
