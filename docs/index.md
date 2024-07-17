@@ -20,7 +20,7 @@ other key ideas behind benny are that it provides a minimal, low distraction int
 
 [I](https://www.jamesholden.org/) made benny because it didn't exist and I wanted it. It's my personal project and designed around my ideas and priorities. It's not commercial software. It's not finished, it may never be, but I've been using benny for my live sets since early 2023.
 
-Benny is free to download and use. It is also open source and you're free to use the code provided in other projects, as long as those projects also come with the same license terms as benny.
+Benny is free to download and use. It is also open source and you're free to use [the code provided](https://github.com/jamesholdenmusic/benny/) in other projects, as long as those projects also come with the same license terms as benny.
 
 ## Contributing
 

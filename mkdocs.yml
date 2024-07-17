@@ -24,7 +24,7 @@ markdown_extensions:
   - pymdownx.superfences
 extra:
   generator: false
-repo: https://github.com/jamesholdenmusic/benny    
+repo_url: https://github.com/jamesholdenmusic/benny    
 nav:
   - About: index.md
   - Overview:
