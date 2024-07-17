@@ -28,7 +28,6 @@ repo_url: https://github.com/playbenny/benny
 nav:
   - About: index.md
   - Installation: installation.md
-  - Contributing: contributing.md
   - How to use benny:
     - Launcher : launcher.md
     - Blocks : blocks.md
@@ -42,3 +41,4 @@ nav:
   - Playing live sets with benny: live_sets.md
   - Keyboard shortcuts: keyboard_shortcuts.md
   - Developing blocks: developing.md
+  - Contributing: contributing.md

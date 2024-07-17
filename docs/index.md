@@ -34,5 +34,5 @@ benny relies on several other people's work and ideas.
 - [Surreal Machines](https://www.surrealmachines.com/) whose gen filter models are used in a few places in the provided audio blocks.
 - [Ernest Meyer](https://www.yofiel.com) whose advanced max + gen tutorials on the c74 forums were instrumental in working out benny's efficient modulation routing system, and whose EPTR oscillator code is used in various places to provide very clean rectangle waves (which are integrated to provide very clean triangle and saw waves too).
 - [Luke Abbott](https://en.wikipedia.org/wiki/Luke_Abbott) for extensive input, inspiration and testing.
-- Michael Terren as I found [this](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) essay and others inspirational.
+- [Michael Terren](https://buttondown.email/michaelterren) as I found [this](https://disclaimer.org.au/contents/where-and-how-to-gather/the-hegemony-of-the-daw) essay and others inspirational.
 - [Oskari Tamellin](http://jeskola.net/) who wrote [Jeskola Buzz](http://jeskola.net/buzz/), the first music software I ever used and a huge inspiration for benny's design.
