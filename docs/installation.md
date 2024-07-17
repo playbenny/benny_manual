@@ -1,23 +1,23 @@
-- [download the latest benny](https://github.com/jamesholdenmusic/benny/archive/refs/heads/main.zip) and extract the whole folder. 
+- [Download the latest benny](https://github.com/jamesholdenmusic/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
-- install [max](http://www.cycling74.com). you don't need to buy max in order to use benny, but if you want to build your own blocks you'll need to. please do not bother cycling74 support with problems with benny.
+- Install [Max](http://www.cycling74.com). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/jamesholdenmusic/benny/discussions) for that.)
 
-- a few blocks require airwindows console 7 vsts. they're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. 
+- A few blocks require Airwindows console 7 vsts. They're included in the download, look in the vst dependencies subfolder and install the ones you need for your system. 
 
-    *windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
+    *Windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
 
-- open 'benny.maxproj'. the benny launcher window will appear.
+- Open 'benny.maxproj'. The benny launcher window will appear.
 
-- open the audio settings and choose which audio driver/interface to use
+- Open the audio settings and choose which audio driver/interface to use.
 
-- choose the 'no hardware' configuration to try benny out using just the default io on your computer. 
+The dropdown contains a list of example hardware configurations. Choose the 'no hardware.json' one then press the **start** button to try benny out using just the default stereo io on your computer.
 
-to set benny up for seamless integration with your midi controllers, modular synth, keyboards, drum machines, synths, microphones, pedals, and outboard effects you'll need to make your own hardware configuration file.
+To set benny up for seamless integration with your midi controllers, modular synth, keyboards, drum machines, synths, microphones, pedals, and outboard effects you'll need to make your own hardware configuration file.
 
 
 ## Hardware configuration
 
-to use your **hardware** fluidly within benny you need to build a configuration file. in it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. if you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. in my usage i have a configuration file for each iteration of my live touring setup and a different one for a setup i have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
+To use your **hardware** fluidly within benny you need to build a configuration file. In it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. In my usage I have a configuration file for each iteration of my live touring setup and a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
 
 the hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
 
