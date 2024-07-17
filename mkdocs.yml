@@ -28,7 +28,7 @@ repo_url: https://github.com/jamesholdenmusic/benny
 nav:
   - About: index.md
   - Installation: installation.md
-  - Overview:
+  - How to use benny:
     - Launcher : launcher.md
     - Blocks : blocks.md
     - Sidebar : sidebar.md
