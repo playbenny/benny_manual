@@ -6,9 +6,9 @@
 
     *Windows users should install vsts to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
 
-- Open 'benny.maxproj'. The benny launcher window will appear.
+- Open 'benny.maxproj'. The [benny launcher](launcher.md) window will appear.
 
-- Open the audio settings and choose which audio driver/interface to use.
+- Open the audio settings and choose which audio driver/interface to use. Generally ASIO drivers are best.
 
 The dropdown contains a list of example hardware configurations. Choose the 'no hardware.json' one then press the **start** button to try benny out using just the default stereo io on your computer.
 
@@ -19,35 +19,34 @@ To set benny up for seamless integration with your midi controllers, modular syn
 
 To use your **hardware** fluidly within benny you need to build a configuration file. In it you tell benny about each piece of hardware that's connected to your computer, then they appear as blocks. If you change your hardware setup benny can help you migrate songs from the old to the new, letting you choose substitutes for missing or replaced items. In my usage I have a configuration file for each iteration of my live touring setup and a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.
 
-the hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
+The hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
 
-there are example files included that might help - so far i've made configs for:
+There are example files included that might help - so far i've made configs for:
 
-- midi fighter twister (recommended, the led feedback works well with the automapping features in benny)
+- Midi fighter twister (recommended, the led feedback works well with the automapping features in benny)
 
-- novation launch control xl
+- Novation launch control xl
 
-- akai lpd8 mk2 (not recommended, shoddy midi implementation)
+- Akai lpd8 mk2 (not recommended, incomplete midi implementation)
 
-presets for controller setup are in the to-do list.
-
+*Presets for controller setup are in the to-do list.*
 
 ## VST configuration
 
-to use a **vst plugin** in benny you need to set it up in the vst manager. first run the vst plugin scanner and wait until the progress bar has finished.
+To use a **vst plugin** in benny you need to set it up in the vst manager. First run the vst plugin scanner and wait until the progress bar has finished.
 
-benny comes with a library of config files for vst plugins we've encountered already. when you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
+benny comes with a library of config files for vst plugins we've encountered already. When you run the scan these will automatically be set up (but you can always overwrite these with your own versions of the config)
 
-if your plugin is not automatically added to benny you can set it up in the vst manager. you need to tell it which parameters you want to see, and what order they should appear in. at the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
+If your plugin is not automatically added to benny you can set it up in the vst manager. You need to tell it which parameters you want to see, and what order they should appear in. At the moment it lets you assign them to 4 groups (1 group = 1 row of sliders in the benny interface).
 
-if you've done a good, complete, generic and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the discussions pages and we'll add it to the library.
+If you've done a good, complete, generic and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the discussions pages and we'll add it to the library.
 
 
 ## Preferences
 
-all the **visual/ui preferences** - colour palette, wire curve detail, various other behaviours with self explanatory names, are in config.json. if you want to change a setting copy the relevant entry you want to change the value of over to userconfig.json and change it there, as config.json will be overwritten with defaults next time you update benny but userconfig will not.
+All the **visual/ui preferences** - colour palette, wire curve detail, various other behaviours with self explanatory names, are in config.json. If you want to change a setting copy the relevant entry you want to change the value of over to userconfig.json and change it there, as config.json will be overwritten with defaults next time you update benny but userconfig will not.
 
-the default numbers of note and audio voice slots can be changed this way, but baseline cpu usage of the system's matrix mixer grows fast with audio voice count.
+The default numbers of note and audio voice slots can be changed this way, but baseline cpu usage of the system's matrix mixer grows fast with audio voice count.
 
 ## Recommended computer specs
 
@@ -69,7 +68,7 @@ The aim is for it to be useable on any current mid-range (integrated graphics on
 
 ### Settings that affect GPU usage:
 
-- wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. Add the following keys to **userconfig.json** (which will be created in the root of the benny folder after you first run benny):
+- Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. Add the following keys to **userconfig.json** (which will be created in the root of the benny folder after you first run benny):
 
     ```json
     "MAX_BEZIER_SEGMENTS" : 4,
@@ -78,27 +77,27 @@ The aim is for it to be useable on any current mid-range (integrated graphics on
 
     (the numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it's idle to speed up loading. Defaults are 16 / 8)
 
-- you can also, either by pressing **F10** to toggle, or setting this key to set it as the default, make it only show wires to/from the current block.
+- You can also, either by pressing **F10** to toggle, or setting this key to set it as the default, make it only show wires to/from the current block.
 
 ### Settings that affect CPU usage:
 
-- the maximum number of audio blocks & the number of hardware io. the audio blocks and io are connected to a matrix mixer, cpu usage seems to increase steeply as the size of this increases. On mid range hardware the default (64) seems fine, and supports fairly complex song patches. On high end hardware much higher values are possible. On very low end computers you could reduce this to lower the baseline CPU load.
+- The maximum number of audio blocks & the number of hardware IO. The audio blocks and IO are connected to a matrix mixer, cpu usage seems to increase steeply as the size of this increases. On mid range hardware the default (64) seems fine, and supports fairly complex song patches. On high end hardware much higher values are possible. On very low end computers you could reduce this to lower the baseline CPU load.
 
     ```json
     "MAX_AUDIO_VOICES" : 64,
     ```
 
-- the '**vector size**' of audio processing. find this in the **audio settings** dialog (there's a button to open it on the benny launcher window). This is the number of samples processed at once by each stage of the audio processing in benny. Decreasing it rapidly increases CPU usage. Because of a limitation of how benny's architecture every audio connection adds this much latency, and while it's possible to offset clocks (and other transport-linked blocks eg wave scan blocks also have time offsets) it obviously pays to keep this as low as your computer can manage.
+- The '**vector size**' of audio processing. Find this in the **audio settings** dialog (there's a button to open it on the benny launcher window). This is the number of samples processed at once by each stage of the audio processing in benny. Decreasing it rapidly increases CPU usage. Because of a limitation of how benny's architecture every audio connection adds this much latency, and while it's possible to offset clocks (and other transport-linked blocks eg wave scan blocks also have time offsets) it obviously pays to keep this as low as your computer can manage.
 
-- upsampling. upsampling is a common simple way to mitigate aliasing in harmonics generated by digital processing. most of benny's non-linear audio blocks default to upsampling x2 as it makes a noticeable difference to the clarity of the sound. however upsampling obviously increases the cpu usage. you can adjust it (from 1x-128x) in the sidebar settings section for the block, or the following key can be used to disable upsampling for all blocks on a particular computer. for example if your main computer is lost or broken and you borrow a less powerful one to run your set:
+- **Upsampling** is a common simple way to mitigate aliasing in harmonics generated by digital processing. Most of benny's non-linear audio blocks default to upsampling x2 as it makes a noticeable difference to the clarity of the sound. However upsampling obviously increases the cpu usage. You can adjust it (from 1x-128x) in the sidebar settings section for the block, or the following key can be used to disable upsampling for all blocks on a particular computer. for example if your main computer is lost or broken and you borrow a less powerful one to run your set:
 
     ```json
     "UPSAMPLING" : 0,
     ```
 
-## Troubleshooting
+## Installation Troubleshooting FAQ
 
-- the benny window that comes up when I press start is grey
+- The benny window that comes up when I press start is grey
 
-    open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (this issue only happens if you've had this max installation on your pc for a long while)
+    Open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (This issue only happens if you've had this max installation on your pc for a long while)
 
