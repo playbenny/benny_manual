@@ -32,9 +32,13 @@ This section shows the parameters for the block. Drag or use your scroll wheel t
 
 **Alt-click** returns a value to its default (or if you loaded the songfile from disk, to the value it was in the last save).
 
-On sliders, the darker bar represents the set value of the voice's parameter, the brighter line that usually sits at the end of that bar represents the current actual value. If a parameter is modulated you see the line moving but not the bar.
+On these sliders, the darker bar represents the set value of the voice's parameter and the brighter line that usually sits at the end of that bar represents the current actual value. If a parameter is modulated you will see the line moving but not the bar.
+
+![selecting individual voice sliders](assets/screenshots/ctrl_sel_voices.gif)
 
 If a block has multiple voices then while you hold **ctrl and mouse over** a slider it will highlight it and let you adjust that one individually. 
+
+![tilting values](assets/screenshots/param_tilt.gif)
 
 **Ctrl+Alt** lets you tilt all the values of the individual voices around the one you are hovering over.
 
