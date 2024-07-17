@@ -33,7 +33,7 @@ There are example files included that might help - so far i've made configs for:
 
 - Akai lpd8 mk2 (not recommended, incomplete midi implementation)
 
-*A library of presets for controller setup are in the to-do list.*
+(A library of presets for controller setup are on my to do list.)
 
 ## VST configuration
 
