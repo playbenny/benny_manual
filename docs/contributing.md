@@ -1,5 +1,3 @@
-## Contributing
-
 ### Donate
 - If you find benny useful and you can afford it, the tip jar is [here](https://www.paypal.com/donate/?hosted_button_id=PBQ7JWRPJKLWQ).
 ### Report bugs
