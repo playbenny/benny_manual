@@ -44,14 +44,18 @@ Some midi blocks output 1-dimensional values, and the meter for these is just a 
 
 ![picture of a polyphonic oscillator block](assets/screenshots/block_voices_1.gif)
 
-If you press - or + while a block is selected you'll add or remove voices to it. This oscillator has 3 voices, which you can see as additional cuboid slices on the end. Each voice has its own meters. You can connect midi to the the block (which will handle polyphonic midi allocation) or to individual voices. You can adjust and modulate voices all together or separately. Every voice's audio ins and outs are available separately.
+If you press + or - while a block is selected you'll add or remove voices to it. This oscillator has 3 voices, which you can see as additional cuboid slices on the end. Each voice has its own meters. You can connect midi to the the block (which will handle polyphonic midi allocation) or to individual voices. You can adjust and modulate voices all together or separately. Every voice's audio ins and outs are available separately.
 
-If you click the cube, you select the whole block. If you click an individual voice's cuboid you select just that voice. See the sidebar section for more on this.
+If you click the cube, you select the whole block. If you click an individual voice's cuboid you select just that voice. See the [sidebar](sidebar.md) section for more on this.
 
-## Interacting
+## Interacting with blocks
 
 You can click blocks to select. Shift click to select more. Shift drag to select in a rectangle.
 
-Drag (or arrow keys) to move, drag from one to another to make a new connection. Drag the background to pan around, scroll on the background (or ctrl-drag) to zoom. Home zooms out to show all blocks.
+Ctrl-C, -V, -X do copy / paste / cut.
 
-Ctrl-click mutes a block. Alt-click bypasses it. Ctrl-C, -V, -X do copy / paste / cut.
+Drag (or arrow keys) to move, drag from one to another to make a new connection. 
+
+Drag the background to pan around, scroll on the background (or ctrl-drag) to zoom. Home zooms out to show all blocks.
+
+Ctrl-click **mutes** a block. Alt-click **bypasses** it.
