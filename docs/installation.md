@@ -27,7 +27,7 @@ The hardware configuration file also includes information about the **midi contr
 
 There are example files included that might help - so far i've made configs for:
 
-- Midi fighter twister (recommended, the led feedback works well with the automapping features in benny)
+- [Midi Fighter Twister](https://www.midifighter.com/#Twister) (recommended, the led feedback works well with the automapping features in benny)
 
 - Novation launch control xl
 
