@@ -1,10 +1,10 @@
-Every song in benny is made out of blocks. Blocks are either midi processors, audio processors, representations of hardware attached to the computer, interfaces to control more general things - like tempo or tuning system or some combination of these.
+Every song in benny is made out of blocks. Blocks are either midi processors, audio processors, representations of hardware attached to the computer or interfaces to control more general things like tempo or tuning system.
 
 ## Adding a block
 
 ![picture of the new blocks menu](assets/screenshots/block_menu.png){ align = right }
 
-Press enter, double click the background or just start typing the name of what you want to bring up the new block menu.
+Press enter, double click the background or just start typing the name of what you want, to bring up the new block menu.
 
 ## Types of blocks
 
@@ -12,15 +12,15 @@ Press enter, double click the background or just start typing the name of what y
 
 ![picture of an audio block](assets/screenshots/block_audio_1.gif)
 
-Here's an audio block. This one's an oscillator. Audio blocks have 2 audio inputs, 2 audio outputs, and as many midi inputs and outputs as they want. This block has one voice, represented by the single cuboid section to the right, which has the two meters showing the voice's outputs.
+Here is an audio block. This one is an oscillator. Audio blocks have 2 audio inputs, 2 audio outputs, and as many midi inputs and outputs as they want. This block has one voice, represented by the single cuboid section to the right, which has the two meters showing the voice's outputs.
 
 ![picture of a vst block](assets/screenshots/block_vst_1.png)
 
-This block, holding a VST plugin, has it's 1 voice split into 2 thinner slices to show you it's a stereo-in stereo-out voice.
+This is a VST plugin block, which has it's 1 voice split into 2 thinner slices to show you it is a stereo-in stereo-out voice.
 
 ![picture of a hardware block]()
 
-This is a hardware block. Hardware blocks have meters on the block for both benny's output to them and the signal they send back. Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all audio outputs to hardware.
+This is a hardware block. Hardware blocks have meters for both benny's output to them and the signals they send back. Benny automatically applies a very transparent aliasing-suppressing softclip and dither to all audio outputs to hardware.
 
 #### Audio meters
 
