@@ -34,4 +34,4 @@ If you want to segue seamlessly between songs there are a few approaches:
 
 - **Hardware** loopers, delays or reverbs - anything that can be used to fill 2-10 seconds works here! *In my current live setup I've built an external version of the stretch looper that runs in a Bela Pepper Eurorack module and additionally provides an emergency loop in the unlikely event of my computer crashing.*
 
-**Live set pro-tips:** To prevent crashes, tape your usb cables into the ports, at both ends, every time.
+**Live set pro-tip:** To prevent crashes, tape your usb cables into the ports, at both ends, every time.
