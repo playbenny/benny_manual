@@ -20,13 +20,13 @@ If you want to segue seamlessly between songs there are a few approaches:
 
 - **Output blocks** 
 
-    In the hardware setup, every audio output on your computer has the option to run another layer of audio processing, called 'output blocks'. As standard the transparent anti-aliasing clipper and dither are selected. Because these are part of the hardware setup not the song they're always present. 
+    In the hardware setup, every audio output on your computer has the option to run another layer of audio processing, called 'output blocks'. As standard the transparent anti-aliasing clipper and dither are selected. Because these are part of the hardware setup rather than part of the song they're always present, even when benny is loading a new song. 
     
     - The **stretch_looper** output block lets you grab a loop of the playing track and keep that looping while the next one loads. It uses z-plane timestretch to make it match the tempo of the next song. *This is still a work in progress.*
 
     - similarly there's a **big reverb** output block prototype.
 
-- **Hardware** loopers, delays or reverbs - anything that can be used to grab a bit and fill 2-10 seconds works here! *In my current live setup i've built an external version of the stretch looper that runs in a bela pepper eurorack module and additionally provides an emergency loop in the extremely unlikely event of my computer crashing.*
+- **Hardware** loopers, delays or reverbs - anything that can be used to fill 2-10 seconds works here! *In my current live setup i've built an external version of the stretch looper that runs in a bela pepper eurorack module and additionally provides an emergency loop in the extremely unlikely event of my computer crashing.*
 
 **Live set pro-tips**
 
