@@ -1,17 +1,16 @@
-#GLOBAL KEYS
+##GLOBAL KEYS
 
 **ESC** - back out of menus, unselect, recenter blocks view, cancel dragging
 
-**`** - all off - ends all midi notes, etc
+**`** - all off (ends all midi notes etc)
 
 **space** - play button
 
 **ctrl-space** - load next song
 
-**ctrl-s** - save (by default this saves incrementally numbered copies)
+**ctrl-s** - save
 
-**CAPS LOCK** - when on, the qwerty keyboard is 2.5 octaves of notes - starting at Z up to M for the first octave, then from Q to ]. L and , go up 
-and down an octave
+**CAPS LOCK** - when on, the qwerty keyboard is 2.5 octaves of notes, starting at **Z** up to **M** for the first octave, then from **Q** to **]**. To go up and down an octave use **L** and **,**.
 
 **F1** - panels view
 
@@ -19,17 +18,17 @@ and down an octave
 
 **F3** - waves view
 
-**F4** - open block's custom edit page on the main part of the screen
+**F4** - open the selected block's custom edit page on the main part of the screen. Press again to hide the sidebar and enlarge the edit page.
 
 **F6** - sidebar block settings page
 
-**alt-F6** - open block's voice max patcher for editting.
+**alt-F6** - open the selected block's voice max patcher for editing.
 
 **F7** - sidebar connections list page
 
-**F8** - files (save / load / merge) page
+**F8** - files page (save/load/merge/choose song folder)
 
-**F10** - toggle showing all wires or just those of the selected block (improves performance/reduces gpu load on slow computers)
+**F10** - toggle between showing all wires or just those of the selected block (improves performance/reduces GPU load on slow computers)
 
 **F11** - toggle fullscreen
 
@@ -41,29 +40,29 @@ and down an octave
 
 
 
-#BLOCKS PAGE
 
 
+##BLOCKS PAGE
 
-**shift drag** - selection rectangle
+**shift-drag** - for a selection rectangle
 
-**shift click** blocks or wires to multi-select
+**shift-click** - to multi-select blocks or wires 
 
-**ctrl-click** blocks or wires to mute
+**ctrl-click** - to mute blocks or wires
 
-**alt-click** blocks to bypass
+**alt-click** - to bypass blocks
 
-**drag** blocks to connect
+**drag** - to connect blocks
 
 
 
 **home** - center view
 
-**-**,**+** - change polyphony of the selected block
+**-** or **+** - change the polyphony of the selected block
 
-**ctrl-m** - toggle mute selected blocks
+**ctrl-m** - toggle mute for the selected blocks
 
-**ctrl-r** - toggle record arm for selected blocks
+**ctrl-r** - toggle record arm for the selected blocks
 
 **ctrl-a** - select all
 
@@ -71,58 +70,54 @@ and down an octave
 
 **ctrl-x** - cut
 
-**ctrl-v** - paste (you can copy and paste a block to either a new duplicate block or if you select the same kind of block and paste it'll paste parameter values instead)
+**ctrl-v** - paste. 
 
-**ctrl-alt-V** - paste including connections. so if you copied an oscillator that was connected to a mixer and a midi source the pasted duplicate would have the same connections
+    You can copy and paste single or multiple blocks in the blocks view.
+
+    To copy parameter values from block to block: copy a single block, select a target block of the same kind and then paste.
+
+**ctrl-alt-V** - paste blocks including their connections. For example, if you copy an oscillator that is connected to a mixer and a midi source, then the pasted duplicate will have the same connections.
 
 **ctrl-z** - undo *(currently only undoes delete block, more to come)*
 
-**del**, **backspace** - delete selection
+**del** / **backspace** - delete everything selected
 
 **alt-left arrow** - back to previous sidebar view
 
-**alt-right arrow** - forward to next sidebar view (if you've gone back already..)
+**alt-right arrow** - forward to next sidebar view
 
-**alt-up/down**, if you have a wire selected - takes you to the block at the start or end of the wire
+**alt-up** / **alt-down** - if you have a wire selected it will take you to the block at the start or end of the wire.
 
-**enter** - open new block menu
+**enter** - open the new block menu
 
 **tab** - toggle between blocks / panels views
 
-**up/down/left/right** - move selected blocks
-
-**shift + arrows** - move selected blocks (fine)
+**up** / **down** / **left** / **right** - move selected blocks, **+shift** for fine movement.
 
 **?** - show help
 
-**/** - type to search amongst blocks in the current song
+**/** - to start searching amongst blocks in the current song
 
-**all other typing** - bring up type to search
-
-
-
-#PANELS PAGE
+**any other keys** - start typing the name of your chosen block to bring up the new block menu.
 
 
 
-**ctrl-M**,**tab**,**-+** work as blocks page.
+
+
+##PANELS PAGE
+
+**ctrl-m** , **tab** ,**-**, **+** work as on the blocks page.
 
 
 
-SIDEBAR
 
 
 
-**scroll/drag** to adjust sliders, zoom scopes etc
 
-**+shift** for fine
+##SIDEBAR
 
-**+alt+shift** for extra fine
+**scroll** / **drag** - to adjust sliders, zoom scopes etc. **+shift** for fine, **+alt+shift** for extra fine.
 
+**ctrl-hover** your mouse over sliders to select an individual voice. **scroll+alt+shift** to tilt individual voice values around that voice.
 
-
-**hover** while holding **ctrl** to select an individual voice
-
-once a voice is selected, **scroll/drag +alt+shift** to tilt individual voice values around that voice
-
-**alt click **to return to default value (or value when song loaded)
+**alt click** - to return a slider to its default value (or to the value saved in your songfile).
