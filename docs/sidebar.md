@@ -4,7 +4,7 @@ The sidebar shows the details of whatever you're looking at.
 
 ![picture of the sidebar with one block selected](assets/screenshots/sidebar_block.png)
 
-With a single block selected the sidebar shows you all of its settings. Click the section headers to move through them.
+With a single block selected the sidebar shows you all of its settings. Click the section headers to move through them. To rename a block, ctrl-click the topmost header where the block's name is.
 
 ![picture of the sidebar voice selection section](assets/screenshots/sidebar_voice_selection.png)
 
