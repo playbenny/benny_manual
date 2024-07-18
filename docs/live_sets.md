@@ -10,13 +10,17 @@ If you want to play one song and then the next (stopping in between like a band)
 
 If you want to segue seamlessly between songs there are a few approaches:
 
-- **Merge** lets you load the next song in with to the current one. All the new song's blocks appear on the blocks page to the right of the blocks for the song that is currently playing. 
+- **Merge** lets you load the next song in with the current one. All of the new song's blocks appear on the blocks page to the right of the blocks for the song that is currently playing. 
 
-    Some blocks - for example hardware blocks and core.control.input.auto - can only ever have one copy present in benny. These blocks are shared between old and new songs but benny moves them over to their position in the new song.
+    benny only permits one copy of certain blocks - for example hardware blocks and core.control.input.auto. These blocks are therefore shared between the current and next song, but benny will automatically move them over to their position in the new song.
     
-    benny automatically helps clean up a little. When you merge, any muted blocks (in the old song) and any blocks that are only connected to those muted blocks, will be deleted as the new song merges in. 
-    
-    After merge you'll find two buttons in the top bar: 'select previous' and 'select new' which can help when deleting bits of old song as you move on.
+    benny also cleans up as you merge: any muted blocks in the old song (and all connected blocks that aren't in use elsewhere) will be deleted as the new song merges in. To disable this behaviour add the following line to userconfig.json:
+
+    ```json
+    "PURGE_MUTED_TREES" : 0,
+    ```
+        
+    After merge you will see two new buttons in the top bar: **select previous** and **select new**, which can be used to delete bits of old song.
 
 - **Output blocks** 
 
