@@ -1,6 +1,6 @@
 benny was designed not just for composing individual songs, but also for performing live sets.
 
-Unlike other live music software benny does not fully load up all of the songs at once. 
+Unlike other live music software benny does not load up all of the songs in a set at once. 
 
 *I felt that in order to play a song properly it would help both the performer and computer not to be burdened by the knowledge of the other songs.*
 
