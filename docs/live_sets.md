@@ -24,14 +24,14 @@ If you want to segue seamlessly between songs there are a few approaches:
 
 - **Output blocks** 
 
-    In the hardware setup, every audio output on your computer has the option to run another layer of audio processing, called 'output blocks'. As standard the transparent anti-aliasing clipper and dither are selected. Because these are part of the hardware setup rather than part of the song they're always present, even when benny is loading a new song. 
+    In the hardware setup, every audio output on your computer has the option to run another layer of audio processing, called 'output blocks'. By default benny applies a transparent anti-aliasing clipper and dither here. Because these are part of the hardware setup rather than part of the song they are always present, even when benny is loading a new song.
+
+    There are two *(prototype)* output blocks included:
     
-    - The **stretch_looper** output block lets you grab a loop of the playing track and keep that looping while the next one loads. It uses z-plane timestretch to make it match the tempo of the next song. *This is still a work in progress.*
+    - The **stretch_looper** lets you grab a loop of the playing track and keep it looping while the next one loads. It uses z-plane timestretch to make it match the tempo of the next song. *This is still a work in progress.*
 
-    - similarly there's a **big reverb** output block prototype.
+    - The **big reverb** does what you expect it to.
 
-- **Hardware** loopers, delays or reverbs - anything that can be used to fill 2-10 seconds works here! *In my current live setup i've built an external version of the stretch looper that runs in a bela pepper eurorack module and additionally provides an emergency loop in the extremely unlikely event of my computer crashing.*
+- **Hardware** loopers, delays or reverbs - anything that can be used to fill 2-10 seconds works here! *In my current live setup I've built an external version of the stretch looper that runs in a Bela Pepper Eurorack module and additionally provides an emergency loop in the unlikely event of my computer crashing.*
 
-**Live set pro-tips**
-
-Tape your usb cables into the ports, at both ends, every time.
+**Live set pro-tips:** To prevent crashes, tape your usb cables into the ports, at both ends, every time.
