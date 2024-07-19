@@ -94,6 +94,8 @@
 
 **up** / **down** / **left** / **right** - move selected blocks, **+shift** for fine movement.
 
+**PGUP** / **PGDN** - zoom in or out
+
 **ctrl-T** - in fullscreen mode benny shows a clock in the top right corner. This key switches to showing a set timer (that starts the first time you press play). **ctrl-alt-T** resets this timer.
 
 **?** - show help
