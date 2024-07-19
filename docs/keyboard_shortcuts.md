@@ -94,6 +94,8 @@
 
 **up** / **down** / **left** / **right** - move selected blocks, **+shift** for fine movement.
 
+**ctrl-T** - in fullscreen mode benny shows a clock in the top right corner. This key switches to showing a set timer (that starts the first time you press play). **ctrl-alt-T** resets this timer.
+
 **?** - show help
 
 **/** - to start searching amongst blocks in the current song
