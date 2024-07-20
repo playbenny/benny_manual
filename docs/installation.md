@@ -56,6 +56,13 @@ All the visual/ui preferences - colour palette, wire curve detail and various be
 
 - **config.json** will be overwritten with defaults next time you update benny but **userconfig.json** will not.
 
+If the **glow** effect is too much for your taste, add the following line to **userconfig.json**:
+
+```json
+"glow" : 0,
+```
+
+
 ## Recommended computer specs
 
 benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
