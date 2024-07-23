@@ -63,6 +63,10 @@ If the **glow** effect is too much for your taste, add the following line to **u
 "glow" : 0,
 ```
 
+## Updates
+
+At the moment, benny follows a continuous update schedule. You can get the latest version by downloading it and unzipping it over the top of your current benny install. Or it's slightly more convenient to use a 'git' client (github desktop is free and fine for this). First 'clone' the benny repository and then just 'fetch' every time you want an update.
+
 
 ## Recommended computer specs
 
