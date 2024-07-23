@@ -35,9 +35,9 @@ There are example files included that might help - so far i've made configs for:
 
 (A library of presets for controller setup are on my to do list.)
 
-## VST configuration
+## VST / AMXD configuration
 
-To use a **VST plugin** in benny you need to set it up in the VST manager. First run the VST plugin scanner and wait until the progress bar has finished.
+To use a **VST plugin** in benny you need to set it up in the VST / AMXD manager which you open from the benny launcher window. First run the VST plugin scanner and wait until the progress bar has finished.
 
 benny comes with a library of config files for VST plugins that we have already encountered. When you run the scan these will be set up automatically, but you are free to make your own edits.
 
@@ -45,6 +45,7 @@ If your plugin is not automatically added to benny you can set it up in the VST 
 
 If you've done a complete and useable configuration for a plugin please do post the .json file (found in benny/audio_blocks) on the [discussions](https://github.com/playbenny/benny/discussions) pages and we'll add it to the library.
 
+Max for live devices (AMXD's) are set up similarly, but at present there is no scanner or library for these. Just press the 'add AMXD' button to browse for an AMXD file to import. Devices that use the live API (eg ones that manipulate live sets, or work with modulation inside live) aren't likely to work in benny, but most simple synths and effects do.
 
 ## Preferences
 
