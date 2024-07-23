@@ -32,6 +32,10 @@ If nothing is selected then the core.input.control.auto block acts in basic mode
 
 You can connect from the controller's outputs to any block as with any other connection in benny. If the controller has per-knob leds they will light up to indicate active connections, using the colours set in the block parameters. 
 
+#### Block-exclusive controllers
+
+It's also possible for blocks (for example the [mixer](mixer.md)) to have a fixed, exclusive connection to a particular midi controller. (Developers: you can use controllermanager.js to accomplish this)
+
 ## Keyboards
 
 The core.input.keyboard block handles keyboards, grid devices, drum pads, the QWERTY keyboard or any other device that mainly generates midi note messages.

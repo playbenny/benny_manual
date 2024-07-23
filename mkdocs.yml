@@ -37,6 +37,7 @@ nav:
     - Waves : waves.md
     - Panels : panels.md
     - Midi Control: controllers.md
+    - Mixer : mixer.md
     - Recording: recording.md
   - Playing live sets with benny: live_sets.md
   - Keyboard shortcuts: keyboard_shortcuts.md
