@@ -49,6 +49,8 @@
 **shift-click** - to multi-select blocks or wires 
 
 **ctrl-click** - to mute blocks or wires
+   
+**ctrl-shift-click** - (when unmuting only) holding shift too also 'unmutes the tree' - any muted blocks connected to this one and any muted blocks connected to those, etc.
 
 **alt-click** - to bypass blocks
 
@@ -81,6 +83,10 @@
 **ctrl-z** - undo *(currently only undoes delete block, more to come)*
 
 **del** / **backspace** - delete everything selected
+
+**shift-del** - 'delete tree' - deletes the selected blocks, then any blocks that were only connected to/from a deleted block, recursively.
+
+**shift-T** - 'select tree' - selects what delete tree would delete. useful for saving a part of a patch out as a template.
 
 **alt-left arrow** - back to previous sidebar view
 
