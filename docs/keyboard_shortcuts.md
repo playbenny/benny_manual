@@ -86,7 +86,7 @@
 
 **shift-del** - 'delete tree' - deletes the selected blocks, then any blocks that were only connected to/from a deleted block, recursively.
 
-**shift-T** - 'select tree' - selects what delete tree would delete. useful for saving a part of a patch out as a template.
+**shift-T** - 'select tree' - selects what delete tree would delete. useful for saving a part of a patch out as a template. by default select tree, delete tree and mute tree all ignore connections to core.input.control.* blocks when counting connections but the config key ```TREE_SELECT_IGNORES_CONTROL_BLOCKS``` can change this.
 
 **alt-left arrow** - back to previous sidebar view
 
