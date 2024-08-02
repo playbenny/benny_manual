@@ -92,7 +92,11 @@
 
 **alt-right arrow** - forward to next sidebar view
 
-**alt-up** / **alt-down** - if you have a wire selected it will take you to the block at the start or end of the wire.
+**alt-up** / **alt-down** - if you have a wire selected these will take you to the block at the start or end of the wire.
+
+**insert** - if you have a wire selected, insert a block into the connection
+
+**enter** - if you have a wire selected, collapse source / destination input and output menus.
 
 **enter** - open the new block menu
 
