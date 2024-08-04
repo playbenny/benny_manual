@@ -4,4 +4,4 @@ The benny mix blocks use airwindows console 7 for non-linear summing. For this t
 
 You can assign a midi controller directly to the mixer in the **mix.bus** block.
 
-!(mixer blocks example)[assets/screenshots/mixer.png]
+![mixer blocks example](assets/screenshots/mixer.png)

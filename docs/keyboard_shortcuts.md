@@ -72,9 +72,9 @@
 
 **ctrl-v** - paste. 
 
-    You can copy and paste single or multiple blocks in the blocks view.
+    - You can copy and paste single or multiple blocks in the blocks view.
 
-    To copy parameter values from block to block: copy a single block, select a target block of the same kind and then paste.
+    - To copy parameter values from block to block: copy a single block, select a target block of the same kind and then paste.
 
 **ctrl-alt-V** - paste blocks including their connections. For example, if you copy an oscillator that is connected to a mixer and a midi source, then the pasted duplicate will have the same connections.
 
