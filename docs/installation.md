@@ -129,7 +129,7 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 
     Open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (This issue only happens if you've had this max installation on your pc for a long while)
 
-- (OSX) *I get the following messages in the max console and benny won't open*
+- (macOS) *I get the following messages in the max console and benny won't open*
 
     ```
     openactions.txt : can't load, error -1
@@ -138,3 +138,9 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
     ```
 
     The person who encountered this found that openactions.txt was set to open with text edit, changing it to open with max solved the problem.
+
+- (macOS) *I get a warning box: External cannot be loaded due to macOS quarantine*
+    
+    ![quarantine box](assets/screenshots/macos-quarantine.png)
+
+    Just click OK as many times as it takes for these to go away, there's nothing to worry about here. Note this only happens if you download and unzip, if you use git (or github desktop or etc) to get benny and keep it up to date the files aren't flagged for quarantine.
