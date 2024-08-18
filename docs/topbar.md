@@ -1,4 +1,4 @@
-![picture of the top bar](/assets/screenshots/topbar2.png)
+![picture of the top bar](assets/screenshots/topbar2.png)
 
 the top bar is almost always visible and contains (from left to right):
 
