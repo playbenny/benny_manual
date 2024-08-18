@@ -36,6 +36,7 @@ nav:
     - States : states.md
     - Waves : waves.md
     - Panels : panels.md
+    - Top bar : topbar.md
     - Midi Control: controllers.md
     - Mixer : mixer.md
     - Recording: recording.md
