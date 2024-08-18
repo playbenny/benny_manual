@@ -49,6 +49,8 @@
 **shift-click** - to multi-select blocks or wires 
 
 **ctrl-click** - to mute blocks or wires
+   
+**ctrl-shift-click** - (when unmuting only) holding shift too also 'unmutes the tree' - any muted blocks connected to this one and any muted blocks connected to those, etc.
 
 **alt-click** - to bypass blocks
 
@@ -72,9 +74,9 @@
 
 **ctrl-v** - paste. 
 
-    You can copy and paste single or multiple blocks in the blocks view.
+    - You can copy and paste single or multiple blocks in the blocks view.
 
-    To copy parameter values from block to block: copy a single block, select a target block of the same kind and then paste.
+    - To copy parameter values from block to block: copy a single block, select a target block of the same kind and then paste.
 
 **ctrl-alt-V** - paste blocks including their connections. For example, if you copy an oscillator that is connected to a mixer and a midi source, then the pasted duplicate will have the same connections.
 
@@ -82,11 +84,19 @@
 
 **del** / **backspace** - delete everything selected
 
+**shift-del** - 'delete tree' - deletes the selected blocks, then any blocks that were only connected to/from a deleted block, recursively.
+
+**shift-T** - 'select tree' - selects what delete tree would delete. useful for saving a part of a patch out as a template. by default select tree, delete tree and mute tree all ignore connections to core.input.control.* blocks when counting connections but the config key ```TREE_SELECT_IGNORES_CONTROL_BLOCKS``` can change this.
+
 **alt-left arrow** - back to previous sidebar view
 
 **alt-right arrow** - forward to next sidebar view
 
-**alt-up** / **alt-down** - if you have a wire selected it will take you to the block at the start or end of the wire.
+**alt-up** / **alt-down** - if you have a wire selected these will take you to the block at the start or end of the wire.
+
+**insert** - if you have a wire selected, insert a block into the connection
+
+**enter** - if you have a wire selected, collapse source / destination input and output menus.
 
 **enter** - open the new block menu
 

@@ -63,6 +63,8 @@ If the **glow** effect is too much for your taste, add the following line to **u
 "glow" : 0,
 ```
 
+If you'd like different blocks present at startup you can save over **autoload.json** in the templates folder.
+
 ## Updates
 
 At the moment, benny follows a continuous update schedule. You can get the latest version by downloading it and unzipping it over the top of your current benny install. Or it's slightly more convenient to use a 'git' client (github desktop is free and fine for this). First 'clone' the benny repository and then just 'fetch' every time you want an update.
@@ -129,3 +131,18 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 
     Open max, go in options / preferences / jitter preferences and make sure 'graphics engine' is set to glcore. (This issue only happens if you've had this max installation on your pc for a long while)
 
+- (macOS) *I get the following messages in the max console and benny won't open*
+
+    ```
+    openactions.txt : can't load, error -1
+    benny_engine.maxpat : can't open
+    benny_engine.maxpat : can't open, error 0
+    ```
+
+    The person who encountered this found that openactions.txt was set to open with text edit, changing it to open with max solved the problem.
+
+- (macOS) *I get a warning box: External cannot be loaded due to macOS quarantine*
+    
+    ![quarantine box](assets/screenshots/macos-quarantine.png)
+
+    Just click OK as many times as it takes for these to go away, there's nothing to worry about here. Note this only happens if you download and unzip, if you use git (or github desktop or etc) to get benny and keep it up to date the files aren't flagged for quarantine.
