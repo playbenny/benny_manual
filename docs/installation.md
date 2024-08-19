@@ -4,7 +4,7 @@
 
 - A few blocks require Airwindows console 7 VSTs. They're included in the download, look in the VST dependencies subfolder and install the ones you need for your system. 
 
-    *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp can't see them.*
+    *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp may not see them.*
 
 - Open 'benny.maxproj'. The [benny launcher](launcher.md) window will appear.
 
@@ -38,6 +38,8 @@ There are example files included that might help - so far i've made configs for:
 ## VST / AMXD configuration
 
 To use a **VST plugin** in benny you need to set it up in the VST / AMXD manager which you open from the benny launcher window. First run the VST plugin scanner and wait until the progress bar has finished.
+
+   *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp may not see them.*
 
 benny comes with a library of config files for VST plugins that we have already encountered. When you run the scan these will be set up automatically, but you are free to make your own edits.
 
