@@ -23,7 +23,15 @@ If you change your hardware setup benny can help you migrate songs from the old 
 
 *In my usage I have a configuration file for each iteration of my live touring setup, a different one for a setup I have at home and a setup for the studio with my synths and outboard compressors available as individual blocks.*
 
-The hardware configuration file also includes information about the **midi controllers** you have connected - how many controls, how they're arranged, the midi channels and protocols etc that they use, and which other controllers work as a substitute.
+Open the hardware manager from the benny launcher window. Choose a hardware config file to start from and click the open button. The hardware manager will show you 4 sections:
+
+### Keyboards
+
+This section lists the available midi inputs. If an input doesn't show up here go to options / midi setup and make sure it's showing up in max. On my PC I seem to need to have everything connected and turned on before starting max. You can toggle each one on or off, the selected ones will be available in the core.input.keyboard block for mapping / automapping.
+
+### Controllers
+
+This section lets you define all your midi controllers. The ones you set up will be available in the core.input.control blocks. Benny supports incremental encoder and potentiometer input, value feedback, buttons, button assign to global functions, and led indicators.
 
 There are example files included that might help - so far i've made configs for:
 
@@ -33,7 +41,33 @@ There are example files included that might help - so far i've made configs for:
 
 - Akai lpd8 mk2 (not recommended, incomplete midi implementation)
 
-(A library of presets for controller setup are on my to do list.)
+(todo: a library of presets for controller setup, support for more brands' led protocols)
+
+### Hardware
+
+This section tells benny which inputs and outputs of the computer each piece of hardware is connected to. You can set up audio ins and outs, midi ins and outs, and if your system includes a midi controlled matrix switch (eg alyseum's matrix ii module) you can set up io for that too.
+
+(todo: setting up parameters that send midi ccs or sysex to hardware devices - ccs already work if you manually edit the hardware .json file, see the midi drum machine example file)
+
+The hardware manager lets you send out test signals to any audio output you're setting up and also shows a meter for any inputs you set up.
+
+### Advanced
+
+Here you can select if you have a supported midi controlled matrix switch in your system, or if your soundcard driver has a matrix mixer that benny can control (currently only RME totalmix).
+
+#### RME Totalmix
+
+If you're using this brand benny can control the soundcard mixer via OSC and make hardware-hardware connections directly in the soundcard DSP. This reduces the latency of this connection from 2x io vectorsize to around 40 samples.
+
+For it to work you need to select the RME driver in the dropdown in this section and enable OSC control in Totalmix. benny is locked to the default totalmix port etc..
+
+This feature is experimental. At the moment we don't have a way to show these signals on benny's meters.
+
+#### Latency measurement
+
+The self-tuning midi to cv block in benny is very robust if (and only if) it has an accurate latency measurement for the system. Once you've set up your hardware, use this section to perform a loop latency test. Pick a hardware device that will pass audio back to benny in the dropdown and press the round button until the value stabilises.
+
+**The hardware configuration isn't saved until you click save or save as at the top of the page**
 
 ## VST / AMXD configuration
 
