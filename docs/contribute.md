@@ -15,5 +15,5 @@
 - Create a new branch, commit your block files to it, submit a pull request.
 ### Contribute VST plugin setup files
 - benny comes with a library of VST plugin config files so it will work out the box with these. If you make a config file for a VST plugin that is not yet included, please submit it to the library via the [forum](https://github.com/playbenny/benny/discussions) or pull request. 
-### Help with this manual
+### Help with this manual or make video demos
 - This manual is a [separate github repository](https://github.com/playbenny/bennyDocs). If you hit a problem or question that isn't answered here please do add your solution to the appropriate section of the manual.
