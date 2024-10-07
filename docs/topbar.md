@@ -6,6 +6,8 @@ the top bar is almost always visible and contains (from left to right):
 
 - **play button** - starts and stops the global transport. black = stopped, yellow = playing. when loading songs the surround of this button is grey until everything has loaded. you're still free to press play before loading completes.
 
+- **midi input indicators** - one flashing light for each of the midi inputs you have both configured and available. click here to show a more detailed version of this in the sidebar.
+
 - **hardware input meters** - in order, every hardware audio input you have set up. clicking the meter shows a scope. clicking the title in that scope selects the block that output is a part of, if it is present in the patch.
 
 - **hardware output meters** - meters for all your outputs to hardware. as with all meters in benny these show min/max values in the last frame.
