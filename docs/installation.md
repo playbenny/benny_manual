@@ -169,6 +169,12 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
     },
     ```
 
+- **Hardware Recording** in order to be able to record directly from external hardware benny has to create a few objects in the max patch. These use a tiny bit of CPU. If you have lots of channels of external hardware and are struggling for CPU then adding the following to userconfig.json might make a small difference:
+
+    ```json
+    "ENABLE_RECORD_HARDWARE" : 0,
+    ```
+
 ## Installation Troubleshooting FAQ
 
 - *The benny window that comes up when I press start is grey*
