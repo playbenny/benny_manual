@@ -36,6 +36,7 @@ This section lets you define all your midi controllers. The ones you set up will
 There are example files included that might help - so far i've made configs for:
 
 - [Midi Fighter Twister](https://www.midifighter.com/#Twister) (recommended, the led feedback works well with the automapping features in benny)
+    NOTE the midi fighter twister needs to be outputting encoder messages not cc ones from its knobs, the factory default settings for the midi fighter won't work with my configs. In ```benny\hardware_configs\preset files for common controllers``` you'll find settings to load onto your midi fighter with the midi fighter utility.
 
 - Novation launch control xl
 
