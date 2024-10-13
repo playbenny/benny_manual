@@ -40,7 +40,8 @@ nav:
     - Midi Control: controllers.md
     - Mixer : mixer.md
     - Recording: recording.md
-  - Playing live sets with benny: live_sets.md
+  - List of blocks : blockipedia.md 
   - Keyboard shortcuts: keyboard_shortcuts.md
+  - Playing live sets with benny: live_sets.md
   - Developing blocks: developing.md
   - Contribute: contribute.md
