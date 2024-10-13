@@ -71,7 +71,6 @@ Every block has a help/description text you can view in the sidebar. This automa
 - notes with no length are only cut off by the next note or entering an 'off' with the 1 key. 
 
 - editor keys:
-- -----------
 - notes start at z for the bottom octave and q for the top octave and a half
 - 1 enters an 'off' in the notes column
 - L and , switch octave
@@ -80,7 +79,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - hold shift and use arrows or click to select an area
 - ctl-c,ctl-x,ctl-v,ctl-a, ctl-l copy cut paste select all select a whole column
 - ctl-i interpolates values from one end of a selection to the other.
-- # toggles 'grouping' for a row. grouped rows (indicated by a small indent) work as a single step, every time the playhead lands on this step it plays the next one of the grouped notes, round-robin-ing. so if you have a sequence CCCDEF and the last 4 are grouped it'll play CCCCCCCDCCCECCCF. 
+- '#' toggles 'grouping' for a row. grouped rows (indicated by a small indent) work as a single step, every time the playhead lands on this step it plays the next one of the grouped notes, round-robin-ing. so if you have a sequence CCCDEF and the last 4 are grouped it'll play CCCCCCCDCCCECCCF. 
 
 - the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop
 
@@ -323,8 +322,6 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### voice.shepherd
 - Shepherd oscillator with env and vca. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
 
-## hardware
-
 ## fx
 
 ### fx.clouds
@@ -496,6 +493,8 @@ Every block has a help/description text you can view in the sidebar. This automa
 - mixer channel. borrows the mix concept from worrng modules, uses airwindows console7cascade for nice summing and drive. MUST BE ALL ROUTED FROM THIS BLOCK, AT UNITY GAIN, INTO A utility.mixer.buss BLOCK.
 
 - IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
+
+nsole7buss64) installed.
 
 ## abb
 
