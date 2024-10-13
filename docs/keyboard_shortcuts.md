@@ -56,6 +56,11 @@
 
 **drag** - to connect blocks
 
+**scroll** - to zoom
+
+**ctrl-scroll** - over a wire, adjust connection level
+
+**alt-shift-scroll** - make space: push (or pull) all blocks away from (or towards) the mouse cursor
 
 
 **home** - center view
