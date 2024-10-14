@@ -234,9 +234,6 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### source.harmonic.osc
 - 8 drawbar harmonics, uses non-linear summing borrowed from airwindows console which serves to give it a nice glued character that sits in a mix well, less a collection of digital sines than a single voice.
 
-### source.marbles
-- A wrapper for Volker Böhm's port of Émilie Gillet's Rings module.
-
 ### source.random.noise.s&h
 - inspired by the buchla stepped and continuous random.
 - - multiple colours of noise
@@ -252,6 +249,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### source.shepherd.osc
 - Shepherd oscillator. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
+
+### source.tides
+- A wrapper for Volker Böhm's port of Émilie Gillet's Tides module.
 
 ### source.wave.scan
 - A looping wave player that lets you fluidly move around the longer sample while staying quantised. EG if you have a long wav of a drum performance loaded you can 'play' it by moving the target parameter and this block will keep it in time.
@@ -448,7 +448,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - takes a mono input, lets you adjust pan. has audio-rate control input.
 
 ### utility.record.endpoint.stereo
-- DOES NOTHING. but is a convenient way to record a stereo wav - just route whatever into it and arm it to record. useful for recording multiple blocks, or for recording hardware (which currently can't be recorded directly). passes through unaltered audio.
+- DOES NOTHING. but is a convenient way to record a stereo wav - just route whatever into it and arm it to record. useful for recording multiple blocks. passes through unaltered audio.
 
 ### utility.self.tuner
 - self-tuning midi to cv converter. 
@@ -493,3 +493,5 @@ Every block has a help/description text you can view in the sidebar. This automa
 - mixer channel. borrows the mix concept from worrng modules, uses airwindows console7cascade for nice summing and drive. MUST BE ALL ROUTED FROM THIS BLOCK, AT UNITY GAIN, INTO A utility.mixer.buss BLOCK.
 
 - IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
+
+vsts (console7channel64, console7cascade64, console7buss64) installed.
