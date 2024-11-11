@@ -34,6 +34,8 @@ This section shows the parameters for the block. Drag or use your scroll wheel t
 
 On these sliders, the darker bar represents the set value of the voice's parameter and the brighter line that usually sits at the end of that bar represents the current actual value. If a parameter is modulated you will see the line moving but not the bar.
 
+You can also hover your mouse over a slider and start typing numbers to directly enter a value.
+
 ![selecting individual voice sliders](assets/screenshots/ctrl_sel_voices.gif)
 
 If a block has multiple voices then while you hold **ctrl and mouse over** a slider it will highlight it and let you adjust that one individually. 
