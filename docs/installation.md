@@ -2,6 +2,8 @@
 
 - Install [Max 8](https://cycling74.com/downloads/older). *benny does work with max 9 but there are a some issues and for now it's more reliable on max 8.* You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
+- If you have ableton and max for live installed already, be sure to use the latest version of max 8 to run benny. It will crash if you use an out of date version, such as the one ableton may have installed for max for live.
+
 - A few blocks require Airwindows console 7 VSTs. They're included in the download, look in the VST dependencies subfolder and install the ones you need for your system. 
 
     *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp may not see them.*
@@ -113,15 +115,9 @@ benny is fairly resource intensive. A lot of graphic work is handled by the GPU 
 
 The audio side of benny takes full advantage of multi core CPUs *(afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't).*
 
-We've tested benny on the systems below, and hope it will be useable on any current mid range (integrated graphics only) laptop.
+We've tested benny on a range of systems and hope it will be useable on any current mid range (integrated graphics only) laptop but it runs best on a gaming PC with separate graphics.
 
-- M1 MacBook Air
-
-- 2023 mid range (i7/intel Xe) Framework laptop
-
-- 2019 PC with integrated graphics (AMD 4700G) 
-
-- 2024 high end (7950X3D) with a 3050 GPU. 
+A few users of new Apple computers have been surprised that their expensive machines appear to struggle with benny, getting hot and running fans on high. VCV rack has a similar note in its FAQ: these computers are fast for short-term loads, but having graphics and cpu in the same chip in a thin computer with limited cooling means that under sustained load on both components they perform very poorly compared to gaming laptops or desktop pcs.
 
 ### Resource usage sidebar
 
