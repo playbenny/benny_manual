@@ -1,6 +1,6 @@
 - [Download the latest benny](https://github.com/playbenny/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
-- Install [Max 8](https://cycling74.com/downloads/older). *benny does work with max 9 but there are a some issues and for now it's more reliable on max 8.* You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
+- Install [Max](https://cycling74.com/downloads). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
 - If you have ableton and max for live installed already, be sure to use the latest version of max 8 to run benny. It will crash if you use an out of date version, such as the one ableton may have installed for max for live.
 
