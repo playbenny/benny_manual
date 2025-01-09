@@ -120,7 +120,7 @@ We've tested benny on a range of systems and it should be useable on:
 - gaming laptops with discrete graphics from the last decade (eg 7th gen core i7 with nvidia 970)
 - desktop computers with any mid-range gpu from the last decade or more
 
-While the newer Apple computers are very fast for short term loads they are very thin, have very little cooling and are doing the GPU work in the same chip as the CPU work. This means under loads like benny - where there's a continuous mid-level load on both components - they accumulate heat and start thermal throttling. Some of the settings below - reducing graphic detail and audio voice count particularly - will help a lot.
+While the newer Apple computers are very fast for short term loads they are very thin, have very little cooling and are doing the GPU work in the same chip as the CPU work. This means under loads like benny - where there's a continuous mid-level load on both components - they accumulate heat and start thermal throttling. VCV Rack have a similar note in their FAQ. Some of the settings below - reducing graphic detail and audio voice count particularly - will help a lot.
 
 ### Resource usage sidebar
 
