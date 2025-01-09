@@ -115,9 +115,12 @@ benny is fairly resource intensive. A lot of graphic work is handled by the GPU 
 
 The audio side of benny takes full advantage of multi core CPUs *(afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't).*
 
-We've tested benny on a range of systems and hope it will be useable on any current mid range (integrated graphics only) laptop but it runs best on a gaming PC with separate graphics.
+We've tested benny on a range of systems and it should be useable on:
+- mid range laptops with integrated graphics from the last few years (eg 10th gen core i7, M2)
+- gaming laptops with discrete graphics from the last decade (eg 7th gen core i7 with nvidia 970)
+- desktop computers with any mid-range gpu from the last decade or more
 
-A few users of new Apple computers have been surprised that their expensive machines appear to struggle with benny, getting hot and running fans on high. VCV rack has a similar note in its FAQ: these computers are fast for short-term loads, but having graphics and cpu in the same chip in a thin computer with limited cooling means that under sustained load on both components they perform very poorly compared to gaming laptops or desktop pcs.
+While the newer Apple computers are very fast for short term loads they are very thin, have very little cooling and are doing the GPU work in the same chip as the CPU work. This means under loads like benny - where there's a continuous mid-level load on both components - they accumulate heat and start thermal throttling. Some of the settings below - reducing graphic detail and audio voice count particularly - will help a lot.
 
 ### Resource usage sidebar
 
