@@ -26,7 +26,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### core.input.keyboard
 - Midi keyboard input. Outputs notes played and the usual keyboard controllers. 
 
-- If auto assign is turned on then when a block is selected the keyboard notes are sent to that block instead, until the block is deselected. 
+- If auto assign is turned on then when a block is selected the keyboard notes are sent to that block instead, until the block is deselected.
+
+- The block records the last 64 bars of what you've played, and by switching to loop (or overdub) modes - default shortcut F9 - you can select a section of that history. once you're happy with your selection range pressing the spawn button (default shortcut ctrl-F9) will spawn 1 or more seq.piano.roll objects (depending on what you have connected)
 
 ### core.scales.shapes
 - Scales and shapes storage. You can make scales (dynamically if you want!) using midi input in two ways: 
@@ -61,10 +63,16 @@ Every block has a help/description text you can view in the sidebar. This automa
 - takes the incoming note, if it's above C3 it steps up the scale, if it's below C3 it steps down. the further from C3, the bigger the step. notes in the reset input reset the position in the scale to the one nearest the reset note. 
 
 ### seq.note.step
-- note step sequencer. add more voices for more polyphony. on the trigger input C=clock B=back D=reset, you can also directly access the first 128 rows through the row select input. start point can be before, inside or even after the loop points. the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop.
+- note step sequencer. add more voices for more polyphony. the editor shows you patterns on other voices as hollow notes. 
+
+- on the trigger input C=clock B=back D=reset, you can also directly access the first 128 rows through the row select input. 
+
+- The start point can be before, inside or even after the loop points. the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop. 
+
+- You can also choose how it behaves when the pattern slider changes. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
 
 ### seq.note.tracker
-- note tracker. each voice is monophonic channel of midi notes, add more voices for more polyphony.
+- note tracker. each voice is a monophonic channel of midi notes, add more voices for more polyphony.
 
 - on the trigger input C=clock B=back D=reset, you can also directly access the first 128 rows through the row select input. start point can be before, inside or even after the loop points. 
 
@@ -83,17 +91,31 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop
 
+### seq.piano.roll
+- Classic piano roll sequencer. 
+- Unlike other benny sequencers this one has an internal clock linked to the global clock and doesn't need a clock in. (It does follow timing drift from the kuramoto section of the clock if that's enabled.)
+
+- ctrl-click to create events, ctrl drag to create many events (in a values lane). scroll adjusts velocity or cc levels, drag or arrow keys to move events, ctrl+scroll, drag or arrow keys to adjust lengths. scroll or shift+scroll on the time ruler for zoom/pan. or drag on the ruler, or shift-drag on the background.
+
+- press 3 to put the ruler into triplet divisions of beats when zoomed in.
+
+- press q to time quantise the selected notes or events to the current grid.
+
+- l makes the selected notes legato.
+
+- At the moment only scroll over the loop start / length etc numbers works to adjust those, and longer sequences than 256 beats can't yet be created in the ui here. More soon.
+
 ### seq.rene
 - a circle on a cartesian plane step sequencer, obviously inspired by the module of the same name
 
 ### seq.shape.player
-- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. The trigger note input both triggers and sets the in-scale offset (eg midi-note 2 offsets the pattern by 2 notes). In the clocked modes a trigger note starts the whole sequence playing by itself on a regular clock. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, C# on triggers one of the ornament types.
+- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. In the clocked modes a trigger note starts the whole sequence playing by itself on a regular clock. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, C# on triggers one of the ornament types.
 
 ### seq.values
-- A step sequencer for values. One voice = one sequencer row.
+- A step sequencer for values. One voice = one sequencer row. The 'notes out' uses the value as a note, and the velocity from the incoming trigger.
 
 ### seq.wonky
-- The step time sliders control the length of each step, the block pro-ratas these lengths to make them fit into the time period you've set below. You can use this as a clock or there are also value sliders so you can use it as a stand alone sequencer.
+- The step time sliders control the length of each step, the block pro-ratas these lengths to make them fit into the time period you've set below. You can use this as a clock or there are also value sliders so you can use it as a stand alone sequencer - it outputs both the raw slider values and quantised pitches (with vel following incoming clocks).
 
 ### seq.analogue
 - A simple 'analogue-style' step sequencer. Each step has note, vel, and on/off. 
@@ -136,7 +158,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### midi.fold
 - Transposes, folding notes that lie outside the set range. 
 
-- The last control, 'glissando', determines whether the output notes change when you adjust the controls as opposed to just when new notes come in.
+- The last control, 'glissando', determines whether the output notes change when you adjust the controls as opposed to just when new notes come in. You can send midi to the second input to set the transpose value.
 
 ### midi.free.clock
 - a free-running clock, disconnected from the global one
@@ -145,9 +167,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Forgets some midi events, randomly
 
 ### midi.lfo
-- A midi LFO, if you add more voices they're linked, so you can build eg quadrature lfos from this. 
-
-- NOTE if you modulate 'rate' this lfo will skip, if you want to modulate something modulate phase, or use a different lfo.
+- A midi LFO, if you add more voices they're linked, so you can build eg quadrature lfos from this.
 
 ### midi.note.length
 - sets the length of midi notes. 
@@ -214,8 +234,17 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## source
 
+### source.abb.phase.distortion
+- crunked up phase distortion oscillator alligator
+
+### source.abl.chip
+- wrapper for the abl.dsp.chip oscillator. only available in max 9.
+
+### source.abl.crackle
+- wrapper for the abl.dsp.crackle oscillator. only available in max 9.
+
 ### source.basic.osc
-- Basic single oscillator. Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in *LFO* and *audio* ranges. 
+- Basic single oscillator. Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in *LFO* and *audio* ranges. The 'initial pitch' slider sets the starting pitch, incoming midi overrides this but doesn't reset the slider. 
 
 - The rectangle portion of this oscillator uses 'EPTR' code from Yofiel.com. 
 
@@ -234,6 +263,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### source.harmonic.osc
 - 8 drawbar harmonics, uses non-linear summing borrowed from airwindows console which serves to give it a nice glued character that sits in a mix well, less a collection of digital sines than a single voice.
 
+### source.quanti.slide.osc
+- Quanti-slide oscillator. Quantises pitch to the selected scale - the quantiser is after the midi note in (with portamento), the detune, the range, the fm input and the unstable pitch are summed. The slide width control controls the size of a linear transition region between pitches - on 0 you get sharply quantised notes, on 1 you get no quantisation at all. 
+
+- Like the basic osc, shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in *LFO* and *audio* ranges. The 'initial pitch' slider sets the starting pitch, incoming midi overrides this but doesn't reset the slider. 
+
+- The rectangle portion of this oscillator uses 'EPTR' code from Yofiel.com. 
+
 ### source.random.noise.s&h
 - inspired by the buchla stepped and continuous random.
 - - multiple colours of noise
@@ -251,7 +287,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Shepherd oscillator. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
 
 ### source.tides
-- A wrapper for Volker Böhm's port of Émilie Gillet's Tides module.
+- A wrapper for Volker Böhm's port of Émilie Gillet's Tides module. The frequency slider is overridden by note inputs.
 
 ### source.wave.scan
 - A looping wave player that lets you fluidly move around the longer sample while staying quantised. EG if you have a long wav of a drum performance loaded you can 'play' it by moving the target parameter and this block will keep it in time.
@@ -324,8 +360,20 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## fx
 
+### fx.abl.distortion
+- wrapper for the abl.dsp.distortion. stereo in stereo out. only available in max 9.
+
+### fx.abl.fuzz
+- wrapper for the abl.dsp.fuzz. stereo in stereo out. only available in max 9.
+
+### fx.abl.pitchshift
+- wrapper for the abl.dsp.pitchshift. stereo in stereo out. only available in max 9.
+
+### fx.abl.waveshaper
+- wrapper for the abl.dsp.waveshaper. stereo in stereo out. only available in max 9.
+
 ### fx.clouds
-- A wrapper for Volker Böhm's port of Émilie Gillet's Clouds module.
+- A wrapper for Volker Böhm's port of Émilie Gillet's Clouds module. The module's internal buffer is 4 seconds long, you can save it to a wave slot and you're also able to load waves into it.
 
 ### fx.clouds.pvoc
 - A wrapper for Volker Böhm's port of just the phase vocoder from Émilie Gillet's Clouds module.
@@ -348,6 +396,15 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### fx.filter.2pole
 - surreal machines' zero delay feedback filter model
 
+### fx.filter.abl.filther
+- wrapper for the abl.dsp.filther filter. second input is frequence modulation. only available in max 9.
+
+### fx.filter.abl.lowpass
+- wrapper for the abl.dsp.dfm filter. second input is frequence modulation. only available in max 9.
+
+### fx.filter.abl.vowel
+- wrapper for the abl.dsp.vowel filter. second audio input is switchable between cutoff and formant modulation. only available in max 9.
+
 ### fx.filter.fixed.bank
 - fixed filter bank based on the moog 914 with an option to split odd and even bands to different outputs. 
 
@@ -365,6 +422,21 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### fx.freqshift
 - max msp's freqshift object. for both positive and negative shifts mix both outputs. the audio rate input is fm of the freq set by the slider
+
+### fx.mod.abl.chorus
+- wrapper for the abl.dsp.chorus. stereo in stereo out. only available in max 9.
+
+### fx.mod.abl.ensemble
+- wrapper for the abl.dsp.ensemble. stereo in stereo out. only available in max 9.
+
+### fx.mod.abl.flanger
+- wrapper for the abl.dsp.flanger. stereo in stereo out, but there's no crossfeed so you could use one side as an envelope input. only available in max 9.
+
+### fx.mod.abl.phaser
+- wrapper for the abl.dsp.phaser. stereo in stereo out, but there's no crossfeed so you could use one side as an envelope input. only available in max 9.
+
+### fx.mod.abl.vibrato
+- wrapper for the abl.dsp.vibrato. stereo in stereo out. only available in max 9.
 
 ### fx.pitch.divider
 - an octave divider / sub oscillator generator inspired by the 4ms atoner
@@ -388,6 +460,24 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### fx.pitch.shift
 - pitch shift
 
+### fx.reverb.abl.darkhall
+- wrapper for the abl.dsp.darkhall reverb. stereo in stereo out. only available in max 9.
+
+### fx.reverb.abl.plate
+- wrapper for the abl.device.reverb. mono in stereo out simple plate reverb. only available in max 9.
+
+### fx.reverb.abl.prism
+- wrapper for the abl.dsp.prism reverb. stereo in stereo out. only available in max 9.
+
+### fx.reverb.abl.quartz
+- wrapper for the abl.dsp.quartz reverb. stereo in stereo out. only available in max 9.
+
+### fx.reverb.abl.shimmer
+- wrapper for the abl.dsp.quartz reverb. stereo in stereo out. only available in max 9.
+
+### fx.reverb.abl.tides
+- wrapper for the abl.dsp.tides reverb. stereo in stereo out. only available in max 9.
+
 ### fx.varispeed.looper
 - Flexible buffer record/playback device inspired by monome norns' softcut: record and play into and out of the buffer can occur at any rate you like. Multiple voices can access the same or different wave buffers. All jumps and loops are crossfaded smoothly. The buffer it uses is tagged with timestamps and metadata and available (as one of the waves on the waves page) for other blocks to play or write into. You can save this wave from there if you fill the buffer with something you like. Does an excellent impression of how BBD delays repitch, but is capable of far more - loopers, buffer-fx, repitchers, complex delays, sample-mangling, live resampling, etc
 
@@ -401,6 +491,21 @@ Every block has a help/description text you can view in the sidebar. This automa
 - W I Z A R D S A T U R A T I O N##By Luke Abbott
 
 ## utility
+
+### utility.abl.3band.eq
+- wrapper for the abl.device.channeleq. stereo. only available in max 9.
+
+### utility.abl.compressor
+- wrapper for the abl.device.compressor. only available in max 9. the second output is the compressor gain reduction amount.
+
+### utility.abl.env.follow
+- wrapper for the abl.device.envfollower. a simple envelope follower. only available in max 9.
+
+### utility.abl.limiter
+- wrapper for the abl.device.limiter. stereo. only available in max 9.
+
+### utility.abl.transient.design
+- wrapper for the abl.dsp.transientdesigner. a simple transient design effect with a separate input for the control signal. only available in max 9.
 
 ### utility.audio.smooth
 - Uses a 2 pole low pass filter modulated by a bandpass out of the same filter to smooth values in a way which responds well to fast changes. Algorithm by Andrew Simper of Cytomic from here: https://cytomic.com/files/dsp/DynamicSmoothing.pdf. The 'sensitivity' control governs how much the bandpass modulates the lowpass.
@@ -427,6 +532,12 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### utility.env.asr
 - ASR envelope, follower, slew etc
+
+### utility.env.eight.stage
+- 8 stage multi-mode envelope. easily chainable, lots of interesting trigger ins and outs.
+
+### utility.env.four.stage
+- 4 stage multi-mode envelope. easily chainable, lots of interesting trigger ins and outs.
 
 ### utility.eq.peak
 - a single band of nonstandard stereo peak/notch eq. partially gain compensated, airwindows style nonlinear internal summing, selfmod. cut is a subtle (undistorted) notch, boost fades from a peak kind of shape into more of a bandpass at the extreme settings. 
@@ -460,7 +571,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - IMPORTANT make sure you've used the hardware config tool to run at least one loopback test so it can store the measured loopback latency for your current system. this helps tuner stability.
 
 ### utility.sidechain.compressor
-- pro-c2 set up to sidechain
+- simple sidechain compressor
 
 ### utility.vca.env
 - VCA with integrated ASR envelope, follower, slew etc
@@ -494,4 +605,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
 
-vsts (console7channel64, console7cascade64, console7buss64) installed.
+## zx
+
+## test
+
+## tg
+
+## fb
+
