@@ -85,7 +85,7 @@
 
 **ctrl-alt-V** - paste blocks including their connections. For example, if you copy an oscillator that is connected to a mixer and a midi source, then the pasted duplicate will have the same connections.
 
-**ctrl-z** - undo *(currently only undoes delete block, more to come)*
+**ctrl-z** - undo
 
 **del** / **backspace** - delete everything selected
 
