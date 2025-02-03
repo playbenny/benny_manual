@@ -24,7 +24,7 @@ If you ctrl-click one of the global state buttons (bottom left of the benny wind
 
 You can recall a state for a single block by clicking the coloured square in the (unexpanded) states section of the sidebar.
 
-The panels page also shows (by default, can be disabled in userconfig) a button for every stored state on the panel of the relevant block.
+The panels page also shows (by default, can be disabled in ui preferences) a button for every stored state on the panel of the relevant block.
 
 To recall a given state for ALL blocks use the global state buttons that are at the bottom left corner of the benny window.
 

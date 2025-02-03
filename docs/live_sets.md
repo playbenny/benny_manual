@@ -14,11 +14,7 @@ If you want to segue seamlessly between songs there are a few approaches:
 
     benny only permits one copy of certain blocks - for example hardware blocks and core.control.input.auto. These blocks are therefore shared between the current and next song, but benny will automatically move them over to their position in the new song.
     
-    benny also cleans up as you merge: any muted blocks in the old song (and all connected blocks that aren't in use elsewhere) will be deleted as the new song merges in. To disable this behaviour add the following line to userconfig.json:
-
-    ```json
-    "PURGE_MUTED_TREES" : 0,
-    ```
+    benny also cleans up as you merge: any muted blocks in the old song (and all connected blocks that aren't in use elsewhere) will be deleted as the new song merges in. To disable this behaviour in ui preferences uncheck ```json"PURGE_MUTED_TREES"```.
         
     After merge you will see two new buttons in the top bar: **select previous** and **select new**, which can be used to delete bits of old song.
 

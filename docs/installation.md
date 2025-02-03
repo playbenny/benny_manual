@@ -1,5 +1,7 @@
 - [Download the latest benny](https://github.com/playbenny/benny/archive/refs/heads/main.zip) and extract the whole folder. 
 
+    *At the moment, benny follows a continuous update schedule. You can get the latest version by downloading it and unzipping it over the top of your current benny install. Or it's slightly more convenient to use a 'git' client (github desktop is free and fine for this). First 'clone' the benny repository and then just 'fetch' every time you want an update.*
+
 - Install [Max](https://cycling74.com/downloads). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
 - If you have ableton and max for live installed already, be sure to use the latest version of max 8 to run benny. It will crash if you use an out of date version, such as the one ableton may have installed for max for live.
@@ -86,27 +88,14 @@ If you've done a complete and useable configuration for a plugin please do post 
 
 Max for live devices (AMXD's) are set up similarly, but at present there is no scanner or library for these. Just press the 'add AMXD' button to browse for an AMXD file to import. Devices that use the live API (eg ones that manipulate live sets, or work with modulation inside live) aren't likely to work in benny, but most simple synths and effects do.
 
+
 ## Preferences
 
-All the visual/ui preferences - colour palette, wire curve detail and various behaviours with self explanatory names, are in **config.json**. If you want to change a setting:
+All the main visual/ui preferences can be changed by clicking the **ui preferences** button. The preferences editor saves your changes instantly but you need to fully close out of benny and restart for them to take effect.
 
-- copy the whole line for that setting and paste it into **userconfig.json**
-
-- anything in **userconfig.json** overrides the default value in **config.json**. it is created in the root of the benny folder after you first run benny.
-
-- **config.json** will be overwritten with defaults next time you update benny but **userconfig.json** will not.
-
-If the **glow** effect is too much for your taste, add the following line to **userconfig.json**:
-
-```json
-"glow" : 0,
-```
+If the **glow** effect is too much for your taste it can be altered here.
 
 If you'd like different blocks present at startup you can save over **autoload.json** in the templates folder.
-
-## Updates
-
-At the moment, benny follows a continuous update schedule. You can get the latest version by downloading it and unzipping it over the top of your current benny install. Or it's slightly more convenient to use a 'git' client (github desktop is free and fine for this). First 'clone' the benny repository and then just 'fetch' every time you want an update.
 
 
 ## Recommended computer specs
@@ -128,38 +117,21 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 
 ### Settings that affect GPU usage:
 
-- Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. Add the following keys to **userconfig.json**:
+- Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. The two settings: ```json"MAX_BEZIER_SEGMENTS"``` and ```json"MIN_BEZIER_SEGMENTS"``` control this. The numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it is idle to speed up loading. Defaults are 16 / 8.
 
-    ```json
-    "MAX_BEZIER_SEGMENTS" : 4,
-    "MIN_BEZIER_SEGMENTS" : 4,
-    ```
-
-    (the numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it is idle to speed up loading. Defaults are 16 / 8)
-
-- You can also make it only show wires to/from the current block, either by pressing **F10** to toggle, or setting this key to set it as the default:
-
-    ```json
-    "WIRES_SHOW_ALL" : 1,
-    ```
+- You can also make it only show wires to/from the current block, either by pressing **F10** to toggle, or the unticking setting ```json"WIRES_SHOW_ALL"```.
 
 ### Settings that affect CPU usage:
 
-- The maximum number of audio blocks & the number of hardware IO have a big effect on the baseline CPU usage. On mid range hardware the default (64) seems fine, and supports fairly complex song patches. On high end hardware much higher values are possible. On very low end computers you could reduce this to lower the baseline CPU load. Add the following key to **userconfig.json**
+- The maximum number of audio blocks & the number of hardware IO have a big effect on the baseline CPU usage. On mid range hardware the default (64) seems fine, and supports fairly complex song patches. On high end hardware much higher values are possible. On very low end computers you could reduce this to lower the baseline CPU load. Look for ```json"MAX_AUDIO_VOICES"``` in the preferences list.
 
-    ```json
-    "MAX_AUDIO_VOICES" : 64,
-    ```
+- The scopes and audio to data conversion in benny do use quite a lot of cpu. If you increase ```json"AUDIO_TO_DATA_DOWNSAMPLING"``` to eg 4 or 8 it'll save up to 20% cpu (on a low end system running a large patch), at the expense of some accuracy in audio to data conversion and the maximum zoom in available in the sidebar scopes.
 
 - The '**vector size**' of audio processing also has a big effect. This is the size (in samples) of the chunks of audio worked on by each stage of processing in benny. Decreasing it rapidly increases CPU usage. Find this in the **audio settings** dialog (there's a button to open it on the benny launcher window). 
 
     Because of a limitation of benny's architecture every audio connection adds latency proportional to this value, and while it's possible to offset clocks (and other transport-linked blocks eg wave scan blocks also have time offsets) it obviously pays to keep this as low as your computer can manage. On mid range hardware 256 samples is a good target, 64 is a sensible minimum for high end systems.
 
-- **Upsampling** is a common simple way to mitigate aliasing in harmonics generated by digital processing. Most of benny's non-linear audio blocks default to upsampling x2 as it makes a noticeable difference to the clarity of the sound. However upsampling obviously increases the CPU usage. You can adjust it (from 1x-128x) in the sidebar settings section for the block, or the following key (in userconfig.json) can be used to disable upsampling for all blocks on a particular computer (for example if your main computer is lost or broken and you borrow a less powerful one to run your set):
-
-    ```json
-    "UPSAMPLING" : 0,
-    ```
+- **Upsampling** is a common simple way to mitigate aliasing in harmonics generated by digital processing. Most of benny's non-linear audio blocks default to upsampling x2 as it makes a noticeable difference to the clarity of the sound. However upsampling obviously increases the CPU usage. You can adjust it (from 1x-128x) in the sidebar settings section for the block, or the ```json"UPSAMPLING"``` setting can be unticked to disable upsampling for all blocks on a particular computer (for example if your main computer is lost or broken and you borrow a less powerful one to run your set).
 
 - **Max Scheduler** max has some options for how the underlying engine balances the various kinds of tasks it has to perform. If you use blocks that have particularly involved chains of events in their note processing you may run into irregular timing. Adding the following key to userconfig.json can help:
 
@@ -169,11 +141,9 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
     },
     ```
 
-- **Hardware Recording** in order to be able to record directly from external hardware benny has to create a few objects in the max patch. These use a tiny bit of CPU. If you have lots of channels of external hardware and are struggling for CPU then adding the following to userconfig.json might make a small difference:
+- **Hardware Recording** in order to be able to record directly from external hardware benny has to create a few objects in the max patch. These use a tiny bit of CPU. If you have lots of channels of external hardware and are struggling for CPU then unticking the ui preferences setting ```json"ENABLE_RECORD_HARDWARE"``` might help a little.
 
-    ```json
-    "ENABLE_RECORD_HARDWARE" : 0,
-    ```
+- If you are on a very high DPI screen you can increase ```json"CLICK_BUFFER_SCALEDOWN"``` from its default of 2, which will slightly reduce the cpu cost of full screen redraws when they happen.
 
 ## Installation Troubleshooting FAQ
 
