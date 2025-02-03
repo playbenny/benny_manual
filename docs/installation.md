@@ -119,7 +119,7 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 
 - Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. The two settings: ```json"MAX_BEZIER_SEGMENTS"``` and ```json"MIN_BEZIER_SEGMENTS"``` control this. The numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it is idle to speed up loading. Defaults are 16 / 8.
 
-- You can also make it only show wires to/from the current block, either by pressing **F10** to toggle, or the unticking setting ```json"WIRES_SHOW_ALL"```.
+- You can also make it only show wires to/from the current block, by unticking the setting ```json"WIRES_SHOW_ALL"```.
 
 ### Settings that affect CPU usage:
 

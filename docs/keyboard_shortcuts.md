@@ -28,7 +28,7 @@
 
 **F8** - files page (save/load/merge/choose song folder)
 
-**F10** - toggle between showing all wires or just those of the selected block (improves performance/reduces GPU load on slow computers)
+**F10** - show the core.input.control.auto fullscreen view (so you can see what your midi controller is mapped to)
 
 **F11** - toggle fullscreen
 
