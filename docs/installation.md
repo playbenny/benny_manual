@@ -125,7 +125,7 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 
 - The maximum number of audio blocks & the number of hardware IO have a big effect on the baseline CPU usage. On mid range hardware the default (64) seems fine, and supports fairly complex song patches. On high end hardware much higher values are possible. On very low end computers you could reduce this to lower the baseline CPU load. Look for ```"MAX_AUDIO_VOICES"``` in the preferences list.
 
-- The scopes and audio to data conversion in benny do use quite a lot of cpu. If you increase ```"AUDIO_TO_DATA_DOWNSAMPLING"``` to eg 4 or 8 it'll save up to 20% cpu (on a low end system running a large patch), at the expense of some accuracy in audio to data conversion and the maximum zoom in available in the sidebar scopes.
+- The scopes and audio to data conversion in benny do use quite a lot of cpu. If you increase ```"AUDIO_TO_DATA_DOWNSAMPLING"``` to eg 4 or 8 it'll save up to 10% cpu (on a low end system running a large patch), at the expense of some accuracy in audio to data conversion and the maximum zoom in available in the sidebar scopes.
 
 - The '**vector size**' of audio processing also has a big effect. This is the size (in samples) of the chunks of audio worked on by each stage of processing in benny. Decreasing it rapidly increases CPU usage. Find this in the **audio settings** dialog (there's a button to open it on the benny launcher window). 
 
