@@ -100,7 +100,7 @@ If you'd like different blocks present at startup you can save over **autoload.j
 
 ## Recommended computer specs
 
-benny is fairly resource intensive. A lot of graphic work is handled by the GPU but if you have an old laptop with only integrated graphics it may struggle. See below for some settings that can lighten the load on the GPU.
+benny is fairly resource intensive, though is now a lot more efficient than the early versions were. There are a few settings you can alter for lower power systems below.
 
 The audio side of benny takes full advantage of multi core CPUs *(afaik this is an advantage over hosting patches in Max for Live, which last time I checked, doesn't).*
 
@@ -109,8 +109,6 @@ We've tested benny on a range of systems and it should be useable on:
 - gaming laptops with discrete graphics from the last decade (eg 7th gen core i7 with nvidia 970)
 - desktop computers with any mid-range gpu from the last decade or more
 
-While the newer Apple computers are very fast for short term loads they are very thin, have very little cooling and are doing the GPU work in the same chip as the CPU work. This means under loads like benny - where there's a continuous mid-level load on both components - they accumulate heat and start thermal throttling. VCV Rack have a similar note in their FAQ. Some of the settings below - reducing graphic detail and audio voice count particularly - will help a lot.
-
 ### Resource usage sidebar
 
 benny shows a CPU meter to the left of the play button. You can press **F12** to show the resource usage sidebar, which shows CPU usage history (yellow, lower better) and framerate history (white dots, higher better).
@@ -118,8 +116,6 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
 ### Settings that affect GPU usage:
 
 - Wire segment count. Low end GPUs struggle with the number of polygons needed to make smooth wires. The two settings: ```"MAX_BEZIER_SEGMENTS"``` and ```"MIN_BEZIER_SEGMENTS"``` control this. The numbers need to be divisible by 4 and MIN must be < MAX - when loading patches it initially draws the min number then upgrades the wires when it is idle to speed up loading. Defaults are 16 / 8.
-
-- You can also make it only show wires to/from the current block, by unticking the setting ```"WIRES_SHOW_ALL"```.
 
 ### Settings that affect CPU usage:
 
