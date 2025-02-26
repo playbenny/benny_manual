@@ -95,7 +95,10 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Classic piano roll sequencer. 
 - Unlike other benny sequencers this one has an internal clock linked to the global clock and doesn't need a clock in. (It does follow timing drift from the kuramoto section of the clock if that's enabled.)
 
-- ctrl-click to create events, ctrl drag to create many events (in a values lane). scroll adjusts velocity or cc levels, drag or arrow keys to move events, ctrl+scroll, drag or arrow keys to adjust lengths. scroll or shift+scroll on the time ruler for zoom/pan. or drag on the ruler, or shift-drag on the background.
+- ctrl-click to create events, ctrl drag to create many events (in a values lane). scroll adjusts velocity or cc levels, drag or arrow keys to move events, ctrl+scroll, drag or arrow keys to adjust lengths. 
+
+- scroll or shift+scroll on the time ruler for zoom/pan. or drag on the ruler, or shift-drag on the background. 
+- alt+drag copies selected events.
 
 - press 3 to put the ruler into triplet divisions of beats when zoomed in.
 
@@ -112,7 +115,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. In the clocked modes a trigger note starts the whole sequence playing by itself on a regular clock. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, C# on triggers one of the ornament types.
 
 ### seq.values
-- A step sequencer for values. One voice = one sequencer row. The 'notes out' uses the value as a note, and the velocity from the incoming trigger.
+- A step sequencer for values. One voice = one sequencer row. The 'notes out' uses the value as a note, and the velocity from the incoming trigger. The 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
 
 ### seq.wonky
 - The step time sliders control the length of each step, the block pro-ratas these lengths to make them fit into the time period you've set below. You can use this as a clock or there are also value sliders so you can use it as a stand alone sequencer - it outputs both the raw slider values and quantised pitches (with vel following incoming clocks).
@@ -123,6 +126,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Unlike many other sequencers in benny, adding more voices adds more playheads traversing the same sequence. 
 
 - You can clock this sequencer from midi or from audio pulses, or you can use an audio signal to set the playhead position, enabling audio-rate scanning of the sequence.
+
+### seq.curved.time
+- This sequencer is about bending time. It sums the internal phasors and the audio input into a timing signal. When this crosses the thresholds (set as even divisions of the 0-1 range) a trigger is emitted. Using interesting timing signals will create interesting rhythms. You can use the division number or counter outputs to address positions of other sequencers (eg seq.values, note.step, note.tracker..) or use the trigger events as a clock to drive other sequencers (eg shape.player, seq.rene)
 
 ### seq.sample.tracker
 - UNFINISHED
@@ -234,9 +240,6 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## source
 
-### source.abb.phase.distortion
-- crunked up phase distortion oscillator alligator
-
 ### source.abl.chip
 - wrapper for the abl.dsp.chip oscillator. only available in max 9.
 
@@ -286,6 +289,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### source.shepherd.osc
 - Shepherd oscillator. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
 
+### source.stick.slip
+- Simple model of an object connected to the user input 'position' by a spring, sticking and slipping chaotically. The texture parameter adds variation to the friction forces as a function of position. This block pairs well with resonators (eg voice.modal, elements). Inspired by Knut Kaulke's work (see https://medias.ircam.fr/x7aa847). The pitch midi input alters the model parameters in order to make the resonant frequency of the mass spring system the note you requested.
+
 ### source.tides
 - A wrapper for Volker Böhm's port of Émilie Gillet's Tides module. The frequency slider is overridden by note inputs.
 
@@ -310,7 +316,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Basic KS string model with selfmodulation and a -x^3 saturator in the feedback loop. ##positive values of 'highpass' are a onepole in the loop, negative values are a 2 pole highpass post-filter. in both cases pitch is relative to the string's current note pitch. ##selfmod is self-fm simulating a tanpura's curved bridge. negative values have a half-wave rectifier on this modulation.
 
 ### voice.modal
-- Simple voice made around a bank of resonators and a selection of model algorithms for setting the frequencies, amplitudes and bandwidths of those resonators. Models come from an article by Nathan Ho.
+- Simple voice made around a bank of resonators and a selection of model algorithms for setting the frequencies, amplitudes and bandwidths of those resonators. Works as a voice you can play with midi input but also as an effect, and can be used to model body resonances for physical modelling patches.
+
+- Models come from an article by Nathan Ho apart from the two measured violin body resonances which come from a paper by Holm & Välimäki (https://www.eurasip.org/Proceedings/Eusipco/Eusipco2000/SESSIONS/FRIPM/SS1/CR1706.PDF) and some measurements taken from a bell in a post online (https://sccode.org/1-5ay/fork).
 
 - -Elements string
 
@@ -328,12 +336,16 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - -Free Plate
 
+- -Good vilin
+
+- -Bad violin
+
 ### voice.multi.sample.player
-- multisample player with slices, offset, timestretch, and a set of loose emulations of melotron mechanics - pitch wobble, motor drag (proportional to the number of notes held down*), and a finite limit set on rewind speed. 
+- multisample player with slices, offset, timestretch, and a set of loose emulations of melotron mechanics - pitch wobble, motor drag (proportional to the number of notes held down), and a finite limit set on rewind speed. 
 
 - this voice expects you to load a wave with an ascending scale, evenly spaced, with the slices set.
 
-- * motor drag only works when an actual connection has been made - it won't work when auto-assign keyboard is played into the block.
+- motor drag only works when an actual connection has been made - it won't work when auto-assign keyboard is played into the block.
 
 ### voice.noise
 - noise source + VCA + ENV. midi to the 'damp' input causes the envelope to close quickly.
@@ -391,16 +403,16 @@ Every block has a help/description text you can view in the sidebar. This automa
 - A wrapper for Volker Böhm's port of just the reverb from Émilie Gillet's Elements module.
 
 ### fx.filter.2pole.env
-- surreal machines' zero delay feedback filter model with an ASR env
+- surreal machines' zero delay feedback filter model with an ASR env built in. there is additionally audio rate cutoff modulation and accurate key follow from the midi input. the outputs are a fade between lowpass and highpass and a separate bandpass.
 
 ### fx.filter.2pole
-- surreal machines' zero delay feedback filter model
+- surreal machines' zero delay feedback filter model. in benny this has audio rate cutoff modulation and accurate key follow from midi input. the outputs are a fade between lowpass and highpass and a separate bandpass.
 
 ### fx.filter.abl.filther
-- wrapper for the abl.dsp.filther filter. second input is frequence modulation. only available in max 9.
+- wrapper for the abl.dsp.filther filter. second input is frequency modulation. only available in max 9.
 
 ### fx.filter.abl.lowpass
-- wrapper for the abl.dsp.dfm filter. second input is frequence modulation. only available in max 9.
+- wrapper for the abl.dsp.dfm filter. second input is frequency modulation. only available in max 9.
 
 ### fx.filter.abl.vowel
 - wrapper for the abl.dsp.vowel filter. second audio input is switchable between cutoff and formant modulation. only available in max 9.
@@ -604,12 +616,4 @@ Every block has a help/description text you can view in the sidebar. This automa
 - mixer channel. borrows the mix concept from worrng modules, uses airwindows console7cascade for nice summing and drive. MUST BE ALL ROUTED FROM THIS BLOCK, AT UNITY GAIN, INTO A utility.mixer.buss BLOCK.
 
 - IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
-
-## zx
-
-## test
-
-## tg
-
-## fb
 
