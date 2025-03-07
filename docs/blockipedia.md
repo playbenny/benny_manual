@@ -216,6 +216,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### midi.switch
 - Has multiple ins and outs, lets you select an input and route it to an output, (accomplishing the functions of the max gate and switch objects). Also lets you select i/o via midi and cycle through io via midi
 
+### midi.tilt+.scan
+- Generates modulation for multiple voices: wire each voice of this block to a voice on a block you want to modulate, in order, and this will let you tilt (optionally exponentially) the values and/or 'scan' a resizeable bump through the voices' values. 
+
+- you can also use this block attached to eg a harmonic oscillators partials sliders to replicate the 'verbos harmonic oscillator' eurorack module, or to the fixed filter bank block.
+
 ### midi.utility.buttons
 - 3 buttons on a panel, 3 separate outputs. 
 
@@ -432,6 +437,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - http://www.acoustics.hut.fi/publications/papers/dafx13-lpg/
 
+### fx.freeze
+- freeze time! multiple ways. stereo in stereo out.
+
 ### fx.freqshift
 - max msp's freqshift object. for both positive and negative shifts mix both outputs. the audio rate input is fm of the freq set by the slider
 
@@ -494,7 +502,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - Flexible buffer record/playback device inspired by monome norns' softcut: record and play into and out of the buffer can occur at any rate you like. Multiple voices can access the same or different wave buffers. All jumps and loops are crossfaded smoothly. The buffer it uses is tagged with timestamps and metadata and available (as one of the waves on the waves page) for other blocks to play or write into. You can save this wave from there if you fill the buffer with something you like. Does an excellent impression of how BBD delays repitch, but is capable of far more - loopers, buffer-fx, repitchers, complex delays, sample-mangling, live resampling, etc
 
 ### fx.warps
-- A wrapper for Volker Böhm's port of Émilie Gillet's Warps module, which lets you smoothly fade between several different algorithms for combining two signals.
+- A wrapper for Volker Böhm's port of Émilie Gillet's Warps module, which lets you smoothly fade between several different algorithms for combining two signals. 
+
+- In 'easter' mode it acts as a frequency shifter, with algo controlling freq,timbre xfading upper/lower sidebands,level 1 controlling feedback and level 2 xfading dry and wet.
 
 ### fx.wavefold
 - wavefolder modelled roughly after the doepfer one
@@ -601,19 +611,31 @@ Every block has a help/description text you can view in the sidebar. This automa
 ## mix
 
 ### mix.bus
-- every mix.channel/stereo.channel etc block has to be routed, at unity gain, to one of these, to make the magic work.
+- provides a UI for all connected mixer channel blocks. optionally you can put the mixer bus ui in the bottom panel area. 
 
-- IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
+- every mix.channel/stereo.channel etc block has to be routed, at unity gain, to one of these, to make the airwindows non-linear summing magic work.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without it the mixer defaults to normal digital summing.
 
 ### mix.channel
-- mixer channel. borrows the mix concept from worrng modules, uses airwindows console7 for nice summing and drive. 
+- mixer channel. 
+
+- borrows the mix concept from worrng modules - each voicing has an eq shape and width setting, you can vary the amount and sweep the frequencies. 
+
+- uses airwindows console7 for nice summing and drive. 
 
 - MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
 
-- IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
 ### mix.stereo.channel
-- mixer channel. borrows the mix concept from worrng modules, uses airwindows console7cascade for nice summing and drive. MUST BE ALL ROUTED FROM THIS BLOCK, AT UNITY GAIN, INTO A utility.mixer.buss BLOCK.
+- stereo mixer channel. 
 
-- IMPORTANT this block will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed.
+- borrows the mix concept from worrng modules - each voicing has an eq shape and width setting, you can vary the amount and sweep the frequencies. 
+
+- uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
