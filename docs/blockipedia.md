@@ -610,17 +610,25 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## mix
 
-### mix.bus
+## mixer
+
+### mixer.bus
 - provides a UI for all connected mixer channel blocks. optionally you can put the mixer bus ui in the bottom panel area. 
 
 - every mix.channel/stereo.channel etc block has to be routed, at unity gain, to one of these, to make the airwindows non-linear summing magic work.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without it the mixer defaults to normal digital summing.
 
-### mix.channel
-- mixer channel. 
+### mixer.mono.basic
+- mono mixer channel. 
 
-- borrows the mix concept from worrng modules - each voicing has an eq shape and width setting, you can vary the amount and sweep the frequencies. 
+- the *voicing* slider sets the character of each channel - it controls eq shape and stereo width together.
+
+- 'clean' is just sub-sonic / ultrasonic filters, the kick and sub curves are designed to work together, and the other voicings progressively get brighter and wider as you go up. the amount slider and sweep slider adjust the depth and frequencies of whichever voicing you've picked.
+
+- this concept is borrowed from a module by worrng modules.
+
+- the mono version of this block has a very simple sidechain compressor.
 
 - uses airwindows console7 for nice summing and drive. 
 
@@ -628,14 +636,60 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
-### mix.stereo.channel
+### mixer.mono.comp
+- mono mixer channel. 
+
+- based around luke abbott's 'abb.boff' multiband channel compressor with tilt control. 
+
+- uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
+### mixer.mono.tape
+- mono mixer channel. 
+
+- runs a wide peak eq with adaptive q into airwindows' totape6 and then partially cancels out that eq afterwards, leaving a squashy but dynamic signal with performable control over emphasis. with amount positive this emphasis is tapey, with amount negative the rest of the sound is tapey but the emphasis is clean. there is a high pass filter at the end of the channel.
+
+- the mono version of this block has a very simple sidechain compressor.
+
+- uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+
+- IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
+### mixer.stereo.basic
 - stereo mixer channel. 
 
-- borrows the mix concept from worrng modules - each voicing has an eq shape and width setting, you can vary the amount and sweep the frequencies. 
+- use the *voicing* slider to pick an eq shape for each channel, amound and sweep then adjust it. voicings also affect the stereo width of channels. this concept is borrowed from a module by worrng modules.
 
 - uses airwindows console7 for nice summing and drive. 
 
 - MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
+### mixer.stereo.comp
+- stereo mixer channel. 
+
+- based around a mid-side modification of luke abbott's 'abb.boff' multiband channel compressor with tilt control. 
+
+- uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
+### mixer.stereo.tape
+- stereo mixer channel. 
+
+- runs a wide peak eq with adaptive q into airwindows' totape6 (configured for mid side) and then partially cancels out that eq afterwards, leaving a squashy but dynamic signal with performable control over emphasis. with amount positive this emphasis is tapey, with amount negative the rest of the sound is tapey but the emphasis is clean. there is a high pass filter at the end of the channel.
+
+- uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+
+- IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
