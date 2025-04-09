@@ -5,7 +5,17 @@ Every block has a help/description text you can view in the sidebar. This automa
 ## core
 
 ### core.clock
-- Control tempo, swing, and microtiming settings for multiple free but synchronised clock sources. 1 voice = 1 clock. when you merge in another song that contains a clock, it won't adjust the global tempo until you unmute it. it shares timing sync ids with the first clock - ie voice one of every clock block is the same 'virtual player'. Click offset is measured in multiples of vector size, so it should stay consistent if you change vs in future.
+- Control tempo, swing, and microtiming settings for multiple free but synchronised clock sources. 1 voice = 1 clock. The clocks are synchronised using a discrete time kuramoto algorithm which mirrors many naturally occuring synchronisation and alignment processes. 
+
+- When you merge-load in another song that contains a clock, it won't adjust the global tempo until you unmute the new clock. 
+
+- Headphone click offset is measured in multiples of vector size, so it should stay consistent if you change vs in future. 
+
+- There's a hidden parameter that's available for midi mapping called **tempo bend**, if you map eg a pitchbend controller to this you can do dj-style tempo bends.
+
+- If you want to synchronise external gear via midi clock out or a gate clock over audio you can configure these in the hardware manager.
+
+- To enable ableton link support, you need to install the ableton link package for max. To do this, open a new max window, go file / package manager and search for ableton link. Install the package and restart benny. Then click on the midi indicators right of the play button. In the sidebar page that appears there's an option to enable link.
 
 ### core.input.control.auto
 - Midi controller input with optional automapping.
@@ -52,7 +62,15 @@ Every block has a help/description text you can view in the sidebar. This automa
 - recall states via midi message. note number = state number. blend input does a xfade from current state to the selected one, based on the velocity of the incoming note.
 
 ### core.tuning
-- global tuning controller, affects all blocks that have a midi-pitch function (eg oscillators). the tilt and nonlin controls simulate inaccurate tuning in analogue synths and eg pianos - with tilt stretching the tuning across the whole range, which is common in pianos badly tuned by ear, and nonlin introducing slight brownian deviations as you'd see from slightly nonlinear midi-cv conversion in an analogue synth. offset lets you tune to the nearest churchbells or the hum of the mains in your town or 432Hz if you believe in that sort of thing. the scale and root sliders let you select between the common western 12TET tuning, which only sounds good for certain types of melody and harmony, with 3rds sounding particularly rough, and a few other options - just intonation and a couple of scales used in iranian music, rast and segah. all these non-12TET scales are based around a chosen root key, and they generally share the property of some intervals sounding really good and some sounding extra inharmonious. still TODO: more cultural and technical context for each scale, more scales and import of scale files. 
+- global tuning controller. 
+
+- affects all of benny's source and voice blocks, and can be applied to any vst or amxd (max for live device) instrument that supports pitchbend. 
+
+- you can tune each note pitch individually, enabling various tunings of 12 tones or less. internally benny's tuning system would support everything a scala file contains, but scala import isn't yet implemented. 
+
+- the tilt and nonlin controls simulate inaccurate tuning in analogue synths and eg pianos - with tilt stretching the tuning across the whole range, which is common in pianos badly tuned by ear, and nonlin introducing slight brownian deviations as you'd see from slightly nonlinear midi-cv conversion in an analogue synth. this is calculated per-voice, so increasing it increases tuning spread of polysynths. these detunings are in addition to any detuning controls in benny blocks. offset lets you tune to the nearest churchbells or the hum of the mains in your town or 432Hz if you believe in that sort of thing.
+
+- if you create presets for more scales please do submit them (eg by github discussion forum post)
 
 ## seq
 
@@ -112,7 +130,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - a circle on a cartesian plane step sequencer, obviously inspired by the module of the same name
 
 ### seq.shape.player
-- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. In the clocked modes a trigger note starts the whole sequence playing by itself on a regular clock. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, C# on triggers one of the ornament types.
+- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, notes from C# upwards trigger one of the ornament types.
 
 ### seq.values
 - A step sequencer for values. One voice = one sequencer row. The 'notes out' uses the value as a note, and the velocity from the incoming trigger. The 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
@@ -123,7 +141,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### seq.analogue
 - A simple 'analogue-style' step sequencer. Each step has note, vel, and on/off. 
 
-- Unlike many other sequencers in benny, adding more voices adds more playheads traversing the same sequence. 
+- Adding more voices adds more playheads traversing the same sequence. 
 
 - You can clock this sequencer from midi or from audio pulses, or you can use an audio signal to set the playhead position, enabling audio-rate scanning of the sequence.
 
@@ -139,13 +157,15 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## midi
 
-### midi.autodamp
-- Implements the korg mono/poly's autodamp feature. Note offs are stored up and not sent, even when all notes are released. Only when a new note starts after a silence are they all sent. Works nicely for paraphonic pads if you play the voices through this and have a separate envelope for a main vca like a mono/poly.
-
 ### midi.calculus
 - Differentials and integrals of midi value streams.
 
 - This block can output a value representing the speed and direction of movement of a value, or output a value only when it changes, or sum a value over time.
+
+### midi.chord.hold
+- Implements the korg mono/poly's *autodamp* feature. 
+
+- Note offs are stored up and not sent, even when all notes are released. Only when a new note starts after a silence are they all sent. Works nicely for paraphonic pads if you play the voices through this and have a separate envelope for a main vca like a mono/poly.
 
 ### midi.curve.map.1d
 - Maps input values to output values defined by the curve you draw with the sliders. Useful for control mappings. You can choose how many sliders there are if you want a few neat steps.
@@ -157,6 +177,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### midi.ducker
 - Sidechain midi ducker by Luke Abbott
+
+### midi.ext.clock
+- Receives midi clock from the input you've set up in hardware manager, and divides it to whatever rate you'd like. If your incoming clock is 24ppqn the fastest division is 32nd note triplet. 
+
+- Can optionally also attempt to synchronise the global transport.
 
 ### midi.fidget
 - ADHD for a controller. refuses to sit on one value for too long, once it gets bored takes a brownian hop to a nearby value. for example, put it between a midi controller and the parameter you want to control.
@@ -191,7 +216,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - gate (or split) notes based on pitch
 
 ### midi.rhythmes.alpes
-- Switches between subdivisions of a clock, inspired by the mechanical proto-drummachine used by the wonderful french group 'Catherine Ribiero & Alpes'.
+- Fades / switches between subdivisions of a clock, inspired by the mechanical proto-drummachine used by the wonderful french group 'Catherine Ribiero & Alpes'.
+
+- The controls let you choose which divisions are emphasised and whether it's just a single division or a combination of several.
 
 ### midi.scale.quantise
 - Quantises notes to the scales defined in the core.scales.shapes module. 
@@ -261,6 +288,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - I've adapted it to work with benny's global tuning system. I've also added velocity mod controls, if the vel->vca != 0 it introduces a tiny 3ms delay on notes and triggers to avoid clicks. The scale quantise in the module isn't implemented as it wouldn't work with benny's global tuning, and we have scale quantisers already in benny.
 
+### source.chaos.osc
+- chaos oscillator. several different models to pick from. 
+
+- the 'initial state' settings strongly affect the behaviour of some models. if a model blows up try initial values closer to 0 and try rate either near 1 or near 0, they all behave slightly differently. a midi reset sets the model back to the inital state. behaviour also scales with oversampling, and if you want to use this block to generate musical pitches you'll need to set oversampling to 16x or more on the block settings page.
+
+- the algorithms here came from an open source m4l device a friend sent me a long time ago and i've lost the attribution, let me know if you recognise it.
+
 ### source.dual.osc
 - A pair of basic oscillators with diverse cross modulation possibilities. 
 
@@ -318,7 +352,16 @@ Every block has a help/description text you can view in the sidebar. This automa
 - 8 drawbar harmonics + env + vca. uses non-linear summing borrowed from airwindows console, and a very gentle sine shaper on the output post env/vca, which all serves to give it a nice glued character that sits in a mix well, less a collection of digital sines than a single voice.
 
 ### voice.ks
-- Basic KS string model with selfmodulation and a -x^3 saturator in the feedback loop. ##positive values of 'highpass' are a onepole in the loop, negative values are a 2 pole highpass post-filter. in both cases pitch is relative to the string's current note pitch. ##selfmod is self-fm simulating a tanpura's curved bridge. negative values have a half-wave rectifier on this modulation.
+- Basic KS string model with selfmodulation and a -x^3 saturator in the feedback loop. 
+
+- positive values of 'highpass' are a onepole in the loop, negative values are a 2 pole highpass post-filter. in both cases pitch is relative to the string's current note pitch. 
+
+- selfmod is self-fm simulating a tanpura's curved bridge. negative values have a half-wave rectifier on this modulation.
+
+### voice.ks6
+- KS instrument with 6 strings in one voice. You can send pitches to them all individually, or each voice has a built in round-robin allocator around its first 4 strings. The strings all feed energy between themselves, giving the instrument a slightly more nuanced nature than the standard voice.KS, though it uses a little more cpu and lacks the opportunities for per-voice modulation. 
+
+- Unusually for benny, because the each voice of this contains more voices of its own, to make the 'notes' input work with polyphony you'll need to connect your source of notes to the voice not the block.
 
 ### voice.modal
 - Simple voice made around a bank of resonators and a selection of model algorithms for setting the frequencies, amplitudes and bandwidths of those resonators. Works as a voice you can play with midi input but also as an effect, and can be used to model body resonances for physical modelling patches.
@@ -374,6 +417,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### voice.shepherd
 - Shepherd oscillator with env and vca. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
+
+### voice.wave.guide
+- simple wave guide model with 2 filters in the feedback path. 
+
+- the sustained noise exciter type is useful for flutey tones. with a modulation source like per-key aftertouch mapped to the filter frequencies this model does nice performable overblown wind harmonics.
 
 ## fx
 
@@ -544,6 +592,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - *at the moment learn mode works but the save/recall of learned drum templates isn't implemented.
 
+### utility.comparator
+- Comparator - tells you if one input is bigger than the other. Can also send out midi events when this changes, in one direction or other. The 'distance' output is high when the inputs are close and low when they're not, and makes a rounder sound when processing audio waveforms.
+
 ### utility.cv.scale.quantise
 - Quantises notes to the scales defined in the core.scales.shapes module. 
 
@@ -615,7 +666,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### mixer.bus
 - provides a UI for all connected mixer channel blocks. optionally you can put the mixer bus ui in the bottom panel area. 
 
-- every mix.channel/stereo.channel etc block has to be routed, at unity gain, to one of these, to make the airwindows non-linear summing magic work.
+- every mixer.mono/mixer.stereo etc block has to be routed, at unity gain, to one of these, to make the airwindows non-linear summing magic work.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without it the mixer defaults to normal digital summing.
 
@@ -632,7 +683,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
@@ -643,7 +694,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
@@ -656,7 +707,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
@@ -667,7 +718,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
@@ -678,7 +729,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
@@ -689,7 +740,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - uses airwindows console7 for nice summing and drive. 
 
-- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mix.bus BLOCK.
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
