@@ -130,10 +130,18 @@ Every block has a help/description text you can view in the sidebar. This automa
 - a circle on a cartesian plane step sequencer, obviously inspired by the module of the same name
 
 ### seq.shape.player
-- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. The ornaments sliders control the chance of various types of ornamentation being applied to the pattern. On the second midi input C = reset, notes from C# upwards trigger one of the ornament types.
+- The core.scales.shapes block stores the 'shape' of a pattern played into it as well as the scale. This block plays back these shapes. 
+
+- You can transpose them in-scale, rotate in time or apply several other types of ornamentation and variation using this block. You can also play a shape using a different scale to the one it was entered in.
+
+- The ornaments sliders control how often the various types of ornamentation occur. 
+
+- On the second midi input C = reset, notes from C# upwards trigger one of the ornament types directly.
 
 ### seq.values
-- A step sequencer for values. One voice = one sequencer row. The 'notes out' uses the value as a note, and the velocity from the incoming trigger. The 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
+- a simple step sequencer for one dimensional values. the 'notes out' uses the value as a note, and the velocity from the incoming trigger. the 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
+
+- add voices to the block to add more sequencer rows.
 
 ### seq.wonky
 - The step time sliders control the length of each step, the block pro-ratas these lengths to make them fit into the time period you've set below. You can use this as a clock or there are also value sliders so you can use it as a stand alone sequencer - it outputs both the raw slider values and quantised pitches (with vel following incoming clocks).
@@ -279,9 +287,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - wrapper for the abl.dsp.crackle oscillator. only available in max 9.
 
 ### source.basic.osc
-- Basic single oscillator. Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in *LFO* and *audio* ranges. The 'initial pitch' slider sets the starting pitch, incoming midi overrides this but doesn't reset the slider. 
+- single oscillator. the shape control fades from sine through triangle saw rectangle square triangle and back to sine. accepts MIDI and CV, works in LFO and audio ranges. the 'initial pitch' slider sets the starting pitch, incoming midi overrides this but doesn't reset the slider. 
 
-- The rectangle portion of this oscillator uses 'EPTR' code from Yofiel.com. 
+- the rectangle portion of this oscillator uses EPTR code from Yofiel.com. the saw/tri part is made by integrating this. for notes above C7 turn on oversampling in the block settings for a clearer tone.
 
 ### source.braids
 - A wrapper for Volker Böhm's port of Émilie Gillet's Braids module. 48 different oscillator models! 
@@ -340,7 +348,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 ## voice
 
 ### voice.basic
-- Basic single oscillator through a VCA driven by an ASR envelope. Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
+- a single oscillator with an ASR envelope on its amplitude. the shape control fades from sine through triangle saw rectangle square triangle and back to sine. accepts MIDI and CV, works in LFO and audio ranges and over fairly long timescales. 
+
+- the envelope can loop, including decay bouncing ball type loops, and features 'accumulation' - when retriggered before the envelope has decayed to silence the remaining level is added to the new target level, so fast sections can be set to build up by themselves, or down. 
+
+- if you're playing near the top of the keyboard range (above C7) turn on oversampling in settings for a clearer tone, particularly on the saw.  
+
+- the rectangle portion of this oscillator uses EPTR code from yofiel.com, the saw/tri is made by integrating this. sine was invented by 2nd century BC egyptian people.
 
 ### voice.dual
 - A pair of basic oscillators, with 2 envelopes and vcas and a load of diverse cross modulation possibilities. Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
@@ -366,7 +380,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### voice.modal
 - Simple voice made around a bank of resonators and a selection of model algorithms for setting the frequencies, amplitudes and bandwidths of those resonators. Works as a voice you can play with midi input but also as an effect, and can be used to model body resonances for physical modelling patches.
 
-- Models come from an article by Nathan Ho apart from the two measured violin body resonances which come from a paper by Holm & Välimäki (https://www.eurasip.org/Proceedings/Eusipco/Eusipco2000/SESSIONS/FRIPM/SS1/CR1706.PDF) and some measurements taken from a bell in a post online (https://sccode.org/1-5ay/fork).
+- Models come from an article by Nathan Ho apart from the two measured violin body resonances which come from a paper by Holm & Välimäki and some measurements taken from a bell in a post online, links in the patcher.
 
 - -Elements string
 
@@ -384,9 +398,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - -Free Plate
 
-- -Good vilin
+- -Good violin
 
 - -Bad violin
+
+- -Measured bell
 
 ### voice.multi.sample.player
 - multisample player with slices, offset, timestretch, and a set of loose emulations of melotron mechanics - pitch wobble, motor drag (proportional to the number of notes held down), and a finite limit set on rewind speed. 
@@ -396,13 +412,15 @@ Every block has a help/description text you can view in the sidebar. This automa
 - motor drag only works when an actual connection has been made - it won't work when auto-assign keyboard is played into the block.
 
 ### voice.noise
-- noise source + VCA + ENV. midi to the 'damp' input causes the envelope to close quickly.
+- noise source that can fade between different colours and types of noise, with a looping, accumulating ASR envelope controlling amplitude. midi in to the 'damp' input causes the envelope to close quickly.
 
 ### voice.organ
 - 9 drawbar harmonics with a rough model of how the key contacts of a hammond tonewheel organ worked. the notes input blends between pressed and struck profiles based on velocity, with very quiet notes corresponding to partial keypresses that don't engage the switch for every harmonic. inspired by the paper 'Dynamic temporal behaviour of the keyboard action on the Hammond organ and its perceptual significance' by Giulio Moro, Andrew P. McPherson and Mark B. Sandler in JASA 142/5 2017.
 
 ### voice.pitch.env
-- like voice.basic - a single oscillator + VCA + ENV but with a 2nd ENV routed to pitch. 
+- a single oscillator with pitch envelope and amplitude envelope. ideal as a building block for simple electronic drum sounds, but useful for all sorts of things. also works at lfo rates and over long timescales. 
+
+- both envelopes feature 'accumulation' - when retriggered before the envelope has decayed to silence the remaining level is added to the new target level, so rolls can be set to build up by themselves (or down - when set negative it makes the envelope obey jaki leibzeit's rule of '2nd hit quieter'). the envelopes also have a loop control, when set <1 each repeat of the loop is a little lower, leading to a classic bouncing ball effect. 
 
 ### voice.plaits
 - A wrapper for Volker Böhm's port of Émilie Gillet's Plaits module.
