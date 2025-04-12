@@ -2,7 +2,7 @@
 
     *At the moment, benny follows a continuous update schedule. You can get the latest version by downloading it and unzipping it over the top of your current benny install. Or it's slightly more convenient to use a 'git' client (github desktop is free and fine for this). First 'clone' the benny repository and then just 'fetch' every time you want an update.*
 
-- Install [Max](https://cycling74.com/downloads). You don't need to buy Max in order to use benny, but if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
+- Install [Max](https://cycling74.com/downloads). You don't need to buy Max in order to use benny, or even start the free trial - benny will work 100% with max in unregistered mode. But if you want to build your own blocks you will need to buy or subscribe. (Please do not bother cycling74 support with problems with benny! We have a [forum](https://github.com/playbenny/benny/discussions) for that.)
 
 - If you have ableton and max for live installed already, be sure to use the latest version of max 8 to run benny. It will crash if you use an out of date version, such as the one ableton may have installed for max for live.
 
