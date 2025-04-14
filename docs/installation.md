@@ -98,6 +98,20 @@ If the **glow** effect is too much for your taste it can be altered here.
 If you'd like different blocks present at startup you can save over **autoload.json** in the templates folder.
 
 
+## Ableton Link
+
+Benny supports ableton link, but you need to install the ableton link package into max yourself. Open max, and in a max window go file / package manager and search for ableton link. click install, then close max and open benny. You'll find a button to enable link at the bottom of the clock block's controls, and also in the midi indicators sidebar view (reached by clicking the midi indicators, which are the dots just right of the play button).
+
+When link is enabled the play button turns green.
+
+## MIDI clock sync
+
+Currently benny can send midi clock (and start/stop) messages out to any devices you configure in the hardware manager. When you stop benny it doesn't stop the external clocks, and when you press play again benny waits for the start of the next bar before joining in in time.
+
+There's an 'external midi clock' block that can receive midi clock from hardware and pipe divisions of it into benny, but this does not (yet) affect the main transport.
+
+When external sync is enabled the play button turns an orange/coral shade.
+
 ## Recommended computer specs
 
 benny is fairly resource intensive, though is now a lot more efficient than the early versions were. There are a few settings you can alter for lower power systems below.
