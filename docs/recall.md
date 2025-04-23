@@ -1,5 +1,7 @@
 The recall page of benny lets you trigger states and choose which patterns sequencer blocks are playing.
 
+![recall page picture](assets/screenshots/recall_page.png)
+
 On the left states (if there are any) are shown. You can trigger the whole state from the left hand column or just trigger it for an individual block.
 
 On the right all sequencer blocks that support patterns are shown, along with all the saved patterns. 
