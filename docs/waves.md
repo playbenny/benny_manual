@@ -1,6 +1,6 @@
 benny keeps all the audio files you use in a centralised repository that all blocks can access. In the waves page you can load in audio files and tag them with timing information.
 
-*This page of benny is one of the less finished areas. The UI is a bit awkward still and many planned features are not yet implemented.*
+*This page of benny is one of the less finished areas. Many planned features are not yet implemented.*
 
 ![waves page picture](assets/screenshots/waves_page_1.png)
 
@@ -8,7 +8,9 @@ benny keeps all the audio files you use in a centralised repository that all blo
 
 Click an empty slot and a file chooser dialog will pop up to let you choose a wave. It will load up and a pictoral representation of it will appear.
 
-You can use the scroll wheel to zoom in on the wave.
+You can also drag and drop audio files or folders onto the benny logo in the launcher window.
+
+Drag to zoom and pan around the wave.
 
 ## Slices
 
