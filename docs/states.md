@@ -36,7 +36,7 @@ You can crossfade from current parameter values to the ones stored in a state to
 
 ![state xfade](assets/screenshots/state_fade.png)
 
-Click and hold on one of the global state buttons in the bottom left corner of the window. After a brief pause a horizontal slider appears. Drag to the right to interpolate from the current settings into the stored state.
+Click and hold, or drag to the right, on one of the global state buttons in the bottom left corner of the window. A horizontal slider will appear. Drag to the right to interpolate from the current settings into the stored state.
 
 ## core.states block
 
