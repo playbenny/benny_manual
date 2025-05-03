@@ -176,3 +176,7 @@ benny shows a CPU meter to the left of the play button. You can press **F12** to
     ![quarantine box](assets/screenshots/macos-quarantine.png)
 
     Just click OK as many times as it takes for these to go away, there's nothing to worry about here. Note this only happens if you download and unzip, if you use git (or github desktop or etc) to get benny and keep it up to date the files aren't flagged for quarantine.
+
+- (macOS) *benny crashes on first run, or does not show the blocks menu on first run*
+
+    In rare cases this seems to happen? the solution is to force close max and try a second time.
