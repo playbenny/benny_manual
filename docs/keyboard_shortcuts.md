@@ -18,7 +18,7 @@
 
 **F3** - waves view
 
-**F4** - open the selected block's custom edit page on the main part of the screen. Press again to hide the sidebar and enlarge the edit page.
+**F4** - recall page.
 
 **F6** - sidebar block settings page
 
@@ -28,11 +28,11 @@
 
 **F8** - files page (save/load/merge/choose song folder)
 
-**F10** - show the core.input.control.auto fullscreen view (so you can see what your midi controller is mapped to)
-
 **F11** - toggle fullscreen
 
-**F12** - show resource usage page
+**ctrl-F12** - resource usage page
+
+**F12** - show the core.input.control.auto fullscreen view (so you can see what your midi controller is mapped to)
 
 
 
@@ -112,6 +112,8 @@
 **PGUP** / **PGDN** - zoom in or out
 
 **ctrl-T** - in fullscreen mode benny shows a clock in the top right corner. This key switches to showing a set timer (that starts the first time you press play). **ctrl-alt-T** resets this timer.
+
+**[** / **]** - for control.auto when there are more parameters than there are knobs/sliders on your controller these keys cycle the mapping offset.
 
 **?** - show help
 
