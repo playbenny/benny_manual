@@ -117,7 +117,7 @@
 
 **[** / **]** - for control.auto when there are more parameters than there are knobs/sliders on your controller these keys cycle the mapping offset.
 
-**?** - show help
+**?** - show the help for the selected block in the sidebar
 
 **/** - to start searching amongst blocks in the current song
 
