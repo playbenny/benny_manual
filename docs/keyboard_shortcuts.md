@@ -63,7 +63,7 @@
 **alt-shift-scroll** - make space: push (or pull) all blocks away from (or towards) the mouse cursor
 
 
-**home** - center view
+**home** or **ctrl-0** - center view
 
 **-** or **+** - change the polyphony of the selected block
 
@@ -101,7 +101,7 @@
 
 **alt-up** / **alt-down** - if you have a wire selected these will take you to the block at the start or end of the wire.
 
-**insert** - if you have a wire selected, insert a block into the connection
+**insert** or **ctrl-i** - if you have a wire selected, insert a block into the connection
 
 **enter** - if you have a wire selected, collapse source / destination input and output menus.
 
