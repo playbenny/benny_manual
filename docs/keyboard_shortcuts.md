@@ -63,7 +63,7 @@
 **alt-shift-scroll** - make space: push (or pull) all blocks away from (or towards) the mouse cursor
 
 
-**home** or **ctrl-0** - center view
+**home** or **cmd-0** - center view
 
 **-** or **+** - change the polyphony of the selected block
 
@@ -144,3 +144,11 @@
 **ctrl-hover** your mouse over sliders to select an individual voice. **scroll+alt+shift** to tilt individual voice values around that voice.
 
 **alt click** - to return a slider to its default value (or to the value saved in your songfile).
+
+
+
+
+
+##PERSONALISING
+
+The shortcuts are all stored in keymap.json. If you press a key combination that isn't assigned then benny prints 'keycode 994' or similar to the max console. This number is what you need to swap into the relevent entry in this file if you want to change a keyboard mapping.
