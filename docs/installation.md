@@ -17,6 +17,8 @@
 
     - HISStools - to enable the fx.convolve block
 
+    - monome - if you want to use monome devices with benny
+
     - you *dont* need to install the abl devices package, the actual effects are already in a max 9 installation.
 
 - Open 'benny.maxproj'. The [benny launcher](launcher.md) window will appear.
