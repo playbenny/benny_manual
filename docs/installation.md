@@ -9,6 +9,15 @@
 - A few blocks require Airwindows console 7 VSTs. They're included in the download, look in the VST dependencies subfolder and install the ones you need for your system. 
 
     *Windows users should install VSTs to C:\Program Files\VSTPlugins otherwise max/msp may not see them.*
+    *apple users are suggested to copy the files to /Library/Audio/Plug-Ins/VST*
+
+- (optional) extras to install via the max package manager (file/package manager):
+
+    - ableton link - to enable ableton link support in benny for syncing to other devices
+
+    - HISStools - to enable the fx.convolve block
+
+    - you *dont* need to install the abl devices package, the actual effects are already in a max 9 installation.
 
 - Open 'benny.maxproj'. The [benny launcher](launcher.md) window will appear.
 
