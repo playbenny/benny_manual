@@ -6,7 +6,7 @@
 
 **space** - play button
 
-**ctrl-space** - load next song
+**ctrl-space** / **opt-space** - load next song
 
 **ctrl-s** - save
 
@@ -41,6 +41,18 @@
 
 
 
+##SIDEBAR
+
+**scroll** / **drag** - to adjust sliders, zoom scopes etc. **+shift** for fine, **+alt+shift** for extra fine.
+
+**ctrl-hover** your mouse over sliders to select an individual voice. **scroll+alt+shift** to tilt individual voice values around that voice.
+
+**alt click** - to return a slider to its default value (or to the value saved in your songfile).
+
+**012345679** while hovering over a slider you can enter numbers, hit enter to store
+
+
+
 
 ##BLOCKS PAGE
 
@@ -56,7 +68,7 @@
 
 **drag** - to connect blocks
 
-**scroll** - to zoom
+**scroll** / **ctrl-drag** - to zoom
 
 **ctrl-scroll** - over a wire, adjust connection level
 
@@ -131,19 +143,6 @@
 
 **ctrl-m** , **tab** ,**-**, **+** work as on the blocks page.
 
-
-
-
-
-
-
-##SIDEBAR
-
-**scroll** / **drag** - to adjust sliders, zoom scopes etc. **+shift** for fine, **+alt+shift** for extra fine.
-
-**ctrl-hover** your mouse over sliders to select an individual voice. **scroll+alt+shift** to tilt individual voice values around that voice.
-
-**alt click** - to return a slider to its default value (or to the value saved in your songfile).
 
 
 
