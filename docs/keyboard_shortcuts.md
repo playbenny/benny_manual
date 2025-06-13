@@ -66,7 +66,9 @@
 
 **alt-click** - to bypass blocks
 
-**drag** - to connect blocks
+**drag** - to move blocks, or drag a block over another one to connect them
+
+**ctrl-shift-drag** - insert a block into a wire
 
 **scroll** / **ctrl-drag** - to zoom
 
