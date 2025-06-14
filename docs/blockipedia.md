@@ -22,9 +22,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - The values from your midi controller's knobs and sliders are output by this block so you can use them to modulate parameters etc. 
 
+- You can save a starting position for all, or in 'edit mode' you can save those individually. Edit mode also lets you assign colours to knobs (for controllers like the midi fighter twister / launch control xl 3 that have rgb leds) and also for controllers that have encoders or motorised pots you can set up 'end zone forces' - areas at either end of the range that either repel or attract the fader position. This is useful eg for delay feedback controls - you can set it to turn itself down if you forget to (!).
+
+- For standard potentiometers benny has a (unique?) smart soft pickup system, where fader curves are recalibrated around the current position and the actual value, so as well as avoiding jumps there are no dead zones (like normal soft pickup faders) - increasing the knob always increases the value & the converse.
+
 - If auto assign is turned on then when a block is selected the controller will auto assign to this block's parameters. When you deselect the block the midi controller goes back to it's normal mode - outputting values from this block. 
 
-- You can only have one of these blocks per song, for other midi controllers use the core.input.control.basic block.
+- You can only have one of these core.input.control.auto blocks per song, for other midi controllers use the core.input.control.basic block.
 
 ### core.input.control.basic
 - Midi controller input.
@@ -41,19 +45,19 @@ Every block has a help/description text you can view in the sidebar. This automa
 - The block records the last 64 bars of what you've played, and by switching to loop (or overdub) modes - default shortcut F9 - you can select a section of that history. once you're happy with your selection range pressing the spawn button (default shortcut ctrl-F9) will spawn 1 or more seq.piano.roll objects (depending on what you have connected)
 
 ### core.scales.shapes
-- Scales and shapes storage. You can make scales (dynamically if you want!) using midi input in two ways: 
+- Scales and shapes storage and editting. 
+
+- Benny has 8 scale slots, you can access these by adding more voices to this block. (1 voice = 1 scale). You can use these for quantisation - eg in midi.scale.quantise or fx.retune etc - but this block can also store patterns in the form of the scale and a list ('shape') of which notes occurred in which order. The seq.shape.player can play back and mutate these patterns.
+
+- You can enter scales with the mouse by clicking the keyboard graphics. 
+
+- You can make scales (dynamically if you want!) using midi (or QWERTY!) input in two ways: 
 
 - For midi into the 'held' input the currently held notes are stored along with the order they were added. 
 
-- A phrase played into the 'pattern' input is turned into a list of notes and the order they were received. it decides you've finished a couple of hundred ms after the last note off, so you can input repeated notes by either holding another previous note while you enter them, or by leaving a very short gap between them. 
+- A phrase played into the 'pattern' input is turned into a list of notes and the order they were received. it decides you've finished a couple of hundred ms after the last note off, so you can input repeated notes by either holding another previous note while you enter them, or by leaving a very short gap between them, but you do have to wait a tiny moment if you want to enter a new scale so that it doesn't treat it all as one. 
 
-- Scales can also span two octaves, if the scale you input is bigger than an octave then it treats it as being two.
-
-- You can edit scales by clicking the keyboard graphics in the ui, but at the moment you can't edit the order of a pattern that way.
-
-- The seq.shape.player can play back these patterns, various pitch quantisation blocks can use the stored lists of notes too. 
-
-- If you add more voices to this block you can have more stored scales and shapes. 
+- Scales can also span two octaves, if the scale you input is bigger than an octave then it treats it as being two. In the mouse interface if you hold shift it only adds/removes in the current octave. 
 
 ### core.space
 - Lets you blow a wind-like force into the flocked parameters simulation. Also has controls for visual declarification.
@@ -83,16 +87,16 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### seq.note.step
 - note step sequencer. add more voices for more polyphony. the editor shows you patterns on other voices as hollow notes. 
 
-- on the trigger input C=clock B=back D=reset, you can also directly access the first 128 rows through the row select input. 
+- You can either record live or step record into this block, turn on the record button in the sidebar. 
 
 - The start point can be before, inside or even after the loop points. the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop. 
 
-- You can also choose how it behaves when the pattern slider changes. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
+- You can also choose how it behaves when a new pattern is selected. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
 
 ### seq.note.tracker
-- note tracker. each voice is a monophonic channel of midi notes, add more voices for more polyphony.
+- note tracker. each voice is a monophonic channel of midi notes, add more voices for more polyphony. 
 
-- on the trigger input C=clock B=back D=reset, you can also directly access the first 128 rows through the row select input. start point can be before, inside or even after the loop points. 
+- You can either record live or step record into this block, turn on the record button in the sidebar. 
 
 - notes with no length are only cut off by the next note or entering an 'off' with the 1 key. 
 
@@ -107,16 +111,19 @@ Every block has a help/description text you can view in the sidebar. This automa
 - ctl-i interpolates values from one end of a selection to the other.
 - '#' toggles 'grouping' for a row. grouped rows (indicated by a small indent) work as a single step, every time the playhead lands on this step it plays the next one of the grouped notes, round-robin-ing. so if you have a sequence CCCDEF and the last 4 are grouped it'll play CCCCCCCDCCCECCCF. 
 
-- the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop
+- The start point can be before, inside or even after the loop points. the loop follow mode determines how it behaves if you move the loop position or length sliders while it's playing - in soft mode if you move the loop later it will just gradually play through into the new loop, in hard mode it will jump into the new loop. 
+
+- You can also choose how it behaves when a new pattern is selected. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
 
 ### seq.piano.roll
 - Classic piano roll sequencer. 
-- Unlike other benny sequencers this one has an internal clock linked to the global clock and doesn't need a clock in. (It does follow timing drift from the kuramoto section of the clock if that's enabled.)
+- Unlike many other benny sequencers this one has an internal clock linked to the global clock and doesn't need a clock in. (It does follow timing drift from the kuramoto section of the clock if that's enabled.)
 
 - ctrl-click to create events, ctrl drag to create many events (in a values lane). scroll adjusts velocity or cc levels, drag or arrow keys to move events, ctrl+scroll, drag or arrow keys to adjust lengths. 
 
-- scroll or shift+scroll on the time ruler for zoom/pan. or drag on the ruler, or shift-drag on the background. 
-- alt+drag copies selected events.
+- scroll or shift+scroll on the time ruler for zoom/pan. or drag on the ruler, or drag on the background. 
+
+- shift+drag for a selection rectangle, alt+drag copies selected events.
 
 - press 3 to put the ruler into triplet divisions of beats when zoomed in.
 
@@ -124,7 +131,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - l makes the selected notes legato.
 
-- At the moment only scroll over the loop start / length etc numbers works to adjust those, and longer sequences than 256 beats can't yet be created in the ui here. More soon.
+- drag the loop handles or scroll over the loop start / length etc numbers.
 
 ### seq.rene
 - a circle on a cartesian plane step sequencer, obviously inspired by the module of the same name
@@ -142,6 +149,8 @@ Every block has a help/description text you can view in the sidebar. This automa
 - a simple step sequencer for one dimensional values. the 'notes out' uses the value as a note, and the velocity from the incoming trigger. the 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
 
 - add voices to the block to add more sequencer rows.
+
+- on this sequencer the record mode is step recording which disables the trigger input until you turn it off, and stores either incoming notes or incoming velocities, depending on the toggle switch setting.
 
 ### seq.wonky
 - The step time sliders control the length of each step, the block pro-ratas these lengths to make them fit into the time period you've set below. You can use this as a clock or there are also value sliders so you can use it as a stand alone sequencer - it outputs both the raw slider values and quantised pitches (with vel following incoming clocks).
@@ -161,7 +170,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - buzz-style sample tracker.
 
-- works but none of the fx commands are implemented yet
+- works but none of the fx commands are implemented yet.
+
+- i don't think the max/msp sample playback objects do anti-aliasing so if you're pitching samples up turn on oversampling for this block.
 
 ## midi
 
@@ -229,7 +240,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 - The controls let you choose which divisions are emphasised and whether it's just a single division or a combination of several.
 
 ### midi.scale.quantise
-- Quantises notes to the scales defined in the core.scales.shapes module. 
+- Quantises notes to scales. 
+
+- In quantise mode the first note in the scale below the incoming one is picked, in index mode the note number of the input is used as the index in the list of notes in the scale. For example if the scale was CEG and you played C0,C#0,F0 into it in quantise mode you'd get C0,C0,E0, in index mode you'd get C0,E0,G1. 
+
+- Scales are saved and can be dynamically set by incoming midi in the core.scales.shapes block, so this will be loaded automatically. 
 
 - This block works efficiently for fast note streams (including if you patch an audio signal to the note in) but there is also a utility.audio.scale.quantise which works all the way up to audio rate.
 
@@ -330,6 +345,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - - audio input can be used with the s&h / shift register
 - - the midi 'both' input feeds the note value into the s&h's audio input (if noise colour slider is on audio input) and also triggers a step, so you can use it to do sublooping type shift register effects on midi patterns.
 
+### source.sacred.waves.osc
+- Dual osciallator using Prophet 600 or MonoPoly synth waveforms (switchable) from Sacred Walls.  With crossmod and sub osc.  Made by Luke Abbott.
+
 ### source.sheep
 - A wrapper for Volker Böhm's port of Émilie Gillet's Tides module running the unofficial 'Sheep' firmware, which is a XY wavetable synth oscillator.
 
@@ -409,7 +427,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - this voice expects you to load a wave with an ascending scale, evenly spaced, with the slices set.
 
-- motor drag only works when an actual connection has been made - it won't work when auto-assign keyboard is played into the block.
+- motor drag only works when an actual connection has been made - it won't work when auto-assign keyboard is played into the block. 
+
+- i don't think the max/msp sample playback objects do anti-aliasing so if you're pitching samples up turn on oversampling for this block.
 
 ### voice.noise
 - noise source that can fade between different colours and types of noise, with a looping, accumulating ASR envelope controlling amplitude. midi in to the 'damp' input causes the envelope to close quickly.
@@ -431,7 +451,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 - A wrapper for Volker Böhm's port of Émilie Gillet's Rings module.
 
 ### voice.sample.player
-- sample player with slices, offset, timestretch
+- sample player with slices, offset, timestretch. 
+
+- i don't think the max/msp sample playback objects do anti-aliasing so if you're pitching samples up turn on oversampling for this block.
 
 ### voice.shepherd
 - Shepherd oscillator with env and vca. Mixes multiple octaves of a wave to let you make scales that ascend or descend forever, or parts that fluidly morph between high and low frequencies, using the ideas of Roger Shepherd and his famous barberpole tone (which this block can recreate by connecting a rising sawtooth lfo to the fm input). Shape fades from sine through triangle saw rectangle square triangle and back to sine. Accepts MIDI and CV, works in LFO and audio ranges. The rectangle portion of this oscillator uses code from Yofiel.com. 
@@ -460,6 +482,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### fx.clouds.pvoc
 - A wrapper for Volker Böhm's port of just the phase vocoder from Émilie Gillet's Clouds module.
+
+### fx.convolve
+- Simple wrapper for the HISStools max convolution object, uses benny's wave storage for the impulses. You can convolve all sorts of things together, not just reverbs.
+
+- IMPORTANT - to make this work you need to open max package manager (from the file menu) and find and install HISStools.
 
 ### fx.delay.buckets
 - Bucket Brigade Delay emulation. Accurate model of writing into a delay line with variable sample rate, responds to input changes in the same way a real BBD does. Additionally includes pre-filter, compander, soft sat, boundary loss and clock leakage, post-filter, HPF in one of two positions, and bit depth quantise (to simulate an early digi-delay rather than a BBD).
@@ -508,6 +535,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### fx.freqshift
 - max msp's freqshift object. for both positive and negative shifts mix both outputs. the audio rate input is fm of the freq set by the slider
+
+### fx.metal.box
+- Gentle saturation models. Based on multi-sampled impulses from studio hardware. Best in the subtle ranges, and particularly work well for gelling sounds together with subtle intermodulation. But you can push them harder - there's plenty of headroom in the samples. If you drive them you should turn upsampling on for the block, 4x works well usually. The bite control adjusts the dynamic behaviour of the saturation, as you turn it up more of the transients are allowed through.
 
 ### fx.mod.abl.chorus
 - wrapper for the abl.dsp.chorus. stereo in stereo out. only available in max 9.
@@ -664,6 +694,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### utility.sidechain.compressor
 - simple sidechain compressor
 
+### utility.spectrum
+- pops open a window with a spectrum view. todo: draw it in benny instead.
+
 ### utility.vca.env
 - VCA with integrated ASR envelope, follower, slew etc
 
@@ -676,8 +709,6 @@ Every block has a help/description text you can view in the sidebar. This automa
 - to fade one input signal between a number of outputs connect the input to every voice. 
 
 - to xfade between a number of inputs connect every output to a single destination.
-
-## mix
 
 ## mixer
 
