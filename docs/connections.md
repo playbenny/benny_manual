@@ -8,6 +8,8 @@ To connect just one voice, drag to or from just the voice rather than the main b
 
 A wire will appear, and the sidebar will show the connection detail edit view.
 
+If you want to connect a block back to itself in a feedback loop you can, but you need to hold shift while you drag.
+
 ![connection edit sidebar](assets/screenshots/connections_edit_1.png)
 
 Here you can select source voice(s), output, destination voice(s) and input. Hitting enter will collapse these choices to the defaults. You can always come back and change any one of them later.
