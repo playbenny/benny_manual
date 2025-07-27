@@ -205,7 +205,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### midi.fidget
 - ADHD for a controller. refuses to sit on one value for too long, once it gets bored takes a brownian hop to a nearby value. for example, put it between a midi controller and the parameter you want to control.
 
-### midi.fold
+### midi.fold.transpose
 - Transposes, folding notes that lie outside the set range. 
 
 - The last control, 'glissando', determines whether the output notes change when you adjust the controls as opposed to just when new notes come in. You can send midi to the second input to set the transpose value.
@@ -300,6 +300,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### source.abl.crackle
 - wrapper for the abl.dsp.crackle oscillator. only available in max 9.
+
+### source.auto.drummer
+- Pattern based drum machine, with DR110 samples.  Intentionally simple, intended as a quick source of drums as a writing aid.  Possibly the greatest drum machine you'll ever encounter.  Made by Luke Abbott.
 
 ### source.basic.osc
 - single oscillator. the shape control fades from sine through triangle saw rectangle square triangle and back to sine. accepts MIDI and CV, works in LFO and audio ranges. the 'initial pitch' slider sets the starting pitch, incoming midi overrides this but doesn't reset the slider. 
@@ -554,6 +557,18 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### fx.mod.abl.vibrato
 - wrapper for the abl.dsp.vibrato. stereo in stereo out. only available in max 9.
 
+### fx.multi.conv.2d
+- Experimental, likely to change. Like convolution, but working with a set of impulse responses taken at many different signal levels. Surprisingly pleasant way of modelling 'weakly nonlinear' hardware saturation.
+
+- The default is to look up (and interpolate between) impulse levels based on the current sample value, but using an envelope here also sounds good. There's a second, very slow, rms env follower that you can feed in here too to add character.
+
+- As opposed to the multi.conv.1d block, this one loads a pair of impulses and lets you fade between them manually or driven by the signal or envelopes.  
+
+- This block supports oversampling, which is recommended if you're getting more overdriven tones out of it.
+
+### fx.multiband.drive
+- Multiband drive, with isolator outputs.  Based on multilayer transfer curves sampled from hardware processors.  Made by Luke Abbott.
+
 ### fx.pitch.divider
 - an octave divider / sub oscillator generator inspired by the 4ms atoner
 
@@ -576,6 +591,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### fx.pitch.shift
 - pitch shift
 
+### fx.pultec.bass.eq
+- Simple bass EQ. You can choose a frequency position and a whether to only boost or also attenuate (the two don't quite line up, and the result is often useful). 
+
+- This block is built from a set of modified multi-level impulses taken through a cheap 500-rack pultec clone I have in my studio, along with the 'bite' control from fx.metal.box. This piece of hardware ended up needing quite long impulses so it uses more cpu than the other multi-impulse models in benny.
+
 ### fx.reverb.abl.darkhall
 - wrapper for the abl.dsp.darkhall reverb. stereo in stereo out. only available in max 9.
 
@@ -593,6 +613,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### fx.reverb.abl.tides
 - wrapper for the abl.dsp.tides reverb. stereo in stereo out. only available in max 9.
+
+### fx.thermal.eq
+- Simple EQ. Great at the end of an instrument or part. You can choose a highpass position and a single area of the spectrum to emphasise. The emphasis pushes into the drive in a lovely way.
+
+- This block is built from a set of modified multi-level impulses taken through a british-made tube preamp/eq I have in my studio, along with the 'bite' control from fx.metal.box.
+
+- If you're running low on cpu the impulse length control set to 32 uses half as much, but in some cases doesn't quite make the same spectral changes.
 
 ### fx.varispeed.looper
 - Flexible buffer record/playback device inspired by monome norns' softcut: record and play into and out of the buffer can occur at any rate you like. Multiple voices can access the same or different wave buffers. All jumps and loops are crossfaded smoothly. The buffer it uses is tagged with timestamps and metadata and available (as one of the waves on the waves page) for other blocks to play or write into. You can save this wave from there if you fill the buffer with something you like. Does an excellent impression of how BBD delays repitch, but is capable of far more - loopers, buffer-fx, repitchers, complex delays, sample-mangling, live resampling, etc
@@ -627,6 +654,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### utility.audio.smooth
 - Uses a 2 pole low pass filter modulated by a bandpass out of the same filter to smooth values in a way which responds well to fast changes. Algorithm by Andrew Simper of Cytomic from here: https://cytomic.com/files/dsp/DynamicSmoothing.pdf. The 'sensitivity' control governs how much the bandpass modulates the lowpass.
+
+### utility.band.splitter
+- crossover, splits a signal into two frequency bands.
 
 ### utility.basic.file.player
 - lets you open a file and play it. autostarts on record. handy for rendering a stem through a benny fx chain, for example.
@@ -682,6 +712,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### utility.record.endpoint.stereo
 - DOES NOTHING. but is a convenient way to record a stereo wav - just route whatever into it and arm it to record. useful for recording multiple blocks. passes through unaltered audio.
 
+### utility.sacred.channel
+- A synth voice minus the oscillators - a morphing filter and a saturdating vca driven by an ADSR envelope generator.  VCA floor can be raised with 'Open VCA' parameter to be used as a saturation effect.  Output filter is 12db shape morphing filter similar to a SEM.  Made by Luke Abbott.
+
 ### utility.self.tuner
 - self-tuning midi to cv converter. 
 
@@ -697,7 +730,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### utility.spectrum
 - pops open a window with a spectrum view. todo: draw it in benny instead.
 
-### utility.vca.env
+### utility.transient.splitter
+- detects transients, and outputs them from the first output, and absolutely everything thats left comes out of the other output. if you mix them back together you get your original sound back, but the suggested use is to process one part of the sound separately from the other.
+
+### utility.vca.env.adsr
+- ADSR envelope generator and saturating vca.  VCA floor can be raised with 'Open VCA' parameter to be used as a saturation effect.  Made by Luke Abbott.
+
+### utility.vca.env.asr
 - VCA with integrated ASR envelope, follower, slew etc
 
 ### utility.vca
@@ -760,6 +799,17 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
+### mixer.mono.thermal
+- mono mixer channel using the multi-convolution recordings of a british tube eq that are also in the fx.thermal.eq block.
+
+- the sidechain compression input feeds into the model in interesting ways, removing peak detail as well as the normal sidechain ducking. 
+
+- Like the other mixer blocks this uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
 ### mixer.stereo.basic
 - stereo mixer channel. 
 
@@ -792,4 +842,17 @@ Every block has a help/description text you can view in the sidebar. This automa
 - MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
 
 - IMPORTANT this block needs airwindows totape6 to do anything at all. also the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
+
+### mixer.stereo.thermal
+- stereo mixer channel using the multi-convolution recordings of a british tube eq that are also in the fx.thermal.eq block.
+
+- in mid side mode there are separate controls for the side channel. cutting the bass in the sides and boosting and saturating the top is a good 'vinyl simulation'
+
+- (aside: on a record player the L R channels are the sides of the groove, at 45 degrees. up and down therefore is the center channel, side-to-side is the side channel. the latter has much less headroom before saturation than the former. this, combined with the RIAA bias curve means that the side channel high frequencies get gently saturated, giving a pleasant fizzy width.) 
+
+- Like the other mixer blocks this uses airwindows console7 for nice summing and drive. 
+
+- MUST BE ALL ROUTED FROM THIS BLOCK INTO A mixer.bus BLOCK.
+
+- IMPORTANT the non-linear summing will only work if you have the airwindows console 7 vsts (console7channel64, console7cascade64, console7buss64) installed, without them it defaults to normal digital summing.
 
