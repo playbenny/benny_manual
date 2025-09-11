@@ -66,7 +66,10 @@
 
 **alt-click** - to bypass blocks
 
-**drag** - to move blocks, or drag a block over another one to connect them
+**drag** - to move blocks, or drag a block over another one to connect them.
+        hold **ctrl** when you release to make the new connection muted.
+
+**shift-drag** - to connect a block to itself
 
 **ctrl-shift-drag** - insert a block into a wire
 
@@ -74,7 +77,7 @@
 
 **ctrl-scroll** - over a wire, adjust connection level
 
-**alt-shift-scroll** - make space: push (or pull) all blocks away from (or towards) the mouse cursor
+**alt-shift-scroll** - make space: push (or pull) all blocks away from (or towards) the mouse cursor, linearly
 
 
 **home** or **cmd-0** - center view
@@ -137,7 +140,7 @@
 
 **any other keys** - start typing the name of your chosen block to bring up the new block menu.
 
-
+**shift** - when selecting a block in the block menu automatically makes a connection between the block that was selected before opening the new block menu and the newly added one.
 
 
 
