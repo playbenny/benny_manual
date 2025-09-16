@@ -93,6 +93,8 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - You can also choose how it behaves when a new pattern is selected. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
 
+- use scroll / shift+scroll on the editor pane to pan around. scroll on the rulers also works, and ctrl scroll on the rulers zooms in and out in either direction.
+
 ### seq.note.tracker
 - note tracker. each voice is a monophonic channel of midi notes, add more voices for more polyphony. 
 
@@ -145,6 +147,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - On the second midi input C = reset, notes from C# upwards trigger one of the ornament types directly.
 
+### seq.turing
+- Implementation of the famous music thing turing machine
+
 ### seq.values
 - a simple step sequencer for one dimensional values. the 'notes out' uses the value as a note, and the velocity from the incoming trigger. the 'values out' sends it as a value, which you can rotate to map to any combination of velocity or pitch if you want to send it to a midi destination.
 
@@ -170,9 +175,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - buzz-style sample tracker.
 
-- works but none of the fx commands are implemented yet.
+- works but not all of the fx commands are implemented yet.
 
-- i don't think the max/msp sample playback objects do anti-aliasing so if you're pitching samples up turn on oversampling for this block.
+- working: arp, cut, fade, offset, pitchslide, reverse, sometimes, mult rate, ramp up vol, rand octave, portamento, delay, hold, retrig.
+
+- if you're pitching bright samples up you'll get a slightly cleaner tone if you turn on oversampling for this block.
 
 ## midi
 
@@ -218,6 +225,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### midi.lfo
 - A midi LFO, if you add more voices they're linked, so you can build eg quadrature lfos from this.
+
+### midi.logic
+- Logic block, all the classic logic functions! Designed for midi, use utility.audio.logic for an audio rate version of this block
 
 ### midi.note.length
 - sets the length of midi notes. 
@@ -637,6 +647,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ## utility
 
+### utility.spray
+- Routes each incoming note to a different output, using either its note or its velocity as an index. Useful for getting an event on a specific step of a sequence using its position output. Want to do this with (monophonic) audio? try the pitch.gate block
+
 ### utility.abl.3band.eq
 - wrapper for the abl.device.channeleq. stereo. only available in max 9.
 
@@ -651,6 +664,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### utility.abl.transient.design
 - wrapper for the abl.dsp.transientdesigner. a simple transient design effect with a separate input for the control signal. only available in max 9.
+
+### utility.audio.logic
+- Logic block, all the classic logic functions! works on audio/cv signals, use midi.logic if you're processing midi. the smoothing control prevents the aliasing you get with on/off signals in digital, and works as a crude octave divider at extreme amounts.
 
 ### utility.audio.smooth
 - Uses a 2 pole low pass filter modulated by a bandpass out of the same filter to smooth values in a way which responds well to fast changes. Algorithm by Andrew Simper of Cytomic from here: https://cytomic.com/files/dsp/DynamicSmoothing.pdf. The 'sensitivity' control governs how much the bandpass modulates the lowpass.
@@ -707,7 +723,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - mid-side processor
 
 ### utility.pan.mono
-- takes a mono input, lets you adjust pan. has audio-rate control input.
+- takes a mono input, lets you adjust pan. has audio-rate control input. note: hard pan is +-1, going past that it feeds an inverted signal to the silent side, pushing the pan out past the speakers. think about your audience's playback equipment and listening position when doing this!
 
 ### utility.record.endpoint.stereo
 - DOES NOTHING. but is a convenient way to record a stereo wav - just route whatever into it and arm it to record. useful for recording multiple blocks. passes through unaltered audio.
