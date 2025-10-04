@@ -93,7 +93,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - You can also choose how it behaves when a new pattern is selected. the default is to keep the playhead where it was and just carry on reading from the new pattern, but you can also have it reset the playhead to the start point in the new pattern, and optionally to quantise that. to make this step sequencer act like a clip in ableton live use the quantise to bar setting.
 
-- use scroll / shift+scroll on the editor pane to pan around. scroll on the rulers also works, and ctrl scroll on the rulers zooms in and out in either direction.
+- use scroll / shift+scroll on the editor pane to pan around. scroll on the rulers also works, and ctrl scroll on the rulers zooms in and out in either direction. alt click a top ruler cell to make it into a round robin.
 
 ### seq.note.tracker
 - note tracker. each voice is a monophonic channel of midi notes, add more voices for more polyphony. 
@@ -226,6 +226,8 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### midi.lfo
 - A midi LFO, if you add more voices they're linked, so you can build eg quadrature lfos from this.
 
+- the set phase input resets the lfo phase, using the note to select where in the cycle to start from. the tap tempo input sets the lfo rate based on the time between the last two notes it receives, and the both input does both of these things in one.
+
 ### midi.logic
 - Logic block, all the classic logic functions! Designed for midi, use utility.audio.logic for an audio rate version of this block
 
@@ -243,6 +245,11 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### midi.pitch.range
 - gate (or split) notes based on pitch
+
+### midi.rate.limit
+- time quantised rate limiting, automatically in sync with the global transport (including clock timing looseness).
+
+- benny has natural speed limits on parameter / modulation connections but midi notes are completely unlimited, and some chains may generate a lot of midi notes. this block can be useful for taming this.
 
 ### midi.rhythmes.alpes
 - Fades / switches between subdivisions of a clock, inspired by the mechanical proto-drummachine used by the wonderful french group 'Catherine Ribiero & Alpes'.
@@ -392,6 +399,13 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### voice.elements
 - A wrapper for Volker Böhm's port of Émilie Gillet's Elements module.
+
+### voice.filter.env
+- a single oscillator and a 2pole state variable filter with filter envelope and amplitude envelope. ideal as a building block for polyphonic synths, but useful for all sorts of things. also works at lfo rates and over long timescales. 
+
+- both envelopes feature 'accumulation' - when retriggered before the envelope has decayed to silence the remaining level is added to the new target level, so rolls can be set to build up by themselves (or down - when set negative it makes the envelope obey jaki leibzeit's rule of '2nd hit quieter'). the envelopes also have a loop control, when set <1 each repeat of the loop is a little lower, leading to a classic bouncing ball effect. 
+
+- the filters in this block are the sm devices zdf svf model. the filter feedback slider feeds the lp (positive values) or bp (negative values) back into the cutoff, through a 1 sample delay, which gives some interesting tones and may add subtle latching behaviours to the resonance.
 
 ### voice.harmonic
 - 8 drawbar harmonics + env + vca. uses non-linear summing borrowed from airwindows console, and a very gentle sine shaper on the output post env/vca, which all serves to give it a nice glued character that sits in a mix well, less a collection of digital sines than a single voice.
@@ -706,6 +720,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### utility.env.four.stage
 - 4 stage multi-mode envelope. easily chainable, lots of interesting trigger ins and outs.
 
+### utility.env.ping
+- Tempo/Tap-synced ping envelope. Inspired by 4ms PEG module. Block by El Chico Fuendre
+
 ### utility.eq.peak
 - a single band of nonstandard stereo peak/notch eq. partially gain compensated, airwindows style nonlinear internal summing, selfmod. cut is a subtle (undistorted) notch, boost fades from a peak kind of shape into more of a bandpass at the extreme settings. 
 
@@ -731,10 +748,12 @@ Every block has a help/description text you can view in the sidebar. This automa
 ### utility.sacred.channel
 - A synth voice minus the oscillators - a morphing filter and a saturdating vca driven by an ADSR envelope generator.  VCA floor can be raised with 'Open VCA' parameter to be used as a saturation effect.  Output filter is 12db shape morphing filter similar to a SEM.  Made by Luke Abbott.
 
-### utility.self.tuner
+### utility.midi.to_cv
 - self-tuning midi to cv converter. 
 
 - connect your osc's output to the listen input. connect the cv output to the osc cv input. optionally if you want to modulate the osc's frequency do it THROUGH this block, via the second input. play notes into the midi input here. 
+
+- this block uses the global tuning system controls that are accessible through the core.tuning block, so you can use your analogue synths in any tuning system you want. 
 
 - if you have more than one oscillator you can add more voices to the tuner for polyphonic midi. the midi through out is useful for lining envelopes up with voices.
 
