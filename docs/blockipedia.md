@@ -51,11 +51,25 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - You can enter scales with the mouse by clicking the keyboard graphics. 
 
-- You can make scales (dynamically if you want!) using midi (or QWERTY!) input in two ways: 
+- You can make scales (dynamically if you want!) using midi (or QWERTY!) input in three ways: 
 
 - For midi into the 'held' input the currently held notes are stored along with the order they were added. 
 
 - A phrase played into the 'pattern' input is turned into a list of notes and the order they were received. it decides you've finished a couple of hundred ms after the last note off, so you can input repeated notes by either holding another previous note while you enter them, or by leaving a very short gap between them, but you do have to wait a tiny moment if you want to enter a new scale so that it doesn't treat it all as one. 
+
+- Finally midi into the 'auto scale select' input picks from the common scale lists: note sets the rote, octave sets the scale type:
+- 0 major
+- 1 dorian 
+- 2 phrygian 
+- 3 lydian 
+- 4 mixolydian 
+- 5 aeolian 
+- 6 locrian 
+- 7 harmonic minor 
+- 8 double harmonic 
+- 9 super locrian 
+
+
 
 - Scales can also span two octaves, if the scale you input is bigger than an octave then it treats it as being two. In the mouse interface if you hold shift it only adds/removes in the current octave. 
 
@@ -147,6 +161,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - On the second midi input C = reset, notes from C# upwards trigger one of the ornament types directly.
 
+### seq.strudel.mini
+- the strudel mini notation in benny. experimental beta.
+
 ### seq.turing
 - Implementation of the famous music thing turing machine
 
@@ -221,7 +238,7 @@ Every block has a help/description text you can view in the sidebar. This automa
 - a free-running clock, disconnected from the global one
 
 ### midi.holes
-- Forgets some midi events, randomly
+- Forgets some midi events, randomly or regularly. Works as a clock divider if you set 'skip every' to eg 0.5.
 
 ### midi.lfo
 - A midi LFO, if you add more voices they're linked, so you can build eg quadrature lfos from this.
@@ -407,6 +424,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 - the filters in this block are the sm devices zdf svf model. the filter feedback slider feeds the lp (positive values) or bp (negative values) back into the cutoff, through a 1 sample delay, which gives some interesting tones and may add subtle latching behaviours to the resonance.
 
+### voice.grains
+- each voice of this is a pair of overlapping 'grains'. this is a building block for granular synthesis. you can stack many voices to make big grain clouds, use benny's lfos and poly spread etc to add modulation. etc
+
 ### voice.harmonic
 - 8 drawbar harmonics + env + vca. uses non-linear summing borrowed from airwindows console, and a very gentle sine shaper on the output post env/vca, which all serves to give it a nice glued character that sits in a mix well, less a collection of digital sines than a single voice.
 
@@ -494,6 +514,9 @@ Every block has a help/description text you can view in the sidebar. This automa
 
 ### fx.abl.distortion
 - wrapper for the abl.dsp.distortion. stereo in stereo out. only available in max 9.
+
+### fx.abl.drumbuss
+- wrapper for the abl.device.drumbuss. stereo in stereo out. only available in max 9.
 
 ### fx.abl.fuzz
 - wrapper for the abl.dsp.fuzz. stereo in stereo out. only available in max 9.
