@@ -4,6 +4,8 @@
 
 **`** - all off (ends all midi notes etc)
 
+**ctrl-`** or **ctrl-=** - resync (resets the phase of all sequencers on the next downbeat)
+
 **space** - play button
 
 **ctrl-space** / **opt-space** - load next song
@@ -49,7 +51,10 @@
 
 **alt click** - to return a slider to its default value (or to the value saved in your songfile).
 
+**\\** - while hovering over a sidebar parameter slider, enters midi map mode. move a control to make a mapping to that slider.
+
 **012345679** while hovering over a slider you can enter numbers, hit enter to store
+**./** you can also enter lists, eg `1,2,3,,,5,0,2.4` which will create a seq.values wired to make that pattern of automation happen. and if you end the list with a slash and a time division (eg `/4n`) then the seq.values will be connected to a new clock voice at that rate.
 
 
 
