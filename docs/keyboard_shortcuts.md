@@ -10,7 +10,7 @@
 
 **ctrl-space** / **opt-space** - load next song
 
-**ctrl-s** - save
+**ctrl-s** - save **please stop playback before saving if possible**
 
 **CAPS LOCK** - when on, the qwerty keyboard is 2.5 octaves of notes, starting at **Z** up to **M** for the first octave, then from **Q** to **]**. To go up and down an octave use **L** and **,**.
 
